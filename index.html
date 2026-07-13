@@ -500,7 +500,7 @@ function pageL(){
   r+='<button class="back-btn" onclick="lecon=null;draw()">← Retour</button>';
   
   // Leçons verrouillées
-  var verrouillee = l.id === 'spiritualite' && !isPremium;
+  var verrouillee = ['spiritualite','etrehumain','maison','transports','lieux','nature','animaux','activites','metiers','viequotidienne','adjectifs','ecole','phrasesutiles','villages','prenoms'].indexOf(l.id) !== -1 && !isPremium;
   if(verrouillee){
     r+='<div class="lecon-header">';
     r+='<div class="lecon-header-emoji">🔒</div>';
@@ -543,6 +543,16 @@ function FC(i){flipped[i]=!flipped[i];draw();}
 
 // ── GRAMMAIRE ──
 function pageG(){
+  if(!isPremium){
+    var r='<div class="anim-up">';
+    r+='<div style="background:rgba(200,137,42,0.08);border:1px solid rgba(200,137,42,0.3);border-radius:18px;padding:28px 20px;text-align:center;margin:20px 0">';
+    r+='<div style="font-size:48px;margin-bottom:12px">🔒</div>';
+    r+='<h3 style="color:var(--gold);font-family:Cinzel,serif;margin-bottom:10px">Contenu Premium</h3>';
+    r+='<p style="color:rgba(240,232,216,0.75);font-size:13px;margin-bottom:20px;line-height:1.7">La grammaire complète est réservée aux membres premium.<br>Accède à tout pour seulement <strong style="color:var(--gold)">19€</strong> à vie.</p>';
+    r+='<div id="stripe-btn-container"></div>';
+    r+='</div></div>';
+    return r;
+  }
   var secs=[
     {id:'rg',lb:'📜 Règles de grammaire'},
     {id:'pp',lb:'👥 Pronoms personnels'},
@@ -671,6 +681,16 @@ function SQ(i){
   go('q');
 }
 function pageQ(){
+  if(!isPremium){
+    var r='<div class="anim-up">';
+    r+='<div style="background:rgba(200,137,42,0.08);border:1px solid rgba(200,137,42,0.3);border-radius:18px;padding:28px 20px;text-align:center;margin:20px 0">';
+    r+='<div style="font-size:48px;margin-bottom:12px">🔒</div>';
+    r+='<h3 style="color:var(--gold);font-family:Cinzel,serif;margin-bottom:10px">Contenu Premium</h3>';
+    r+='<p style="color:rgba(240,232,216,0.75);font-size:13px;margin-bottom:20px;line-height:1.7">Le quiz est réservé aux membres premium.<br>Accède à tout pour seulement <strong style="color:var(--gold)">19€</strong> à vie.</p>';
+    r+='<div id="stripe-btn-container"></div>';
+    r+='</div></div>';
+    return r;
+  }
   if(!quiz.on&&!quiz.fin){
     var r='<h2 class="page-title">Quiz</h2>';
     r+='<p style="font-size:12px;color:var(--muted);margin-bottom:16px">Choisissez une leçon pour vous tester</p>';
@@ -734,6 +754,16 @@ function allMots(){
   return a.sort(function(a,b){return a.fr.localeCompare(b.fr,'fr');});
 }
 function pageD(){
+  if(!isPremium){
+    var r='<div class="anim-up">';
+    r+='<div style="background:rgba(200,137,42,0.08);border:1px solid rgba(200,137,42,0.3);border-radius:18px;padding:28px 20px;text-align:center;margin:20px 0">';
+    r+='<div style="font-size:48px;margin-bottom:12px">🔒</div>';
+    r+='<h3 style="color:var(--gold);font-family:Cinzel,serif;margin-bottom:10px">Contenu Premium</h3>';
+    r+='<p style="color:rgba(240,232,216,0.75);font-size:13px;margin-bottom:20px;line-height:1.7">Le dictionnaire complet est réservé aux membres premium.<br>Accède à tout pour seulement <strong style="color:var(--gold)">19€</strong> à vie.</p>';
+    r+='<div id="stripe-btn-container"></div>';
+    r+='</div></div>';
+    return r;
+  }
   var all=allMots();
   var f=srch?all.filter(function(m){return m.fr.toLowerCase().indexOf(srch.toLowerCase())>=0||m.mj.toLowerCase().indexOf(srch.toLowerCase())>=0;}):all;
   var r='<h2 class="page-title">Dictionnaire</h2>';
