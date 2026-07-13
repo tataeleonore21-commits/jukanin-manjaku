@@ -842,6 +842,15 @@ if(urlParams.get("unlock") === PREMIUM_CODE){
 }
 var isPremium = localStorage.getItem("jukaninPremium") === "true";
 
+
+function insertStripeBtn(){
+  var containers = document.querySelectorAll('#stripe-btn-container');
+  containers.forEach(function(c){
+    if(c && c.innerHTML === ''){
+      c.innerHTML='<stripe-buy-button buy-button-id="buy_btn_1TilzSCVRhVDwbulo3gqBTuf" publishable-key="pk_live_51P3PgKCVRhVDwbulXUkEmxtidOadPD5H6hme46LSqulfFjZIuzjQpQdOfMGNA71HMO1v1BQbm8EjL1ZyicMR4GcA00u0Qebc4N"></stripe-buy-button>';
+    }
+  });
+}
 window.onload=function(){draw();};
 </script>
 
