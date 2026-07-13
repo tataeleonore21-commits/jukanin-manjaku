@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="theme-color" content="#0a0d12">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Jukanin Manjaku">
+<link rel="manifest" href="data:application/json;base64,ewogICJuYW1lIjogIkp1a2FuaW4gTWFuamFrdSIsCiAgInNob3J0X25hbWUiOiAiSnVrYW5pbiIsCiAgImRlc2NyaXB0aW9uIjogIkFwcHJlbmRzIGxlIE1hbmpha3UgLSBCeSBUYXRhIMOJbMOpb25vcmUiLAogICJzdGFydF91cmwiOiAiLiIsCiAgImRpc3BsYXkiOiAic3RhbmRhbG9uZSIsCiAgImJhY2tncm91bmRfY29sb3IiOiAiIzBhMGQxMiIsCiAgInRoZW1lX2NvbG9yIjogIiMwYTBkMTIiLAogICJvcmllbnRhdGlvbiI6ICJwb3J0cmFpdCIsCiAgImljb25zIjogWwogICAgewogICAgICAic3JjIjogImRhdGE6aW1hZ2Uvc3ZnK3htbDtiYXNlNjQsUEhOMlp5QjRiV3h1Y3owaWFIUjBjRG92TDNkM2R5NTNNeTV2Y21jdk1qQXdNQzl6ZG1jaUlIWnBaWGRDYjNnOUlqQWdNQ0ExTVRJZ05URXlJaUIzYVdSMGFEMGlOVEV5SWlCb1pXbG5hSFE5SWpVeE1pSStDaUFnUEdSbFpuTStDaUFnSUNBOGJHbHVaV0Z5UjNKaFpHbGxiblFnYVdROUltSm5JaUI0TVQwaU1DVWlJSGt4UFNJd0pTSWdlREk5SWpFd01DVWlJSGt5UFNJeE1EQWxJajRLSUNBZ0lDQWdQSE4wYjNBZ2IyWm1jMlYwUFNJd0pTSWdjM1I1YkdVOUluTjBiM0F0WTI5c2IzSTZJekZoTVRJd05UdHpkRzl3TFc5d1lXTnBkSGs2TVNJZ0x6NEtJQ0FnSUNBZ1BITjBiM0FnYjJabWMyVjBQU0l4TURBbElpQnpkSGxzWlQwaWMzUnZjQzFqYjJ4dmNqb2pNR0V3WkRFeU8zTjBiM0F0YjNCaFkybDBlVG94SWlBdlBnb2dJQ0FnUEM5c2FXNWxZWEpIY21Ga2FXVnVkRDRLSUNBZ0lEeHNhVzVsWVhKSGNtRmthV1Z1ZENCcFpEMGlaMjlzWkNJZ2VERTlJakFsSWlCNU1UMGlNQ1VpSUhneVBTSXhNREFsSWlCNU1qMGlNVEF3SlNJK0NpQWdJQ0FnSUR4emRHOXdJRzltWm5ObGREMGlNQ1VpSUhOMGVXeGxQU0p6ZEc5d0xXTnZiRzl5T2lObU5XTTROREk3YzNSdmNDMXZjR0ZqYVhSNU9qRWlJQzgrQ2lBZ0lDQWdJRHh6ZEc5d0lHOW1abk5sZEQwaU5UQWxJaUJ6ZEhsc1pUMGljM1J2Y0MxamIyeHZjam9qWlRnNU1qTmhPM04wYjNBdGIzQmhZMmwwZVRveElpQXZQZ29nSUNBZ0lDQThjM1J2Y0NCdlptWnpaWFE5SWpFd01DVWlJSE4wZVd4bFBTSnpkRzl3TFdOdmJHOXlPaU5qT0RnNU1tRTdjM1J2Y0MxdmNHRmphWFI1T2pFaUlDOCtDaUFnSUNBOEwyeHBibVZoY2tkeVlXUnBaVzUwUGdvZ0lEd3ZaR1ZtY3o0S0lDQUtJQ0E4SVMwdElFWnZibVFnTFMwK0NpQWdQSEpsWTNRZ2QybGtkR2c5SWpVeE1pSWdhR1ZwWjJoMFBTSTFNVElpSUhKNFBTSTRNQ0lnWm1sc2JEMGlkWEpzS0NOaVp5a2lMejRLSUNBS0lDQThJUzB0SUVKdmNtUjFjbVVnWkc5eXc2bGxJQzB0UGdvZ0lEeHlaV04wSUhnOUlqRTJJaUI1UFNJeE5pSWdkMmxrZEdnOUlqUTRNQ0lnYUdWcFoyaDBQU0kwT0RBaUlISjRQU0kzTUNJZ1ptbHNiRDBpYm05dVpTSWdjM1J5YjJ0bFBTSjFjbXdvSTJkdmJHUXBJaUJ6ZEhKdmEyVXRkMmxrZEdnOUlqTWlJRzl3WVdOcGRIazlJakF1TmlJdlBnb2dJQW9nSUR3aExTMGd3NGwwYjJsc1pTQmt3NmxqYjNKaGRHbDJaU0JvWVhWMElDMHRQZ29nSUR4MFpYaDBJSGc5SWpJMU5pSWdlVDBpTVRJd0lpQm1iMjUwTFdaaGJXbHNlVDBpUjJWdmNtZHBZU3h6WlhKcFppSWdabTl1ZEMxemFYcGxQU0l6TmlJZ1ptbHNiRDBpZFhKc0tDTm5iMnhrS1NJZ2RHVjRkQzFoYm1Ob2IzSTlJbTFwWkdSc1pTSWdiM0JoWTJsMGVUMGlNQzQ0SWo3aW5LWThMM1JsZUhRK0NpQWdDaUFnUENFdExTQktWVXRCVGtsT0lDMHRQZ29nSUR4MFpYaDBJSGc5SWpJMU5pSWdlVDBpTWpRd0lpQUtJQ0FnSUdadmJuUXRabUZ0YVd4NVBTSkhaVzl5WjJsaExITmxjbWxtSWlBS0lDQWdJR1p2Ym5RdGMybDZaVDBpTnpJaUlBb2dJQ0FnWm05dWRDMTNaV2xuYUhROUltSnZiR1FpQ2lBZ0lDQm1hV3hzUFNKMWNtd29JMmR2YkdRcElpQUtJQ0FnSUhSbGVIUXRZVzVqYUc5eVBTSnRhV1JrYkdVaUNpQWdJQ0JzWlhSMFpYSXRjM0JoWTJsdVp6MGlOaUkrU2xWTFFVNUpUand2ZEdWNGRENEtJQ0FLSUNBOElTMHRJRXhwWjI1bElIUERxWEJoY21GMGNtbGpaU0F0TFQ0S0lDQThiR2x1WlNCNE1UMGlPREFpSUhreFBTSXlOekFpSUhneVBTSTBNeklpSUhreVBTSXlOekFpSUhOMGNtOXJaVDBpZFhKc0tDTm5iMnhrS1NJZ2MzUnliMnRsTFhkcFpIUm9QU0l4TGpVaUlHOXdZV05wZEhrOUlqQXVOU0l2UGdvZ0lBb2dJRHdoTFMwZ1RVRk9Ta0ZMVlNBdExUNEtJQ0E4ZEdWNGRDQjRQU0l5TlRZaUlIazlJak0wTUNJZ0NpQWdJQ0JtYjI1MExXWmhiV2xzZVQwaVIyVnZjbWRwWVN4elpYSnBaaUlnQ2lBZ0lDQm1iMjUwTFhOcGVtVTlJamN5SWlBS0lDQWdJR1p2Ym5RdGQyVnBaMmgwUFNKaWIyeGtJZ29nSUNBZ1ptbHNiRDBpZFhKc0tDTm5iMnhrS1NJZ0NpQWdJQ0IwWlhoMExXRnVZMmh2Y2owaWJXbGtaR3hsSWdvZ0lDQWdiR1YwZEdWeUxYTndZV05wYm1jOUlqWWlQazFCVGtwQlMxVThMM1JsZUhRK0NpQWdDaUFnUENFdExTQlRiM1Z6TFhScGRISmxJQzB0UGdvZ0lEeDBaWGgwSUhnOUlqSTFOaUlnZVQwaU5EQXdJaUFLSUNBZ0lHWnZiblF0Wm1GdGFXeDVQU0pIWlc5eVoybGhMSE5sY21sbUlpQUtJQ0FnSUdadmJuUXRjMmw2WlQwaU1qUWlJQW9nSUNBZ1ptbHNiRDBpSTJNNE9Ea3lZU0lLSUNBZ0lIUmxlSFF0WVc1amFHOXlQU0p0YVdSa2JHVWlDaUFnSUNCc1pYUjBaWEl0YzNCaFkybHVaejBpTXlJS0lDQWdJR1p2Ym5RdGMzUjViR1U5SW1sMFlXeHBZeUkrUW5rZ1ZHRjBZU0REaVd6RHFXOXViM0psUEM5MFpYaDBQZ29nSUNBZ0NpQWdQQ0V0TFNERGlYUnZhV3hsSUdURHFXTnZjbUYwYVhabElHSmhjeUF0TFQ0S0lDQThkR1Y0ZENCNFBTSXlOVFlpSUhrOUlqUTFNQ0lnWm05dWRDMW1ZVzFwYkhrOUlrZGxiM0puYVdFc2MyVnlhV1lpSUdadmJuUXRjMmw2WlQwaU1qZ2lJR1pwYkd3OUluVnliQ2dqWjI5c1pDa2lJSFJsZUhRdFlXNWphRzl5UFNKdGFXUmtiR1VpSUc5d1lXTnBkSGs5SWpBdU5pSSs0cHltSU9LY3BpRGluS1k4TDNSbGVIUStDand2YzNablBnPT0iLAogICAgICAic2l6ZXMiOiAiNTEyeDUxMiIsCiAgICAgICJ0eXBlIjogImltYWdlL3N2Zyt4bWwiLAogICAgICAicHVycG9zZSI6ICJhbnkgbWFza2FibGUiCiAgICB9CiAgXQp9">
+<link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImJnIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzFhMTIwNTtzdG9wLW9wYWNpdHk6MSIgLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdHlsZT0ic3RvcC1jb2xvcjojMGEwZDEyO3N0b3Atb3BhY2l0eToxIiAvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iZ29sZCIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiNmNWM4NDI7c3RvcC1vcGFjaXR5OjEiIC8+CiAgICAgIDxzdG9wIG9mZnNldD0iNTAlIiBzdHlsZT0ic3RvcC1jb2xvcjojZTg5MjNhO3N0b3Atb3BhY2l0eToxIiAvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiNjODg5MmE7c3RvcC1vcGFjaXR5OjEiIC8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogIDwvZGVmcz4KICAKICA8IS0tIEZvbmQgLS0+CiAgPHJlY3Qgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiIHJ4PSI4MCIgZmlsbD0idXJsKCNiZykiLz4KICAKICA8IS0tIEJvcmR1cmUgZG9yw6llIC0tPgogIDxyZWN0IHg9IjE2IiB5PSIxNiIgd2lkdGg9IjQ4MCIgaGVpZ2h0PSI0ODAiIHJ4PSI3MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ1cmwoI2dvbGQpIiBzdHJva2Utd2lkdGg9IjMiIG9wYWNpdHk9IjAuNiIvPgogIAogIDwhLS0gw4l0b2lsZSBkw6ljb3JhdGl2ZSBoYXV0IC0tPgogIDx0ZXh0IHg9IjI1NiIgeT0iMTIwIiBmb250LWZhbWlseT0iR2VvcmdpYSxzZXJpZiIgZm9udC1zaXplPSIzNiIgZmlsbD0idXJsKCNnb2xkKSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgb3BhY2l0eT0iMC44Ij7inKY8L3RleHQ+CiAgCiAgPCEtLSBKVUtBTklOIC0tPgogIDx0ZXh0IHg9IjI1NiIgeT0iMjQwIiAKICAgIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLHNlcmlmIiAKICAgIGZvbnQtc2l6ZT0iNzIiIAogICAgZm9udC13ZWlnaHQ9ImJvbGQiCiAgICBmaWxsPSJ1cmwoI2dvbGQpIiAKICAgIHRleHQtYW5jaG9yPSJtaWRkbGUiCiAgICBsZXR0ZXItc3BhY2luZz0iNiI+SlVLQU5JTjwvdGV4dD4KICAKICA8IS0tIExpZ25lIHPDqXBhcmF0cmljZSAtLT4KICA8bGluZSB4MT0iODAiIHkxPSIyNzAiIHgyPSI0MzIiIHkyPSIyNzAiIHN0cm9rZT0idXJsKCNnb2xkKSIgc3Ryb2tlLXdpZHRoPSIxLjUiIG9wYWNpdHk9IjAuNSIvPgogIAogIDwhLS0gTUFOSkFLVSAtLT4KICA8dGV4dCB4PSIyNTYiIHk9IjM0MCIgCiAgICBmb250LWZhbWlseT0iR2VvcmdpYSxzZXJpZiIgCiAgICBmb250LXNpemU9IjcyIiAKICAgIGZvbnQtd2VpZ2h0PSJib2xkIgogICAgZmlsbD0idXJsKCNnb2xkKSIgCiAgICB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgbGV0dGVyLXNwYWNpbmc9IjYiPk1BTkpBS1U8L3RleHQ+CiAgCiAgPCEtLSBTb3VzLXRpdHJlIC0tPgogIDx0ZXh0IHg9IjI1NiIgeT0iNDAwIiAKICAgIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLHNlcmlmIiAKICAgIGZvbnQtc2l6ZT0iMjQiIAogICAgZmlsbD0iI2M4ODkyYSIKICAgIHRleHQtYW5jaG9yPSJtaWRkbGUiCiAgICBsZXR0ZXItc3BhY2luZz0iMyIKICAgIGZvbnQtc3R5bGU9Iml0YWxpYyI+QnkgVGF0YSDDiWzDqW9ub3JlPC90ZXh0PgogICAgCiAgPCEtLSDDiXRvaWxlIGTDqWNvcmF0aXZlIGJhcyAtLT4KICA8dGV4dCB4PSIyNTYiIHk9IjQ1MCIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsc2VyaWYiIGZvbnQtc2l6ZT0iMjgiIGZpbGw9InVybCgjZ29sZCkiIHRleHQtYW5jaG9yPSJtaWRkbGUiIG9wYWNpdHk9IjAuNiI+4pymIOKcpiDinKY8L3RleHQ+Cjwvc3ZnPg==">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>Jukanin Manjaku</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+:root{
+  --gold:#f0c040;--gold2:#e8923a;--gold3:#c8892a;--gold4:#8a5a1a;
+  --bg:#0a0d12;--bg2:#111520;--bg3:#181e2a;
+  --text:#f0e8d8;--muted:rgba(240,232,216,0.45);--dim:rgba(240,232,216,0.18);
+  --card:rgba(255,255,255,0.035);--border:rgba(200,137,42,0.22);
+  --radius:14px;--rad-sm:9px;
+}
+html,body{height:100%;background:var(--bg);font-family:'Crimson Pro',Georgia,serif;color:var(--text)}
+
+/* ─── GRAIN OVERLAY ─── */
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:9999;opacity:.6}
+
+#app{max-width:430px;margin:0 auto;height:100vh;display:flex;flex-direction:column;background:var(--bg);position:relative;overflow:hidden}
+
+/* ─── HEADER ─── */
+#hd{
+  padding:18px 20px 14px;
+  flex-shrink:0;
+  background:linear-gradient(180deg,rgba(10,8,3,0.95) 0%,rgba(10,13,18,0) 100%);
+  position:relative;z-index:10;
+}
+#hd::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold3),transparent)}
+.hd-inner{display:flex;align-items:center;justify-content:space-between}
+#hd h1{
+  font-family:'Cinzel',serif;font-size:22px;font-weight:700;letter-spacing:1px;
+  background:linear-gradient(135deg,var(--gold) 0%,var(--gold2) 60%,#b8602a 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+}
+.hd-sub{font-size:10px;color:var(--gold3);letter-spacing:3px;text-transform:uppercase;margin-top:1px;font-style:italic}
+.hd-badge{background:rgba(200,137,42,0.15);border:1px solid var(--border);border-radius:20px;padding:4px 10px;font-size:10px;color:var(--gold);font-family:'Cinzel',serif}
+
+/* ─── SCROLL AREA ─── */
+#ct{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:16px 14px 96px;scroll-behavior:smooth}
+#ct::-webkit-scrollbar{width:2px}
+#ct::-webkit-scrollbar-track{background:transparent}
+#ct::-webkit-scrollbar-thumb{background:var(--gold4);border-radius:2px}
+
+/* ─── BOTTOM NAV ─── */
+#nv{
+  position:fixed;bottom:0;left:50%;transform:translateX(-50%);
+  width:100%;max-width:430px;
+  background:rgba(8,10,14,0.92);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  border-top:1px solid var(--border);
+  display:flex;z-index:100;
+  padding:6px 8px 10px;
+  gap:4px;
+}
+.nb{
+  flex:1;padding:8px 2px 6px;background:none;border:none;cursor:pointer;
+  display:flex;flex-direction:column;align-items:center;gap:3px;
+  color:var(--muted);font-family:'Crimson Pro',serif;font-size:9px;
+  border-radius:12px;transition:all .25s ease;position:relative;
+}
+.nb.on{color:var(--bg);background:linear-gradient(135deg,var(--gold),var(--gold2))}
+.nb:not(.on):active{background:rgba(200,137,42,0.1)}
+.ni-wrap{
+  width:34px;height:34px;border-radius:10px;display:flex;align-items:center;justify-content:center;
+  font-size:17px;transition:all .25s ease;
+}
+.nb.on .ni-wrap{background:transparent}
+.nb:not(.on) .ni-wrap{background:rgba(255,255,255,0.04)}
+.nb-lbl{font-size:9px;font-weight:600;letter-spacing:.5px;transition:all .25s ease}
+
+/* ─── PAGE ANIMATIONS ─── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
+@keyframes pulse{0%,100%{opacity:.7}50%{opacity:1}}
+@keyframes scaleIn{from{opacity:0;transform:scale(.92)}to{opacity:1;transform:scale(1)}}
+.anim-up{animation:fadeUp .4s cubic-bezier(.22,1,.36,1) both}
+.anim-in{animation:fadeIn .3s ease both}
+
+/* ─── HERO BANNER (Accueil) ─── */
+.hero{
+  background:linear-gradient(135deg,rgba(200,137,42,0.22) 0%,rgba(232,146,58,0.08) 50%,rgba(200,137,42,0.05) 100%);
+  border:1px solid var(--border);border-radius:18px;padding:20px 18px;margin-bottom:18px;
+  position:relative;overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;top:-30px;right:-30px;width:120px;height:120px;
+  background:radial-gradient(circle,rgba(240,192,64,0.2) 0%,transparent 70%);
+  border-radius:50%;pointer-events:none;
+}
+.hero::after{
+  content:'✦';position:absolute;top:14px;right:18px;font-size:28px;
+  color:rgba(240,192,64,0.2);
+}
+.hero-title{font-family:'Cinzel',serif;font-size:14px;color:var(--gold);letter-spacing:2px;margin-bottom:8px}
+.hero-text{font-size:13px;line-height:1.75;color:rgba(240,232,216,0.75)}
+
+/* ─── STATS STRIP ─── */
+.stats{display:flex;gap:8px;margin-bottom:20px}
+.stat{
+  flex:1;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
+  padding:12px 8px;text-align:center;position:relative;overflow:hidden;
+  transition:transform .2s ease;
+}
+.stat:active{transform:scale(.96)}
+.stat::before{
+  content:'';position:absolute;top:0;left:-100%;width:200%;height:100%;
+  background:linear-gradient(90deg,transparent,rgba(240,192,64,0.06),transparent);
+  animation:shimmer 3s ease infinite;
+}
+.stat-v{font-family:'Cinzel',serif;font-size:22px;font-weight:700;color:var(--gold)}
+.stat-l{font-size:9px;color:var(--muted);margin-top:3px;letter-spacing:1px;text-transform:uppercase}
+
+/* ─── SECTION LABELS ─── */
+.sec-label{
+  font-size:9px;letter-spacing:4px;color:var(--gold3);text-transform:uppercase;
+  margin-bottom:12px;display:flex;align-items:center;gap:8px;
+}
+.sec-label::before,.sec-label::after{content:'';flex:1 1 20px;height:1px;background:linear-gradient(90deg,var(--border),transparent)}
+.sec-label::before{background:linear-gradient(90deg,transparent,var(--border))}
+
+/* ─── LEÇON CARDS (Liste) ─── */
+.lc-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:4px}
+.lc{
+  background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
+  padding:14px 12px;cursor:pointer;position:relative;overflow:hidden;
+  transition:all .25s cubic-bezier(.22,1,.36,1);
+  animation:scaleIn .35s cubic-bezier(.22,1,.36,1) both;
+}
+.lc:active{transform:scale(.95);background:rgba(200,137,42,0.1)}
+.lc-emoji{font-size:26px;margin-bottom:8px;display:block}
+.lc-name{font-size:12px;font-weight:600;line-height:1.3;color:var(--text)}
+.lc-count{font-size:10px;color:var(--muted);margin-top:4px}
+.lc-accent{
+  position:absolute;bottom:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,var(--c,var(--gold3)),transparent);
+}
+.lc-arr{position:absolute;top:10px;right:10px;font-size:11px;color:var(--border)}
+.lc:nth-child(1){animation-delay:.05s}
+.lc:nth-child(2){animation-delay:.1s}
+.lc:nth-child(3){animation-delay:.15s}
+.lc:nth-child(4){animation-delay:.2s}
+.lc:nth-child(5){animation-delay:.25s}
+.lc:nth-child(6){animation-delay:.3s}
+
+/* ─── LEÇON DETAIL ─── */
+.back-btn{
+  display:inline-flex;align-items:center;gap:6px;background:rgba(200,137,42,0.12);
+  border:1px solid var(--border);border-radius:20px;padding:6px 14px;
+  color:var(--gold);font-size:12px;cursor:pointer;margin-bottom:16px;
+  transition:all .2s;font-family:'Crimson Pro',serif;
+}
+.back-btn:active{background:rgba(200,137,42,0.22)}
+.lecon-header{
+  background:linear-gradient(135deg,rgba(200,137,42,0.15),rgba(200,137,42,0.04));
+  border:1px solid var(--border);border-radius:var(--radius);
+  padding:16px;margin-bottom:16px;text-align:center;
+}
+.lecon-header-emoji{font-size:36px;margin-bottom:6px}
+.lecon-header h2{font-family:'Cinzel',serif;font-size:16px;color:var(--gold);margin-bottom:4px}
+.lecon-header p{font-size:11px;color:var(--muted)}
+
+.mc{
+  background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
+  padding:14px;margin-bottom:7px;cursor:pointer;
+  transition:all .2s cubic-bezier(.22,1,.36,1);
+  animation:fadeUp .3s cubic-bezier(.22,1,.36,1) both;
+}
+.mc:active{transform:scale(.98)}
+.mc.open{background:rgba(200,137,42,0.1);border-color:rgba(200,137,42,0.4)}
+.mc-row{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.mc-fr{font-size:13px;font-weight:600;color:var(--text)}
+.mc-fr-lbl{font-size:9px;color:var(--muted);margin-bottom:3px;letter-spacing:1px;text-transform:uppercase}
+.mc-mj{font-size:14px;font-weight:700;color:var(--gold);text-align:right}
+.mc-mj-lbl{font-size:9px;color:var(--gold3);margin-bottom:3px;letter-spacing:1px;text-transform:uppercase;text-align:right}
+.mc-extra{margin-top:10px;padding-top:10px;border-top:1px solid var(--border)}
+.mc-extra-lbl{font-size:9px;color:var(--gold3);letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.mc-extra-val{font-size:12px;color:rgba(240,232,216,0.8);font-style:italic}
+
+
+.sep-lbl{
+  padding:6px 12px;margin:4px 0 8px;
+  background:linear-gradient(90deg,rgba(200,137,42,0.15),transparent);
+  border-left:2px solid var(--gold3);border-radius:0 8px 8px 0;
+  font-size:10px;color:var(--gold3);letter-spacing:2px;text-transform:uppercase;
+}
+.test-btn{
+  width:100%;background:linear-gradient(135deg,var(--gold3),var(--gold));
+  border:none;border-radius:var(--radius);padding:15px;
+  color:var(--bg);font-weight:700;font-size:14px;cursor:pointer;
+  font-family:'Cinzel',serif;letter-spacing:1px;margin-top:10px;
+  transition:all .2s;position:relative;overflow:hidden;
+}
+.test-btn::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,transparent,rgba(255,255,255,0.15),transparent);opacity:0;transition:.2s}
+.test-btn:active{transform:scale(.98)}
+.test-btn:active::after{opacity:1}
+
+/* ─── GRAMMAIRE ─── */
+.sg{
+  background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
+  padding:14px 16px;margin-bottom:7px;cursor:pointer;
+  display:flex;justify-content:space-between;align-items:center;
+  transition:all .2s;animation:fadeUp .3s cubic-bezier(.22,1,.36,1) both;
+}
+.sg:active{background:rgba(200,137,42,0.08)}
+.sg.op{background:rgba(200,137,42,0.1);border-color:rgba(200,137,42,0.4)}
+.sg-title{font-size:13px;font-weight:600;color:var(--text)}
+.sg-icon{font-size:13px;color:var(--gold3);transition:transform .25s ease}
+.sg.op .sg-icon{transform:rotate(180deg)}
+.sg-content{padding:0 2px 6px;animation:fadeUp .25s ease}
+.rc{
+  background:rgba(200,137,42,0.06);border:1px solid var(--border);
+  border-left:3px solid var(--gold3);border-radius:var(--radius);
+  padding:13px;margin-bottom:7px;
+}
+.rc-title{font-size:11px;font-weight:700;color:var(--gold);margin-bottom:6px;font-family:'Cinzel',serif;letter-spacing:.5px}
+.rc-text{font-size:11px;line-height:1.8;color:rgba(240,232,216,0.78)}
+table{width:100%;border-collapse:collapse;font-size:12px}
+th{padding:8px 6px;color:var(--gold3);text-align:left;border-bottom:1px solid var(--border);font-family:'Cinzel',serif;font-size:10px;letter-spacing:1px}
+td{padding:9px 6px;border-bottom:1px solid rgba(255,255,255,0.05)}
+.verb-list-item{
+  background:var(--card);border:1px solid var(--border);border-radius:var(--rad-sm);
+  padding:11px 14px;margin-bottom:5px;cursor:pointer;
+  display:flex;align-items:center;gap:10px;
+  transition:all .2s;animation:fadeUp .25s ease both;
+}
+.verb-list-item:active{background:rgba(200,137,42,0.1);transform:scale(.98)}
+.verb-emoji{font-size:18px;flex-shrink:0}
+.verb-info{flex:1}
+.verb-mj{font-size:13px;font-weight:700;color:var(--gold)}
+.verb-fr{font-size:11px;color:var(--muted);margin-top:1px}
+.verb-detail-grid{display:grid;gap:5px}
+.verb-row{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:9px 12px;border-radius:var(--rad-sm);
+  background:var(--card);border:1px solid var(--border);
+  animation:fadeUp .2s ease both;
+}
+.verb-row:first-child{background:rgba(200,137,42,0.12);border-color:rgba(200,137,42,0.35)}
+.verb-fr-small{font-size:11px;color:var(--muted)}
+.verb-mj-val{font-size:13px;font-weight:700;color:var(--gold)}
+.alpha-section{
+  background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
+  padding:4px;margin-bottom:8px;overflow:hidden;
+}
+.alpha-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(55px,1fr));gap:4px;padding:4px}
+.alpha-cell{
+  background:rgba(200,137,42,0.08);border:1px solid var(--border);border-radius:8px;
+  padding:8px 4px;text-align:center;
+}
+.alpha-letter{font-size:16px;font-weight:700;color:var(--gold);font-family:'Cinzel',serif}
+.alpha-sound{font-size:9px;color:var(--muted);margin-top:3px;line-height:1.3}
+.prn-row{display:flex;gap:6px;padding:8px 4px;border-bottom:1px solid var(--dim);align-items:center}
+.prn-fort{font-family:'Cinzel',serif;font-size:13px;font-weight:700;color:var(--gold);min-width:60px}
+.prn-suj{font-size:12px;color:rgba(240,232,216,0.7);flex:1}
+.prn-fr{font-size:10px;color:var(--muted);text-align:right}
+
+/* ─── QUIZ ─── */
+.quiz-wrap{animation:scaleIn .35s cubic-bezier(.22,1,.36,1)}
+.quiz-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+.quiz-close{
+  width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,0.06);
+  border:1px solid var(--border);color:var(--muted);cursor:pointer;
+  display:flex;align-items:center;justify-content:center;font-size:14px;
+  transition:all .2s;
+}
+.quiz-close:active{background:rgba(255,0,0,0.1)}
+.quiz-prog-bar{height:4px;background:rgba(255,255,255,0.08);border-radius:2px;margin-bottom:18px;overflow:hidden}
+.quiz-prog-fill{height:100%;border-radius:2px;background:linear-gradient(90deg,var(--gold3),var(--gold));transition:width .4s cubic-bezier(.22,1,.36,1)}
+.quiz-score{font-family:'Cinzel',serif;font-size:13px;color:var(--gold)}
+.quiz-num{font-size:11px;color:var(--muted)}
+.quiz-q{
+  background:linear-gradient(135deg,rgba(200,137,42,0.15),rgba(200,137,42,0.04));
+  border:1px solid rgba(200,137,42,0.3);border-radius:18px;
+  padding:24px 18px;text-align:center;margin-bottom:18px;
+}
+.quiz-q-lbl{font-size:10px;color:var(--muted);letter-spacing:2px;text-transform:uppercase;margin-bottom:10px}
+.quiz-q-word{font-family:'Cinzel',serif;font-size:22px;font-weight:700;color:var(--gold);line-height:1.3}
+.quiz-opts{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.quiz-opt{
+  border-radius:var(--radius);padding:15px 8px;text-align:center;cursor:pointer;
+  border:1px solid var(--border);background:var(--card);
+  font-size:13px;font-family:'Crimson Pro',serif;color:var(--text);
+  transition:all .2s cubic-bezier(.22,1,.36,1);
+}
+.quiz-opt:active{transform:scale(.96)}
+.quiz-opt.ok{background:rgba(80,200,100,0.18);border-color:#50c864;color:#80e896;animation:scaleIn .2s ease}
+.quiz-opt.ko{background:rgba(220,60,60,0.18);border-color:#dc3c3c;color:#f08080}
+.quiz-fin{text-align:center;padding:32px 16px;animation:scaleIn .4s cubic-bezier(.22,1,.36,1)}
+.quiz-fin-trophy{font-size:64px;margin-bottom:16px;display:block;animation:fadeUp .5s ease}
+.quiz-fin-score{font-family:'Cinzel',serif;font-size:32px;font-weight:700;color:var(--gold);margin-bottom:8px}
+.quiz-fin-msg{font-size:14px;color:var(--muted);margin-bottom:28px}
+.quiz-list-item{
+  background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
+  padding:14px 16px;margin-bottom:7px;cursor:pointer;
+  display:flex;align-items:center;gap:12px;
+  transition:all .2s;animation:fadeUp .3s ease both;
+}
+.quiz-list-item:active{background:rgba(200,137,42,0.1);transform:scale(.98)}
+
+/* ─── DICO ─── */
+.search-wrap{position:relative;margin-bottom:14px}
+.search-icon{position:absolute;left:13px;top:50%;transform:translateY(-50%);font-size:14px;color:var(--muted);pointer-events:none}
+.search-input{
+  width:100%;background:var(--card);border:1px solid var(--border);border-radius:20px;
+  padding:11px 16px 11px 38px;color:var(--text);font-size:14px;
+  outline:none;font-family:'Crimson Pro',serif;
+  transition:border-color .2s;-webkit-appearance:none;
+}
+.search-input:focus{border-color:var(--gold3)}
+.dico-count{font-size:11px;color:var(--muted);text-align:center;margin-bottom:14px}
+.di{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:11px 14px;margin-bottom:4px;
+  background:var(--card);border:1px solid var(--border);border-radius:var(--rad-sm);
+  transition:background .15s;
+}
+.di:active{background:rgba(200,137,42,0.08)}
+.di-fr{font-size:13px;font-weight:600}
+.di-cat{font-size:9px;color:var(--muted);margin-top:2px;letter-spacing:.5px}
+.di-mj{font-size:13px;font-weight:700;color:var(--gold);text-align:right;max-width:55%}
+
+/* ─── PRONOMS POSSESSIFS ─── */
+.poss-table{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-bottom:10px}
+.poss-title{padding:10px 14px;background:rgba(200,137,42,0.1);font-size:11px;color:var(--gold);font-family:'Cinzel',serif;letter-spacing:1px;border-bottom:1px solid var(--border)}
+
+/* ─── ESSENTIELS ─── */
+.ess-item{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;margin-bottom:4px;background:var(--card);border:1px solid var(--border);border-radius:var(--rad-sm)}
+.ess-fr{font-size:12px;color:rgba(240,232,216,0.75)}
+.ess-mj{font-size:12px;font-weight:700;color:var(--gold);text-align:right;max-width:58%}
+
+
+
+
+/* ─── À PROPOS ─── */
+.ap-hero{
+  background:linear-gradient(135deg,rgba(200,137,42,0.18),rgba(200,137,42,0.04));
+  border:1px solid rgba(200,137,42,0.3);border-radius:18px;
+  padding:22px 18px;margin-bottom:14px;text-align:center;
+}
+.ap-name{font-family:'Cinzel',serif;font-size:20px;font-weight:700;color:var(--gold);margin-bottom:4px}
+.ap-sub{font-size:12px;color:var(--gold3);font-style:italic;margin-bottom:14px;letter-spacing:1px}
+.ap-badge{
+  display:inline-block;background:rgba(200,137,42,0.15);border:1px solid var(--border);
+  border-radius:20px;padding:4px 12px;font-size:11px;color:var(--gold);margin:3px;
+}
+.ap-section{
+  background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
+  padding:16px;margin-bottom:10px;animation:fadeUp .4s cubic-bezier(.22,1,.36,1) both;
+}
+.ap-section-title{
+  font-family:'Cinzel',serif;font-size:11px;color:var(--gold3);
+  letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;
+}
+.ap-text{font-size:13px;line-height:1.8;color:rgba(240,232,216,0.82)}
+.ap-book{
+  background:rgba(200,137,42,0.08);border-left:3px solid var(--gold3);
+  border-radius:0 8px 8px 0;padding:8px 12px;margin:6px 0;
+  font-size:12px;color:var(--gold);font-style:italic;
+}
+.ap-mission{
+  background:linear-gradient(135deg,rgba(200,137,42,0.2),rgba(200,137,42,0.05));
+  border:1px solid rgba(200,137,42,0.35);border-radius:var(--radius);
+  padding:18px;margin-bottom:10px;text-align:center;
+}
+.ap-mission p{font-size:14px;color:var(--gold);font-style:italic;margin:4px 0;line-height:1.7}
+h2.page-title{font-family:'Cinzel',serif;font-size:18px;font-weight:700;color:var(--gold);margin-bottom:16px;letter-spacing:.5px}
+</style>
+<script async src="https://js.stripe.com/v3/buy-button.js"></script>
+</head>
+<body>
+<div id="app">
+  <div id="hd">
+    <div class="hd-inner">
+      <div>
+        <h1>Jukanin Manjaku</h1>
+        <div class="hd-sub">By Tata Eléonore</div>
+      </div>
+      <div class="hd-badge">✦ Manjak</div>
+    </div>
+  </div>
+  <div id="ct"></div>
+  <nav id="nv">
+    <button class="nb on" id="nb-a" onclick="go('a')">
+      <div class="ni-wrap">🏠</div>
+      <span class="nb-lbl">Accueil</span>
+    </button>
+    <button class="nb" id="nb-l" onclick="go('l')">
+      <div class="ni-wrap">📖</div>
+      <span class="nb-lbl">Leçons</span>
+    </button>
+    <button class="nb" id="nb-g" onclick="go('g')">
+      <div class="ni-wrap">✏️</div>
+      <span class="nb-lbl">Gram.</span>
+    </button>
+    <button class="nb" id="nb-q" onclick="go('q')">
+      <div class="ni-wrap">🎯</div>
+      <span class="nb-lbl">Quiz</span>
+    </button>
+    <button class="nb" id="nb-d" onclick="go('d')">
+      <div class="ni-wrap">🔍</div>
+      <span class="nb-lbl">Dico</span>
+    </button>
+    <button class="nb" id="nb-ap" onclick="go('ap')">
+      <div class="ni-wrap">✨</div>
+      <span class="nb-lbl">À propos</span>
+    </button>
+  </nav>
+</div>
+
+<script type="application/json" id="jdata">{"LECONS": [{"id": "salutations", "titre": "Je me présente / Man piban been inji", "emoji": "🤝", "couleur": "#c8892a", "mots": [{"fr": "Bonjour (matin)", "mj": "Bëfa", "reponse": "Bëlon"}, {"fr": "Bonjour (après-midi)", "mj": "Pënak", "reponse": "Pëlon"}, {"fr": "Bonsoir", "mj": "Bëtakala", "reponse": "Bëlon"}, {"fr": "Bonne nuit", "mj": "Bërëm", "reponse": "Bëlon"}, {"fr": "Bonne nuit (variante)", "mj": "Bërëm bë war", "reponse": "Bëlon ban"}, {"fr": "Comment ça va ?", "mj": "Ko rom ?", "reponse": "Ko rots"}, {"fr": "La santé ?", "mj": "Ulief ?", "reponse": "Ulief a yës"}, {"fr": "Merci", "mj": "Baran"}, {"fr": "Oui", "mj": "Eyo"}, {"fr": "Non", "mj": "An-an"}, {"fr": "Bravo !", "mj": "Ina !"}, {"fr": "Comment va ta maman ?", "mj": "Anin u a rom ?", "reponse": "Anin inji a yës"}, {"fr": "Ma maman va bien", "mj": "Anin inji a yës"}, {"fr": "Comment va ton papa ?", "mj": "Asin u a rom ?", "reponse": "Asin inji a yës"}, {"fr": "Comment vont les gens à la maison ?", "mj": "Bañan kato rom ?", "reponse": "Bu ci / Bu yës / Pë yës a ci"}, {"fr": "Comment vont les enfants ?", "mj": "Upats a rom ?", "reponse": "Bu ci / Bu yës"}, {"fr": "Comment vont les gens du pays ?", "mj": "Bañan ucaak a rom ?", "reponse": "Bu ci / Bu yës"}, {"fr": "Comment vont les gens en Europe ?", "mj": "Bañan ubabu a rom ?", "reponse": "Bu ci / Bu yës"}, {"fr": "Ils sont là / Ça va", "mj": "Bu ci"}, {"fr": "Ils vont bien", "mj": "Bu yës"}, {"fr": "La santé est là", "mj": "Pë yës a ci"}, {"fr": "--- Se présenter ---", "mj": ""}, {"fr": "Je m'appelle…", "mj": "Man jaka…"}, {"fr": "Je suis l'enfant de…", "mj": "Man ci abuk…"}, {"fr": "Mon nom est…", "mj": "Katim inji a ci…"}, {"fr": "Ma mère s'appelle…", "mj": "Anin inji ka jaka…"}, {"fr": "Mon père s'appelle…", "mj": "Asin inji ka jaka…"}, {"fr": "Comment t'appelles-tu ?", "mj": "Kë jaka um ?"}, {"fr": "Où habites-tu ?", "mj": "M'cina tsùm ?"}, {"fr": "Où es-tu né(e) ?", "mj": "M'bukna tsùm ?"}, {"fr": "Ton nom ?", "mj": "Ka tim u ?", "reponse": "Man jaka ..."}, {"fr": "À demain", "mj": "A ruka ci faan"}, {"fr": "Aujourd'hui c'est un grand jour", "mj": "Tseri a ci unu uwiek"}]}, {"id": "nourriture", "titre": "La nourriture / Bariela", "emoji": "🍚", "couleur": "#c8692a", "mots": [{"fr": "Nourriture", "mj": "Bariela / Badiela"}, {"fr": "Poisson", "mj": "Utsëb"}, {"fr": "Viande", "mj": "Uyeemats"}, {"fr": "Poulet", "mj": "Uguk"}, {"fr": "Crabe", "mj": "Ukub"}, {"fr": "Crevette", "mj": "Utant"}, {"fr": "Un sac de riz", "mj": "U saku umani"}, {"fr": "De la farine", "mj": "I faar"}, {"fr": "Sel", "mj": "Pënam"}, {"fr": "Sucre", "mj": "U sukar"}, {"fr": "Du lait", "mj": "M'tow"}, {"fr": "Du beurre", "mj": "M'pat"}, {"fr": "Huile", "mj": "M'kër"}, {"fr": "Du poivre", "mj": "Pobër"}, {"fr": "Du pain", "mj": "U pom"}, {"fr": "Des cacahuètes", "mj": "U piets"}, {"fr": "Eau", "mj": "M'lik"}, {"fr": "Thé", "mj": "Dute"}, {"fr": "Œuf", "mj": "Pë jeenj"}, {"fr": "Les denrées", "mj": "U cel"}, {"fr": "Riz", "mj": "Umani"}, {"fr": "Sauce / Bouillon", "mj": "Bëjëlan"}, {"fr": "Mangue", "mj": "Pë mangu"}, {"fr": "Mil", "mj": "Bë maj"}, {"fr": "Piment", "mj": "Iru"}, {"fr": "--- Fruits et légumes ---", "mj": ""}, {"fr": "Fruit", "mj": "M'de"}, {"fr": "Banane", "mj": "Pë nana"}, {"fr": "Orange", "mj": "Pë lele pë joab"}, {"fr": "Citron", "mj": "Pë lele pë ay"}, {"fr": "Noix de coco", "mj": "Pë koko"}, {"fr": "Ail", "mj": "Laj"}, {"fr": "Oignon", "mj": "Pë sobola → I sobola"}, {"fr": "Noix de palme / Arbre à palme", "mj": "M'cem"}, {"fr": "Bissap", "mj": "M'bantu"}, {"fr": "Papaye", "mj": "Pë papaya"}, {"fr": "Haricot", "mj": "Uliek"}, {"fr": "Noix de cajou", "mj": "M'kaju"}]}, {"id": "etrehumain", "titre": "L'être humain / Iñan najin", "emoji": "🧬", "couleur": "#7a5a9e", "mots": [{"fr": "--- L'anatomie ---", "mj": ""}, {"fr": "Corps", "mj": "Ulief"}, {"fr": "Tête", "mj": "Bë iieen"}, {"fr": "Cheveux", "mj": "Ka wel → U wel"}, {"fr": "Front", "mj": "Pë juk"}, {"fr": "Sourcils", "mj": "U Kunk"}, {"fr": "Œil", "mj": "Pë kës → Kë kës"}, {"fr": "Cils", "mj": "Ka yompaj"}, {"fr": "Oreille", "mj": "Ka bats"}, {"fr": "Nez", "mj": "Bë is (Bis)"}, {"fr": "Joue", "mj": "Ka mbakats"}, {"fr": "Bouche", "mj": "M'tum → I tum"}, {"fr": "Lèvres", "mj": "Ka ruj"}, {"fr": "Dents", "mj": "Pë rumaj"}, {"fr": "Langue", "mj": "Pë diemt"}, {"fr": "Menton", "mj": "Bë joak"}, {"fr": "Gorge", "mj": "Ka tsuts"}, {"fr": "Cou", "mj": "Ka tip"}, {"fr": "Épaule", "mj": "Ka cak"}, {"fr": "Bras / Main", "mj": "Ka ñan"}, {"fr": "Coude", "mj": "Ka joj"}, {"fr": "Doigt", "mj": "Pë konj"}, {"fr": "Poitrine / Sein", "mj": "Pë yiël"}, {"fr": "Ventre", "mj": "Pë pës"}, {"fr": "Nombril", "mj": "Pë cintan"}, {"fr": "Dos", "mj": "U fets"}, {"fr": "Fesse", "mj": "U rut"}, {"fr": "Jambe", "mj": "Pë tsiim"}, {"fr": "Genou", "mj": "Pë jul"}, {"fr": "Pied", "mj": "Pë tsim"}, {"fr": "Ongle", "mj": "Kan kuërum"}, {"fr": "Peau", "mj": "Ka të"}, {"fr": "Os", "mj": "Ka moa"}, {"fr": "Cœur", "mj": "U waas"}, {"fr": "Sang", "mj": "Pëniak"}, {"fr": "Estomac", "mj": "Pë cafal"}, {"fr": "Cerveau", "mj": "M'fuk"}, {"fr": "Poumon", "mj": "U wofañ"}, {"fr": "Foie", "mj": "U rieb"}, {"fr": "Vésicule", "mj": "Pë ayar"}, {"fr": "Les hanches", "mj": "I mel"}, {"fr": "Talon", "mj": "Ka yots"}, {"fr": "--- Les besoins physiologiques ---", "mj": ""}, {"fr": "Manger", "mj": "Pë riela / Pë diela"}, {"fr": "Boire", "mj": "Pë raan"}, {"fr": "J'ai faim", "mj": "U bon ka reen / Man bonats"}, {"fr": "J'ai soif", "mj": "U lof ka reen / Man lofënts"}, {"fr": "J'ai sommeil", "mj": "Bëñgoy ka reen"}, {"fr": "J'ai froid", "mj": "U jonts ka reen / Man joabëts"}, {"fr": "J'ai chaud", "mj": "U yëki ka reen / Man yëkan"}, {"fr": "J'ai envie d'uriner", "mj": "Katuan ka reen"}, {"fr": "La faim", "mj": "U bon"}, {"fr": "La soif", "mj": "U lof"}, {"fr": "Le sommeil", "mj": "Bëñgoy"}, {"fr": "Chauffer", "mj": "Pë yëkan"}, {"fr": "Eau chaude", "mj": "M'lik m'yëk"}, {"fr": "Le lever", "mj": "U natse"}, {"fr": "Fatigue", "mj": "Unoor"}, {"fr": "Être fatigué", "mj": "Pë noor"}, {"fr": "--- La santé ---", "mj": ""}, {"fr": "Maux de ventre", "mj": "Ure i pës"}, {"fr": "Maux de tête", "mj": "Ure bëieen"}, {"fr": "Mucus", "mj": "I linj"}, {"fr": "Vaisseaux sanguins", "mj": "I tañ"}, {"fr": "J'ai mal à la tête", "mj": "Been ka reen"}, {"fr": "Se reposer", "mj": "Pë naksa"}, {"fr": "Je suis perdu(e)", "mj": "Man niem"}, {"fr": "Toux", "mj": "Bë co", "exemple": "Man pë co (Je tousse)"}, {"fr": "Tousser", "mj": "Pë co"}, {"fr": "Rhume", "mj": "Uri"}, {"fr": "Être enrhumé", "mj": "Pë cijar ni uri"}, {"fr": "Douleur", "mj": "Ure"}, {"fr": "Blessure", "mj": "Ulupi"}, {"fr": "Se blesser", "mj": "Pë lup"}, {"fr": "Vomissement", "mj": "Ka gac"}, {"fr": "Vomir", "mj": "Pë gac"}, {"fr": "Diarrhée", "mj": "Ka fëkan"}, {"fr": "Avoir la diarrhée", "mj": "Pë fëkan"}, {"fr": "Fièvre", "mj": "Febëri"}, {"fr": "Médicament / Plante", "mj": "Bëko"}, {"fr": "Médicament (comprimé)", "mj": "Bëko nababu"}, {"fr": "Piqûre / Injection", "mj": "Kapingo"}, {"fr": "Guérir / Aller bien", "mj": "Pë yës"}, {"fr": "Hôpital / Dispensaire", "mj": "Tsëko bë cunkan"}, {"fr": "Pharmacie", "mj": "Tsëko kawap bëko bë cunkan nababu"}, {"fr": "Médecin / Soignant", "mj": "Na cunkan → Ba cunkan"}, {"fr": "--- Les émotions ---", "mj": ""}, {"fr": "Les larmes", "mj": "M'ñgand"}, {"fr": "La joie du cœur", "mj": "Ulilan uwas"}, {"fr": "Colère", "mj": "U rieb", "exemple": "M'riebats a ? (Es-tu en colère ?)"}, {"fr": "Dégoût", "mj": "Bë nucian", "exemple": "Man nucian (Je suis dégoûté)"}, {"fr": "Peur", "mj": "Bë lal / U lënkan", "exemple": "M'lal a ? / Man lal"}, {"fr": "Tristesse", "mj": "U joatsal", "exemple": "Man joatsan (Je suis triste)"}, {"fr": "Joie", "mj": "U lilan", "exemple": "Man lilan (Je suis joyeux)"}, {"fr": "Surprise", "mj": "Bë jaralir", "exemple": "Man jaralir (Je suis surpris)"}, {"fr": "Des pleurs", "mj": "I rug"}, {"fr": "La tristesse / La maladie", "mj": "Bë joats"}, {"fr": "Jalousie / Méchanceté", "mj": "Ka bër"}, {"fr": "--- Statuts et caractères ---", "mj": ""}, {"fr": "Riche", "mj": "Na reemb → Ba reemb"}, {"fr": "Malade", "mj": "Na moj → Ba moj"}, {"fr": "Courageux", "mj": "Na njaafu → Ba njaafu"}, {"fr": "Fou / Folle", "mj": "Na fuur → Ba fuur"}, {"fr": "Jeune femme", "mj": "Na jije → Ba jije"}, {"fr": "Jeune homme", "mj": "Na tsasa → Ba tsasa"}, {"fr": "Aveugle", "mj": "Na kuël → Ba kuël"}, {"fr": "Bandit", "mj": "Na gëlëlën → Ba gëlëlën"}, {"fr": "Homme adulte", "mj": "Nantoy → Bantoy"}, {"fr": "Voyant(e)", "mj": "Napene → Bapene"}, {"fr": "Petite femme", "mj": "Ndë kaats"}, {"fr": "Tout(e) petit(e)", "mj": "Ndë tiës"}, {"fr": "Proportionné(e)", "mj": "Ndë lingëluel"}, {"fr": "La femme noire", "mj": "Ñgaats na jinal"}]}, {"id": "famille", "titre": "Ma famille / Ba yëts inji", "emoji": "👪", "couleur": "#c85a5a", "mots": [{"fr": "Parents", "mj": "Ba yëts"}, {"fr": "L'enfant de", "mj": "A buk"}, {"fr": "Enfant", "mj": "Napats"}, {"fr": "Mère", "mj": "Anin"}, {"fr": "Père", "mj": "Asin"}, {"fr": "Petit frère", "mj": "A tsa… nints"}, {"fr": "Grand frère", "mj": "Tsë mak… nints"}, {"fr": "Petite sœur", "mj": "A tsa… ñgaats"}, {"fr": "Grande sœur", "mj": "Tsë mak… ñgaats"}, {"fr": "Grand-mère", "mj": "A tiem… ñgaats"}, {"fr": "Grand-père", "mj": "A tiem… nints"}, {"fr": "Époux", "mj": "A yën"}, {"fr": "Épouse", "mj": "Aar"}, {"fr": "Oncle maternel", "mj": "Ambuñ"}, {"fr": "Tante maternelle", "mj": "Asom"}, {"fr": "Chef de famille", "mj": "Anëmts / Ajug mets"}, {"fr": "Petite fille", "mj": "Atiemo inji ñgaats", "exemple": "Bëfa bi man nonts ni atiemo inji ñgaats (Ce matin j'ai joué avec ma petite fille)"}, {"fr": "Petit garçon", "mj": "Atiemo inji nints"}, {"fr": "Ta petite fille", "mj": "Atiemo u ñgaats"}, {"fr": "Sa petite fille", "mj": "Atiemo ul ñgaats"}, {"fr": "Les gens", "mj": "Bañan"}, {"fr": "La famille (les gens de la maison)", "mj": "Bañan kato"}, {"fr": "Les gens du pays", "mj": "Bañan ucaak"}, {"fr": "Les gens en Europe", "mj": "Bañan ubabu"}, {"fr": "Les collègues de travail", "mj": "Bañan uleemp"}]}, {"id": "activites", "titre": "U bukako / Don & activité", "emoji": "🎭", "couleur": "#9e3a8f", "mots": [{"fr": "--- Les arts ---", "mj": ""}, {"fr": "Chanter", "mj": "Pë ya"}, {"fr": "Danser", "mj": "Pë key"}, {"fr": "Jouer de la musique", "mj": "Pë las"}, {"fr": "Jouer de la guitare", "mj": "Pë las bëcundu"}, {"fr": "Jouer de la cloche", "mj": "Pë las bëcangëre"}, {"fr": "Sculpter", "mj": "Pë fej"}, {"fr": "Peindre", "mj": "Pë pintar"}, {"fr": "Raconter des histoires / Discourir", "mj": "Pë pican"}, {"fr": "Faire du sport", "mj": "Pë tarës ulief"}, {"fr": "Jouer au football", "mj": "Pë lok"}, {"fr": "--- Instruments ---", "mj": ""}, {"fr": "Guitare", "mj": "Bëcundu"}, {"fr": "Cloche", "mj": "Bëcangëre"}, {"fr": "Instrument sacré (cérémonies)", "mj": "Ka bumbalon → I bumbalon"}, {"fr": "--- Dons et talents ---", "mj": ""}, {"fr": "La voyance", "mj": "Bë pene"}, {"fr": "La guérison", "mj": "Bë yësal"}, {"fr": "L'art oratoire", "mj": "Bë yil ujipan"}, {"fr": "Le don de naissance / L'héritage familial", "mj": "U bukako"}, {"fr": "Intelligence / Sagesse / Savoir-faire", "mj": "Kameko"}, {"fr": "--- Activités exceptionnelles ---", "mj": ""}, {"fr": "Pêcher", "mj": "Pë buots"}, {"fr": "Chasser", "mj": "Pë jang"}, {"fr": "Naviguer", "mj": "Pë pat"}, {"fr": "Navigateur", "mj": "Napat"}, {"fr": "Lutter", "mj": "Kan pëtar"}, {"fr": "Forger", "mj": "Pë tsak"}, {"fr": "Tisser", "mj": "Pë ñingits"}, {"fr": "--- Le tissage ---", "mj": ""}, {"fr": "Le tissage", "mj": "Bë ñingits"}, {"fr": "Pagne tissé", "mj": "Bë lenj bë ñingits"}, {"fr": "Un savoir-faire manjaku", "mj": "Kameko manjaku"}]}, {"id": "nombres", "titre": "Je sais compter / Man yil upin", "emoji": "🔢", "couleur": "#5a7a9e", "mots": [{"fr": "--- Unités ---", "mj": ""}, {"fr": "1", "mj": "Ulon / Pëlon / Nalon"}, {"fr": "2", "mj": "Këtëb"}, {"fr": "3", "mj": "Kôants"}, {"fr": "4", "mj": "Këbaakër"}, {"fr": "5", "mj": "Kañan"}, {"fr": "6", "mj": "Paaj"}, {"fr": "7", "mj": "Paaj ni ulon"}, {"fr": "8", "mj": "Kôas"}, {"fr": "9", "mj": "Kôas ni ulon"}, {"fr": "10", "mj": "Untaaja"}, {"fr": "--- De 11 à 19 ---", "mj": ""}, {"fr": "11", "mj": "Untaaja ni pëlon"}, {"fr": "12", "mj": "Untaaja ni këtëb"}, {"fr": "13", "mj": "Untaaja ni kôants"}, {"fr": "14", "mj": "Untaaja ni këbaakër"}, {"fr": "15", "mj": "Untaaja ni kañan"}, {"fr": "16", "mj": "Untaaja ni paaj"}, {"fr": "17", "mj": "Untaaja ni paaj ni pëlon"}, {"fr": "18", "mj": "Untaaja ni kôas"}, {"fr": "19", "mj": "Untaaja ni kôas ni pëlon"}, {"fr": "--- Dizaines ---", "mj": ""}, {"fr": "20", "mj": "Ngëntaaja ngëtëb"}, {"fr": "21", "mj": "Ngëntaaja ngëtëb ni pëlon"}, {"fr": "22", "mj": "Ngëntaaja ngëtëb ni këtëb"}, {"fr": "30", "mj": "Ngëntaaja kôants"}, {"fr": "31", "mj": "Ngëntaaja kôants ni pëlon"}, {"fr": "40", "mj": "Ngëntaaja këbaakër"}, {"fr": "41", "mj": "Ngëntaaja këbaakër ni pëlon"}, {"fr": "50", "mj": "Ngëntaaja kañan"}, {"fr": "51", "mj": "Ngëntaaja kañan ni pëlon"}, {"fr": "60", "mj": "Ngëntaaja paaj"}, {"fr": "61", "mj": "Ngëntaaja paaj ni pëlon"}, {"fr": "70", "mj": "Ngëntaaja paaj ni pëlon"}, {"fr": "71", "mj": "Ngëntaaja paaj ni pëlon ni pëlon"}, {"fr": "80", "mj": "Ngëntaaja kôas"}, {"fr": "81", "mj": "Ngëntaaja kôas ni pëlon"}, {"fr": "90", "mj": "Ngëntaaja kôas ni pëlon"}, {"fr": "91", "mj": "Ngëntaaja kôas ni pëlon ni pëlon"}, {"fr": "100", "mj": "Usent"}, {"fr": "--- Phrases utiles ---", "mj": ""}, {"fr": "Combien ça coûte ?", "mj": "A ciir um ?"}, {"fr": "Combien êtes-vous ?", "mj": "Um ndi da ci un ?"}, {"fr": "Un / Une / Unique", "mj": "Pëlon"}, {"fr": "--- Les classificateurs ---", "mj": ""}, {"fr": "1 mangue (Pë)", "mj": "Pëlon pë mangu → Ngëlon ngë mangu (pluriel)"}, {"fr": "1 chaise (Pë/I)", "mj": "Pëlon pë tsefi → Ilon i tsefi (pluriel)"}, {"fr": "1 sac (Ka/I)", "mj": "Kalon ka mañ → Ilon i mañ (pluriel)"}, {"fr": "1 chien (U/Ngë)", "mj": "Ulon u bus → Ngëlon ngë bus (pluriel)"}, {"fr": "1 soignant (Na/Ba)", "mj": "Nalon na cunkan → Balon ba cunkan (pluriel)"}]}, {"id": "metiers", "titre": "J'ai un métier / Man ka uleemp", "emoji": "👷", "couleur": "#8b7355", "mots": [{"fr": "Travail / Métier", "mj": "Ùleemp"}, {"fr": "Soldat", "mj": "Na sondari → Ba sondari"}, {"fr": "Mécanicien auto", "mj": "Na baman ngë karu → Ba baman ngë karu"}, {"fr": "Cuisinier(e)", "mj": "Na juñg → Ba juñg"}, {"fr": "Menuisier", "mj": "Na liir → Ba liir"}, {"fr": "Sculpteur", "mj": "Na fej → Ba fej"}, {"fr": "Chômeur", "mj": "Na kaats uleemp", "exemple": "Celui qui n'a pas de travail"}, {"fr": "Soignant", "mj": "Na cunkan → Ba cunkan"}, {"fr": "Dentiste", "mj": "Na cunkan i rumaj → Ba cunkan i rumaj"}, {"fr": "Cultivateur", "mj": "Na jaar → Ba jaar"}, {"fr": "Balayeur", "mj": "Na wet → Ba wet"}, {"fr": "Coiffeur(euse)", "mj": "Na nëmb → Ba nëmb"}, {"fr": "Professeur(e)", "mj": "Na jukan → Ba jukan"}, {"fr": "Avocat(e)", "mj": "Na wat pëlents → Ba wat pëlents"}, {"fr": "Commerçant(e)", "mj": "Na jula → Ba jula"}, {"fr": "Pêcheur", "mj": "Na buots → Ba buots"}, {"fr": "Maçon", "mj": "Na niew → Ba niew"}, {"fr": "Chauffeur", "mj": "Na tukand u karu → Ba tukand u karu"}, {"fr": "Couturier(e)", "mj": "Na lët → Ba lët"}, {"fr": "Sage-femme", "mj": "Na bukan → Ba bukan"}, {"fr": "Électricien(ne)", "mj": "Na baman ngë lampa → Ba baman ngë lampa"}, {"fr": "Forgeron", "mj": "Na tsak → Ba tsak"}, {"fr": "Le fer", "mj": "Bë tsak"}, {"fr": "Chasseur", "mj": "Na jang → Ba jang"}, {"fr": "Fusil", "mj": "Pë ngare → I ngare"}, {"fr": "Musicien(ne)", "mj": "Na las → Ba las"}, {"fr": "Danseur(se)", "mj": "Na key → Ba key"}, {"fr": "Agriculteur / Paysan", "mj": "Na jar → Ba jar"}, {"fr": "Piroguier", "mj": "Na tukand ka nowa → Ba tukand ka nowa"}, {"fr": "Tisserand(e)", "mj": "Na ñingits → Ba ñingits"}, {"fr": "Berger", "mj": "Na yefan → Ba yefan"}, {"fr": "Navigateur", "mj": "Napat"}, {"fr": "Demandeur d'emploi", "mj": "Natsas uleemp", "exemple": "Celui qui cherche du travail"}]}, {"id": "maison", "titre": "La maison / Kato", "emoji": "🏠", "couleur": "#8a6a3a", "mots": [{"fr": "--- La maison (général) ---", "mj": ""}, {"fr": "Maison", "mj": "Kato → Ito"}, {"fr": "Chambre", "mj": "U niew → Ngë niew"}, {"fr": "Cuisine", "mj": "U fubon → Ngë fubon"}, {"fr": "Salle de bain", "mj": "Tsëko pë ño"}, {"fr": "Toilettes", "mj": "Tsëko katuan"}, {"fr": "Cour", "mj": "Kakul → Ikul"}, {"fr": "Porte", "mj": "Pëlëman → Ilëman"}, {"fr": "Fenêtre", "mj": "Pëlanter → Ilanter"}, {"fr": "Mur", "mj": "Pëlënk → Ilënk"}, {"fr": "Sol", "mj": "Utsia"}, {"fr": "Terre", "mj": "M'bos"}, {"fr": "Clé", "mj": "Ka nigsani"}, {"fr": "Ouvrir avec une clé", "mj": "Pë nigis"}, {"fr": "Ouvrir", "mj": "Pë ants"}, {"fr": "Ouvrir la porte", "mj": "Pë ants pëlëman"}, {"fr": "Fermer", "mj": "Pë ric"}, {"fr": "Miroir", "mj": "Katenarani"}, {"fr": "Se regarder", "mj": "Pë tenar"}, {"fr": "Puits", "mj": "Pëlik"}, {"fr": "Puiser de l'eau", "mj": "Pë lik"}, {"fr": "Clôture", "mj": "Kacag"}, {"fr": "Clôturer", "mj": "Pë cag"}, {"fr": "La propriété", "mj": "U se"}, {"fr": "Quelle est ma maison ?", "mj": "Koom kato ci un ka mign ?"}, {"fr": "Je vais à la maison", "mj": "Man ya kato"}, {"fr": "--- La cuisine ---", "mj": ""}, {"fr": "Grande cuisine", "mj": "Ufubon uweak"}, {"fr": "Marmites", "mj": "I keents"}, {"fr": "Assiette(s)", "mj": "Pë la / I lat"}, {"fr": "Couteaux", "mj": "U banj / Ngë banj"}, {"fr": "Un couteau", "mj": "U mbanj"}, {"fr": "Verres", "mj": "U wer"}, {"fr": "Cuillère", "mj": "Ka tam"}, {"fr": "Fourchette", "mj": "Ka furset"}, {"fr": "Tasse", "mj": "Ka nekan"}, {"fr": "Table", "mj": "U ntabël"}, {"fr": "Chaise", "mj": "Pë tsefi / Pë tsuari"}, {"fr": "S'asseoir", "mj": "Pë tsef / Pë tsuar"}, {"fr": "Le feu", "mj": "Bëroa"}, {"fr": "Cuisiner", "mj": "Pë jungar"}, {"fr": "Laver la vaisselle", "mj": "Pë gnow i kanda"}, {"fr": "Allumer le feu", "mj": "Pë taban Bëroa"}, {"fr": "Calebasse", "mj": "Kakanda"}, {"fr": "--- La chambre ---", "mj": ""}, {"fr": "Le lit", "mj": "Bëkab"}, {"fr": "Le matelas", "mj": "Pajas"}, {"fr": "Le drap", "mj": "U rarab"}, {"fr": "Armoire", "mj": "Utsuni iñgi"}, {"fr": "Mettre", "mj": "Pë tsu"}, {"fr": "Dormir", "mj": "Pë ñgoy"}, {"fr": "Se coucher", "mj": "Pë pints"}, {"fr": "Rêver", "mj": "Pë yawi"}, {"fr": "Se réveiller", "mj": "Pë teeni"}, {"fr": "Se lever", "mj": "Pë natsa"}, {"fr": "Bonne nuit", "mj": "Bërëm bë war"}, {"fr": "Vêtement", "mj": "Ka ñgii → I ñgii"}, {"fr": "Un chapeau", "mj": "U cape"}, {"fr": "Robe", "mj": "U roba → Ngë roba"}, {"fr": "Chemise", "mj": "Ka misa → I misa"}, {"fr": "Jupe", "mj": "U sip → Ngë sip"}, {"fr": "Pantalon", "mj": "U kalsa → Ngë kalsa"}, {"fr": "Chaussette", "mj": "Ka kowaas → I kowaas"}, {"fr": "Chaussure", "mj": "Ka raala → I ralaa"}, {"fr": "Manteau", "mj": "Ka mãto → I mãto"}, {"fr": "Pagne", "mj": "Ka lenj → I lenj"}, {"fr": "Couverture", "mj": "U manta → Ngë manta"}, {"fr": "Parfum", "mj": "U licar → Ngë licar"}, {"fr": "Peigne", "mj": "Ka cati → I cati"}, {"fr": "Se couvrir / S'habiller", "mj": "Pë kula"}, {"fr": "Se déshabiller", "mj": "Pë wasar"}, {"fr": "--- La salle de bain ---", "mj": ""}, {"fr": "Savon", "mj": "U nij"}, {"fr": "Dentifrice", "mj": "U nij i rumaj"}, {"fr": "Brosse à dents", "mj": "Ka ñowi irumaj"}, {"fr": "Shampooing", "mj": "Unij u weel"}, {"fr": "Serviette", "mj": "Ka fani u lief"}, {"fr": "Gant", "mj": "Ka ñowi ulief"}, {"fr": "Eau", "mj": "M'lik"}, {"fr": "Seau", "mj": "U balo"}, {"fr": "Se doucher", "mj": "Pë ño / Pë gno"}, {"fr": "Se laver", "mj": "Pë ñowa"}, {"fr": "Se laver la figure", "mj": "Pë gnow ka nëm"}, {"fr": "Se brosser les dents", "mj": "Pë sinc i rumaj"}, {"fr": "Se coiffer", "mj": "Pë catar"}, {"fr": "--- Le jardin / La cour ---", "mj": ""}, {"fr": "Balai", "mj": "Bueti"}, {"fr": "Balayer", "mj": "Pë wet"}, {"fr": "Pieux", "mj": "Pë cap → I cap"}, {"fr": "Un sac", "mj": "Ka man → I ma"}, {"fr": "Du charbon", "mj": "Ka juas / I juas"}]}, {"id": "transports", "titre": "Bon voyage / Bias bëwar", "emoji": "✈️", "couleur": "#4a6a8a", "mots": [{"fr": "Le voyage", "mj": "Bias"}, {"fr": "Bon voyage !", "mj": "Bias bë war"}, {"fr": "La pirogue", "mj": "Ka nowa → I nowa"}, {"fr": "Un bateau", "mj": "Bëtsien → Itsien"}, {"fr": "Avion", "mj": "U wabion → Ngë wabion"}, {"fr": "Voiture", "mj": "U karu → Ngë karu"}, {"fr": "Cheval", "mj": "Umpëlinc → Ngë mpëlinc"}, {"fr": "Âne", "mj": "U buru → Ngë buru"}, {"fr": "Monter à bord", "mj": "Pë gija"}, {"fr": "Conduire", "mj": "Pë tukand u karu"}, {"fr": "Voyager", "mj": "Pë tukalir"}, {"fr": "Partir", "mj": "Pë tsëp"}, {"fr": "Arriver", "mj": "Pë baandi"}, {"fr": "--- Avant le départ ---", "mj": ""}, {"fr": "Je pars demain", "mj": "Man tsëp faan / Man tsis faan"}, {"fr": "Je prends l'avion", "mj": "Man gija u abion"}, {"fr": "Bonne route !", "mj": "Bëga bëwar"}, {"fr": "Rentre bien !", "mj": "Witsan uwar"}, {"fr": "--- En voyage ---", "mj": ""}, {"fr": "Où est l'aéroport ?", "mj": "Tsëko ngë abion a ci tsum ?"}, {"fr": "Où est la gare ?", "mj": "Tsëko uko utsak a ci tsum ?"}, {"fr": "Je suis perdu(e)", "mj": "Man niem"}, {"fr": "Attends-moi", "mj": "Lip in"}, {"fr": "--- À l'arrivée ---", "mj": ""}, {"fr": "Je suis arrivé(e)", "mj": "Man baandi"}, {"fr": "Je suis bien arrivé(e)", "mj": "Man baandi uwar"}, {"fr": "Comment s'est passé le voyage ?", "mj": "Bias a par uwar a ?", "exemple": "Pë par = passer / se dérouler"}, {"fr": "Le voyage s'est bien passé", "mj": "Bias a ci uwar"}, {"fr": "--- Nostalgie / Diaspora ---", "mj": ""}, {"fr": "Mon pays me manque", "mj": "Man ri ucaak inji"}, {"fr": "Je rentre au pays", "mj": "Man tsis"}, {"fr": "Je pars en Europe", "mj": "Man ya ubabu"}, {"fr": "Je reviens bientôt", "mj": "Man bi tsi brun / Man witse tsi brun"}, {"fr": "--- À l'aéroport ---", "mj": ""}, {"fr": "Passeport", "mj": "I karta bias"}, {"fr": "Billet", "mj": "U pas"}, {"fr": "Bagage / Valise", "mj": "U nkes"}, {"fr": "Où est la porte d'embarquement ?", "mj": "Pëlëman bë gija a ci tsum ?"}, {"fr": "J'ai perdu mes bagages", "mj": "Man nieman bagas"}, {"fr": "Où est mon siège ?", "mj": "Pë tsefi inji a ci tsum ?"}, {"fr": "Je rate mon avion", "mj": "U abion rukin"}, {"fr": "Mon vol est annulé", "mj": "Bias a gar"}, {"fr": "Où sont les toilettes ?", "mj": "Tsëko katuan a ci tsum ?"}, {"fr": "Je voudrais de l'eau", "mj": "Man ñgaal m'lik"}, {"fr": "--- À l'arrivée ---", "mj": ""}, {"fr": "Je viens en visite", "mj": "Man bi pë me ucaak"}, {"fr": "Je viens voir ma famille", "mj": "Man bi pë teen ba yëts inji"}]}, {"id": "lieux", "titre": "Où vas-tu ? / Kë ya tsum ?", "emoji": "📍", "couleur": "#5a6e8e", "mots": [{"fr": "Endroit / Lieu", "mj": "Tsëko"}, {"fr": "Aéroport", "mj": "Tsëko ngë abion"}, {"fr": "Hôpital", "mj": "Tsëko bë cunkan"}, {"fr": "Restaurant", "mj": "Tsëko bariela"}, {"fr": "Toilette", "mj": "Tsëko ka tuan"}, {"fr": "Tribunal", "mj": "Tsëko ukots"}, {"fr": "Douche", "mj": "Tsëko pë ñoo"}, {"fr": "Croisement", "mj": "Pë ntsink bëga"}, {"fr": "Le marché", "mj": "Kanëm"}, {"fr": "La banque", "mj": "Tsëko ka gang uncam"}, {"fr": "La mosquée", "mj": "Tsëko bëñan ba ñgitar"}, {"fr": "L'église", "mj": "Tsëko bëñan bababu"}, {"fr": "Le port", "mj": "Pëkën"}, {"fr": "La gare", "mj": "Tsëko uko utsak"}, {"fr": "Le commissariat", "mj": "Tsëko polis"}, {"fr": "Où vas-tu ?", "mj": "Kë ya tsum ?"}, {"fr": "Où passez-vous la nuit ?", "mj": "Tsum tsi ndu fër tsun ?"}, {"fr": "Qui part en Guinée ?", "mj": "Bikiyën ka tsëp bukun Guinée ?"}]}, {"id": "nature", "titre": "La nature / Uleemp Nasien batsi", "emoji": "🌿", "couleur": "#4a8a5a", "mots": [{"fr": "Rônier", "mj": "Bë been → I been"}, {"fr": "Palmier", "mj": "Bë cam → I cam"}, {"fr": "Forêt", "mj": "Brin"}, {"fr": "Chemin", "mj": "Bë ga → I ga"}, {"fr": "Mer", "mj": "Bë rëk → I rëk"}, {"fr": "Vague", "mj": "U maron → Ngë maron"}, {"fr": "Feu", "mj": "Bë roa → I roa"}, {"fr": "Baobab", "mj": "Bë dungal → I dungal"}, {"fr": "Bananier", "mj": "Bë nana → I nana"}, {"fr": "Dattier", "mj": "Bë jaak → I jaak"}, {"fr": "Cocotier", "mj": "Bë koko → I koko"}, {"fr": "Arbre", "mj": "Bë ko → I ko"}, {"fr": "Manguier", "mj": "Bë mangu → I mangu"}, {"fr": "Jardin", "mj": "I rig"}, {"fr": "Rizière", "mj": "Bë sañgan → I sañgan"}, {"fr": "Un fleuve", "mj": "Ufora"}, {"fr": "--- Les quatre éléments ---", "mj": ""}, {"fr": "L'eau", "mj": "M'lik"}, {"fr": "Le feu", "mj": "Bë roa"}, {"fr": "La terre", "mj": "M'boos"}, {"fr": "L'air", "mj": "U fuut"}, {"fr": "--- La météo ---", "mj": ""}, {"fr": "Il pleut", "mj": "Kasub"}, {"fr": "La pluie", "mj": "U subal"}, {"fr": "Il y a du soleil", "mj": "Bunu taab"}, {"fr": "Il fait mauvais temps", "mj": "U caak waraats"}, {"fr": "Il fait chaud", "mj": "U yëki ci"}, {"fr": "Il y a du vent", "mj": "Ufuts a ci"}, {"fr": "Le tonnerre gronde", "mj": "Ka parampamp yër"}, {"fr": "Il y a des éclairs", "mj": "A ka i liklik"}, {"fr": "C'est le printemps", "mj": "A ci ka nu"}, {"fr": "C'est l'automne", "mj": "A ci pë ti"}, {"fr": "C'est l'hiver", "mj": "U jõts a ci"}, {"fr": "J'ai froid", "mj": "Man joabëts"}, {"fr": "J'ai chaud", "mj": "Man yëkan"}, {"fr": "--- Le temps ---", "mj": ""}, {"fr": "Le temps", "mj": "Untan"}, {"fr": "Aujourd'hui", "mj": "Tsari / Standi"}, {"fr": "Demain", "mj": "Faan"}, {"fr": "Après-demain", "mj": "Tsankotse"}, {"fr": "Hier", "mj": "Taakal"}, {"fr": "Avant-hier", "mj": "Tsëcuk / Ucuk"}, {"fr": "Cette année", "mj": "Piekal"}, {"fr": "L'année dernière", "mj": "Baneki"}, {"fr": "L'année prochaine", "mj": "Kafa"}, {"fr": "L'arbre à palme / La noix de palme", "mj": "M'cem"}, {"fr": "Nuage", "mj": "Ka sa"}, {"fr": "Étoile", "mj": "U pesaj"}, {"fr": "Brouillard", "mj": "Ka borar"}, {"fr": "La fumée", "mj": "Uru"}, {"fr": "La vapeur", "mj": "U amël"}]}, {"id": "animaux", "titre": "Les animaux / Ngë ko brin", "emoji": "🐾", "couleur": "#7a9e5a", "mots": [{"fr": "--- Basse-cour ---", "mj": ""}, {"fr": "Canard", "mj": "U paata → Ngë paata"}, {"fr": "Coq", "mj": "U rian → Ngë rian"}, {"fr": "Lapin", "mj": "U cëmal → Ngë cëmal"}, {"fr": "Oie", "mj": "U tsuat → Ngë tsuat"}, {"fr": "Pintade", "mj": "U ncañg"}, {"fr": "Poule", "mj": "U guk u kaats → Ngë guk ngë kaats"}, {"fr": "--- Ferme ---", "mj": ""}, {"fr": "Vache", "mj": "U yët u kaats → Ngë yët"}, {"fr": "Mouton", "mj": "Un karnel → Ngë karnel"}, {"fr": "Cochon", "mj": "Un kambe → Ngë kambe"}, {"fr": "Chèvre", "mj": "U pi → Ngë pi"}, {"fr": "--- Sauvages ---", "mj": ""}, {"fr": "Hyène", "mj": "U ñgiil → Ngë ñgiil"}, {"fr": "Lion", "mj": "U lion → Ngë lion"}, {"fr": "Éléphant", "mj": "U long → Ngë long"}, {"fr": "Singe", "mj": "U catsa → Ngë catsa"}, {"fr": "Serpent", "mj": "U ko pëtsas → Ngë ko pëtsas"}, {"fr": "--- Compagnie ---", "mj": ""}, {"fr": "Chat", "mj": "U ndaali → Ngë ndaali"}, {"fr": "Chien", "mj": "U bus → Ngë bus"}, {"fr": "Cheval", "mj": "Umpëlinc → Ngë mpëlinc"}, {"fr": "--- Mer ---", "mj": ""}, {"fr": "Crabe", "mj": "U jinkom → Ngë jinkom"}, {"fr": "Crevette", "mj": "U tant → Ngë tant"}, {"fr": "Crocodile", "mj": "U tiek → Ngë tiek"}, {"fr": "Poisson", "mj": "U tsëb → Ngë tsëb"}, {"fr": "--- Insectes ---", "mj": ""}, {"fr": "Abeille", "mj": "U aaj → Ngë aaj"}, {"fr": "Moustique", "mj": "U barum → Ngë barum"}, {"fr": "Fourmi", "mj": "U tapëts → Ngë tapëts"}, {"fr": "Araignée", "mj": "U lar → Ngë lar"}, {"fr": "Scorpion", "mj": "U tifar → Ngë tifar"}, {"fr": "Un bœuf sans corne", "mj": "U yët unjugur"}, {"fr": "Les cornes", "mj": "I ntin"}, {"fr": "La queue", "mj": "Pëtant"}]}, {"id": "couleurs", "titre": "Les couleurs / Bënaamar", "emoji": "🎨", "couleur": "#3a8fb5", "mots": [{"fr": "Couleur", "mj": "Bënaamar"}, {"fr": "Rouge", "mj": "Jankal"}, {"fr": "Orange", "mj": "Jankëfuël"}, {"fr": "Jaune", "mj": "Betsëleel"}, {"fr": "Vert", "mj": "Bënaamar pëtsas-pëñuaw"}, {"fr": "Bleu", "mj": "Bënaamar ufacarbatsi"}, {"fr": "Violet", "mj": "Fëlal"}, {"fr": "Blanc", "mj": "Faacal"}, {"fr": "Noir", "mj": "Jínal"}, {"fr": "Or / Doré", "mj": "Bënaamar-uwëru"}, {"fr": "Marron / Brun", "mj": "Bënaamar katël najinal"}, {"fr": "Beige", "mj": "Bënaamar m'bos"}]}, {"id": "spiritualite", "titre": "Spiritualité / Undiman Manjaku", "emoji": "🕯️", "couleur": "#5a4a7a", "mots": [{"fr": "Dieu", "mj": "Nasien Batsi", "exemple": "Nasien = Roi, Batsi = Ciel"}, {"fr": "Roi", "mj": "Nasien"}, {"fr": "Ciel", "mj": "Batsi"}, {"fr": "Ange", "mj": "Na elia"}, {"fr": "Diable", "mj": "U setane"}, {"fr": "Vérité", "mj": "Ucer"}, {"fr": "Mensonge", "mj": "Bëtsup"}, {"fr": "La vie", "mj": "Ubira"}, {"fr": "Croire", "mj": "Pë fiar"}, {"fr": "Prier", "mj": "Pë ñan"}, {"fr": "C'est sacré", "mj": "A yëman"}, {"fr": "Amen / Inch'Allah (que Dieu l'entende)", "mj": "Nasien batsi nom"}, {"fr": "Le receveur / Celui qui doit écouter", "mj": "Kante"}, {"fr": "--- Rites et cérémonies ---", "mj": ""}, {"fr": "La cérémonie", "mj": "Kabol"}, {"fr": "La prière", "mj": "Bëñan"}, {"fr": "La voyance", "mj": "Bë pene"}, {"fr": "L'initiation", "mj": "Kakanda bëpene"}, {"fr": "L'esprit ancestral", "mj": "Nalugum"}, {"fr": "Un dragon", "mj": "U njumpor"}, {"fr": "Un présage", "mj": "Panguën"}, {"fr": "Un bain de purification", "mj": "Bë ñow"}, {"fr": "--- Valeurs et vœux ---", "mj": ""}, {"fr": "Pour la nouvelle année", "mj": "Di u subal u walu wi"}, {"fr": "Je vous souhaite", "mj": "Man ñandar ind"}, {"fr": "L'Entente", "mj": "Kan telaar"}, {"fr": "La Foi", "mj": "U aak"}, {"fr": "La Santé", "mj": "Pë yës"}, {"fr": "Le Respect", "mj": "Uremban"}, {"fr": "Le Bonheur", "mj": "U lilan"}, {"fr": "La Lumière", "mj": "Kan jënts"}, {"fr": "L'Amour", "mj": "U ñgal"}, {"fr": "L'Espérance", "mj": "Bë aatsar"}, {"fr": "L'Allégresse", "mj": "U lilan u wieek"}, {"fr": "L'Union", "mj": "Pë ci balole / Bë juk"}, {"fr": "La Paix", "mj": "Kan juab"}, {"fr": "Esprit", "mj": "U lugum"}, {"fr": "--- Les funérailles ---", "mj": ""}, {"fr": "La mort", "mj": "Pëcets"}, {"fr": "Mourir", "mj": "Pë cets"}, {"fr": "Le défunt", "mj": "Nacets"}, {"fr": "L'enterrement", "mj": "Pëmoy"}, {"fr": "Enterrer", "mj": "Pë moy"}, {"fr": "Le cimetière", "mj": "Unguran"}, {"fr": "Porter le deuil", "mj": "Pë tinjiir"}, {"fr": "Les funérailles", "mj": "Pôôm"}, {"fr": "Honorer le défunt", "mj": "Pë las pôôm"}, {"fr": "Le corps sans vie", "mj": "U nieman"}, {"fr": "Que la terre lui soit légère", "mj": "M'bos man rafanul"}, {"fr": "Tuer", "mj": "Pë fiñg"}, {"fr": "Pleurer", "mj": "Pë rug"}, {"fr": "Des pleurs", "mj": "I rug"}, {"fr": "Pagne tissé", "mj": "Bë lenj bë ñingits"}]}, {"id": "villages", "titre": "Les villages manjaku / Ngë tab", "emoji": "🏘️", "couleur": "#7a5a3a", "mots": [{"fr": "Bajoapi", "mj": "Bajoapi"}, {"fr": "Bara", "mj": "Bara"}, {"fr": "Barambe", "mj": "Baramb"}, {"fr": "Basseral", "mj": "Basëral"}, {"fr": "Benitch", "mj": "Bënic"}, {"fr": "Bianga", "mj": "Bianga"}, {"fr": "Bignents", "mj": "Biñents"}, {"fr": "Bindialoum", "mj": "Bindialoum"}, {"fr": "Bo", "mj": "Bo"}, {"fr": "Boutoupa", "mj": "Butupa"}, {"fr": "Cadjindjasa", "mj": "Kajinjasa"}, {"fr": "Cagnobe", "mj": "Kañob"}, {"fr": "Caio", "mj": "Kaio"}, {"fr": "Calequisse", "mj": "Kalëkis"}, {"fr": "Canchungo", "mj": "Kancungo"}, {"fr": "Canoaw", "mj": "Kanoaw"}, {"fr": "Capoal", "mj": "Kapoal"}, {"fr": "Caronca", "mj": "Karonka"}, {"fr": "Catidj", "mj": "Katij"}, {"fr": "Kajindjassa", "mj": "Kajinjassa"}, {"fr": "Pelundo", "mj": "Pëlundo"}, {"fr": "Peucaw", "mj": "Pëkaw"}, {"fr": "Peupal", "mj": "Pëpal"}, {"fr": "Peusis", "mj": "Pësis"}, {"fr": "Peutab", "mj": "Pëtab"}, {"fr": "Plounde", "mj": "Plund"}, {"fr": "Tame", "mj": "Tame"}, {"fr": "Tchour", "mj": "Cur"}, {"fr": "Ter", "mj": "Ter"}]}, {"id": "viequotidienne", "titre": "Que fais-tu ? / Kë ro we ?", "emoji": "🌅", "couleur": "#7a8e6a", "mots": [{"fr": "--- Se lever ---", "mj": ""}, {"fr": "Se réveiller", "mj": "Pë teeni"}, {"fr": "Se lever", "mj": "Pë natsa"}, {"fr": "S'étirer", "mj": "Pë tara"}, {"fr": "Je me suis bien levé(e)", "mj": "Man natsa uwar"}, {"fr": "Le matin", "mj": "Bëfa"}, {"fr": "--- La toilette ---", "mj": ""}, {"fr": "Savon", "mj": "U nij"}, {"fr": "Dentifrice", "mj": "U nij i rumaj"}, {"fr": "Brosse à dent", "mj": "Ka ñowi irumaj"}, {"fr": "Shampooing", "mj": "Unij u weel"}, {"fr": "Serviette", "mj": "Ka fani u lief"}, {"fr": "Gant", "mj": "Ka ñowi ulief"}, {"fr": "Eau", "mj": "M'lik"}, {"fr": "Seau", "mj": "U balo"}, {"fr": "Parfum", "mj": "U licar"}, {"fr": "Se laver", "mj": "Pë ñoowësër"}, {"fr": "Faire sa toilette", "mj": "Pë gnoo"}, {"fr": "Se doucher", "mj": "Pë ño / Pë gno"}, {"fr": "Se laver", "mj": "Pë ñowa"}, {"fr": "Se laver la figure", "mj": "Pë gnow ka nëm"}, {"fr": "Se brosser les dents", "mj": "Pë sinc i rumaj"}, {"fr": "Se coiffer", "mj": "Pë catar"}, {"fr": "Se déshabiller", "mj": "Pë wasar"}, {"fr": "Se couvrir / S'habiller", "mj": "Pë kula"}, {"fr": "--- Manger et boire ---", "mj": ""}, {"fr": "Manger", "mj": "Pë riela / Pë diela"}, {"fr": "Boire", "mj": "Pë raan"}, {"fr": "Boire de l'eau", "mj": "Man ran mëlik"}, {"fr": "Eau chaude", "mj": "M'lik m'yëk"}, {"fr": "Chauffer", "mj": "Pë yëkan"}, {"fr": "Chauffer son ventre", "mj": "Pë yëkan i pës"}, {"fr": "J'ai faim", "mj": "Man bonats"}, {"fr": "J'ai soif", "mj": "Man lofënts"}, {"fr": "La faim", "mj": "U bon"}, {"fr": "La soif", "mj": "U lof"}, {"fr": "--- À la maison ---", "mj": ""}, {"fr": "Balayer", "mj": "Pë wet"}, {"fr": "Cuisiner", "mj": "Pë jungar"}, {"fr": "Laver la vaisselle", "mj": "Pë gnow i kanda"}, {"fr": "Laver le linge", "mj": "Pë nij"}, {"fr": "Puiser de l'eau", "mj": "Pë lik"}, {"fr": "Ouvrir la porte", "mj": "Pë ants pëlëman"}, {"fr": "Fermer", "mj": "Pë ric"}, {"fr": "S'asseoir", "mj": "Pë tsuar"}, {"fr": "Se coucher", "mj": "Pë pints"}, {"fr": "Allumer le feu", "mj": "Pë taban bëroa"}, {"fr": "Je vais à la maison", "mj": "Man ya kato"}, {"fr": "--- Le corps et les besoins ---", "mj": ""}, {"fr": "Le sommeil", "mj": "Bëñgoy"}, {"fr": "J'ai sommeil", "mj": "Bëñgoy ka reen"}, {"fr": "Dormir", "mj": "Pë ñgoy"}, {"fr": "J'ai bien dormi", "mj": "Man ñgoy uwar"}, {"fr": "Rêver", "mj": "Pë yawi"}, {"fr": "La fatigue", "mj": "Unoor"}, {"fr": "Être fatigué(e)", "mj": "Pë noor"}, {"fr": "Se reposer", "mj": "Pë naksa"}, {"fr": "J'ai chaud", "mj": "Man yëkan"}, {"fr": "J'ai froid", "mj": "Man joabëts"}, {"fr": "J'ai envie d'uriner", "mj": "Katuan ka reen"}, {"fr": "Je vais faire pipi", "mj": "Man ya katuan"}, {"fr": "Le lever", "mj": "U natse"}, {"fr": "--- Se déplacer ---", "mj": ""}, {"fr": "Marcher", "mj": "Pë cian"}, {"fr": "Courir", "mj": "Pë tuk"}, {"fr": "Se dépêcher", "mj": "Pë car"}, {"fr": "Partir", "mj": "Pë tsëp"}, {"fr": "Sortir", "mj": "Pë pëni"}, {"fr": "Rentrer chez soi", "mj": "Pë tis"}, {"fr": "Venir", "mj": "Pë bi"}, {"fr": "Aller", "mj": "Pë ya"}, {"fr": "Voyager", "mj": "Pë tukalir"}, {"fr": "Le voyage", "mj": "Bias"}, {"fr": "Le chemin", "mj": "Bëga"}, {"fr": "--- Communiquer ---", "mj": ""}, {"fr": "Parler", "mj": "Pë jipan"}, {"fr": "Dire", "mj": "Pë leents"}, {"fr": "Écouter", "mj": "Pë cikëndën"}, {"fr": "Entendre / Comprendre", "mj": "Pë te"}, {"fr": "Appeler", "mj": "Pë ru"}, {"fr": "Saluer", "mj": "Pë lena"}, {"fr": "Demander", "mj": "Pë yepar"}, {"fr": "Remercier", "mj": "Pë baran"}, {"fr": "Répondre", "mj": "Pë jankma"}, {"fr": "Attendre", "mj": "Pë lip"}, {"fr": "J'attends un peu", "mj": "Man lip kotiës"}, {"fr": "Une parole", "mj": "Përim"}, {"fr": "--- Le temps ---", "mj": ""}, {"fr": "Maintenant", "mj": "Inkëri"}, {"fr": "Aujourd'hui", "mj": "Tsari / Standi"}, {"fr": "Demain", "mj": "Faan"}, {"fr": "Hier", "mj": "Taakal"}, {"fr": "Bonne nuit", "mj": "Bërëm bë war"}, {"fr": "--- Travailler ---", "mj": ""}, {"fr": "Travailler", "mj": "Pë leemp"}, {"fr": "Chercher", "mj": "Pë tsas"}, {"fr": "Acheter", "mj": "Pë wel"}, {"fr": "Vendre", "mj": "Pë waap"}, {"fr": "Donner", "mj": "Pë wël"}, {"fr": "Cotiser", "mj": "Pë cel"}, {"fr": "Quelque chose", "mj": "Ulonko"}, {"fr": "Marcher / Se déplacer", "mj": "Pë yandar", "exemple": "Sens général"}]}, {"id": "adjectifs", "titre": "Les adjectifs / Bëci", "emoji": "🎨", "couleur": "#7a9e8a", "mots": [{"fr": "--- Taille ---", "mj": ""}, {"fr": "Grand(e)", "mj": "Na wiek", "exemple": "A wiek (Il/Elle est grand(e))"}, {"fr": "Petit(e)", "mj": "Na tiës", "exemple": "A tiës (Il/Elle est petit(e))"}, {"fr": "Long(ue)", "mj": "Na yampal"}, {"fr": "Court(e)", "mj": "Na runkëtuël"}, {"fr": "--- Apparence ---", "mj": ""}, {"fr": "Beau / Belle", "mj": "Na war", "exemple": "A war (C'est beau)"}, {"fr": "Laid(e)", "mj": "Na wutsëtsël"}, {"fr": "Propre", "mj": "Na jëntsal", "exemple": "A jënts (C'est propre)"}, {"fr": "Sale", "mj": "Na tsopal", "exemple": "A tsop (C'est sale)"}, {"fr": "--- Température ---", "mj": ""}, {"fr": "Chaud", "mj": "A yëk", "exemple": "A yëk (C'est chaud)"}, {"fr": "Froid", "mj": "A joabuts", "exemple": "A joabuts (C'est froid)"}, {"fr": "--- Poids ---", "mj": ""}, {"fr": "Lourd(e)", "mj": "A rits"}, {"fr": "Léger / Légère", "mj": "A raf"}, {"fr": "--- Âge ---", "mj": ""}, {"fr": "Vieux / Vieille", "mj": "A tsaf"}, {"fr": "Jeune", "mj": "A ci napats"}, {"fr": "--- Caractère / État ---", "mj": ""}, {"fr": "Fort(e) / Courageux(se)", "mj": "A jafatsa"}, {"fr": "Faible", "mj": "A labatsa"}, {"fr": "Bon(ne) — pour un aliment", "mj": "Wara / A lil"}, {"fr": "Mauvais(e)", "mj": "Warats"}, {"fr": "Rapide", "mj": "A car"}, {"fr": "--- État physique ---", "mj": ""}, {"fr": "En bonne santé", "mj": "A yës"}, {"fr": "Enceinte", "mj": "A simpa"}, {"fr": "--- Caractère ---", "mj": ""}, {"fr": "Généreux(se)", "mj": "A raf kanien"}, {"fr": "Méchant(e)", "mj": "Warats uaas"}, {"fr": "Gentil(le)", "mj": "A kan bëga"}, {"fr": "Bavard(e)", "mj": "A ci na jipan"}, {"fr": "--- Quantité ---", "mj": ""}, {"fr": "Beaucoup", "mj": "Mak"}, {"fr": "Un peu", "mj": "Kotiës"}, {"fr": "C'est assez", "mj": "A ling"}, {"fr": "C'est trop", "mj": "A buor"}, {"fr": "--- Dimension ---", "mj": ""}, {"fr": "C'est large", "mj": "A ci u makënjuël"}, {"fr": "C'est étroit(e)", "mj": "A ci u ligëluël"}, {"fr": "C'est plein", "mj": "A cum"}, {"fr": "C'est vide", "mj": "A kats"}]}, {"id": "phrasesutiles", "titre": "Je sais parler / Man yil ujipan", "emoji": "💬", "couleur": "#8a6a9e", "mots": [{"fr": "Je ne comprends pas / Je n'entends pas", "mj": "Inji tets"}, {"fr": "Je ne sais pas", "mj": "Inji mets"}, {"fr": "C'est combien ?", "mj": "A cir um ?"}, {"fr": "Aide-moi s'il te plaît", "mj": "Tsënkin jampësan"}, {"fr": "Oui", "mj": "Eyo"}, {"fr": "Non", "mj": "An-an"}, {"fr": "Merci", "mj": "Baran"}, {"fr": "Bravo !", "mj": "Ina !"}, {"fr": "Bien", "mj": "Uwar"}, {"fr": "Un peu", "mj": "Kotiës"}, {"fr": "Beaucoup", "mj": "Mak"}, {"fr": "Comment puis-je faire pour… ?", "mj": "Man dom pë… ?"}, {"fr": "Qu'est-ce que tu dis ?", "mj": "We kë ja wen ?"}, {"fr": "Pourquoi riez-vous ?", "mj": "Ndu ji we ?"}, {"fr": "Avec qui voyagez-vous ?", "mj": "Ndu yandar ni bikiyën ?"}, {"fr": "Quand arrives-tu ?", "mj": "Lum m'di kë baandi run ?"}, {"fr": "--- Que fais-tu ? Mini dialogues ---", "mj": ""}, {"fr": "Que fais-tu ?", "mj": "Kë ro we ?"}, {"fr": "Ce matin je me suis levé(e)", "mj": "Bëfa man natsa"}, {"fr": "Je me suis douché(e)", "mj": "Man ño"}, {"fr": "Je me suis brossé les dents", "mj": "Man sinc i rumaj"}, {"fr": "Je cuisine", "mj": "Man jungar"}, {"fr": "Je mange", "mj": "Man riela"}, {"fr": "Je bois de l'eau", "mj": "Man ran m'lik"}, {"fr": "Je vais au marché", "mj": "Man ya kanëm"}, {"fr": "Je vais travailler", "mj": "Man ya pë leemp"}, {"fr": "Je rentre à la maison", "mj": "Man tis kato"}, {"fr": "Je me couche", "mj": "Man pints"}, {"fr": "Je me repose", "mj": "Man naksa"}, {"fr": "J'attends quelqu'un", "mj": "Man lip"}, {"fr": "Je vais à l'hôpital", "mj": "Man ya tsëko bë cunkan"}, {"fr": "Je vais à l'école", "mj": "Man ya tsëko pë juk"}, {"fr": "Je vais au port", "mj": "Man ya pëkën"}, {"fr": "Je suis fatigué(e)", "mj": "Man noor"}, {"fr": "Je me promène", "mj": "Man cian"}, {"fr": "--- Je demande mon chemin ---", "mj": ""}, {"fr": "Où est le marché ?", "mj": "Kanëm a ci tsum ?"}, {"fr": "Où est l'hôpital ?", "mj": "Tsëko bë cunkan a ci tsum ?"}, {"fr": "Je suis perdu(e)", "mj": "Man niem"}, {"fr": "Montre-moi le chemin", "mj": "Piban in bëga"}, {"fr": "--- J'exprime mes besoins ---", "mj": ""}, {"fr": "J'ai faim", "mj": "Man bonats"}, {"fr": "J'ai soif", "mj": "Man lofënts"}, {"fr": "Je veux de l'eau", "mj": "Man ñgaal m'lik"}, {"fr": "Je veux manger", "mj": "Man ñgaal pë riela"}, {"fr": "Je veux dormir", "mj": "Man ñgaal pë ñgoy"}, {"fr": "Je suis fatigué(e)", "mj": "Man noor"}, {"fr": "J'ai mal à la tête", "mj": "Been ka reen"}, {"fr": "--- Au marché ---", "mj": ""}, {"fr": "C'est combien ?", "mj": "A ciir um ?"}, {"fr": "C'est trop cher", "mj": "A buor pë ñats"}, {"fr": "Je veux ça", "mj": "Man ñgaal wi / ni / ki"}, {"fr": "Donne-moi", "mj": "Wëlin"}, {"fr": "--- Faire connaissance ---", "mj": ""}, {"fr": "Je m'appelle…", "mj": "Man jaka…"}, {"fr": "Je viens d'Europe", "mj": "Man pëni ubabu"}, {"fr": "Je parle un peu manjaku", "mj": "Man jipan manjaku kotiës"}, {"fr": "J'attends quelqu'un", "mj": "Man lip iñan"}, {"fr": "Allons-y / Parlons manjaku !", "mj": "Jon ngë jipan Manjaku"}, {"fr": "Comprendre le manjaku c'est bien", "mj": "Pë te Manjaku a lil"}, {"fr": "Moi aussi je suis heureux/heureuse", "mj": "Man lilan buts"}]}, {"id": "ecole", "titre": "Je m'instruis / Man tsas u me", "emoji": "📚", "couleur": "#5a7a6a", "mots": [{"fr": "L'école", "mj": "Tsëko pë juk"}, {"fr": "Le/La professeur(e)", "mj": "Na jukan → Ba jukan"}, {"fr": "Livre", "mj": "U libar"}, {"fr": "Cahier", "mj": "Ka kaie"}, {"fr": "Stylo", "mj": "Pë tibni"}, {"fr": "Écrire", "mj": "Pë tib"}, {"fr": "Compter", "mj": "Pë pin"}, {"fr": "Apprendre", "mj": "Pë juk"}, {"fr": "Lire", "mj": "Pë jangir"}, {"fr": "Parler manjaku", "mj": "Pë jipan manjaku"}, {"fr": "--- Les mois de l'année ---", "mj": ""}, {"fr": "Janvier", "mj": "Pëli pë cek"}, {"fr": "Février", "mj": "Pëli pë tëbantsan"}, {"fr": "Mars", "mj": "Pëli pë wajantsan"}, {"fr": "Avril", "mj": "Pëli pë bakëndan"}, {"fr": "Mai", "mj": "Pëli pë gnanatsën"}, {"fr": "Juin", "mj": "Pëli pë pajëntsën"}, {"fr": "Juillet", "mj": "Pëli pë pajëntsën ni pëlon"}, {"fr": "Août", "mj": "Pëli pë wasëndën"}, {"fr": "Septembre", "mj": "Pëli pë wasëndën ni pëlon"}, {"fr": "Octobre", "mj": "Pëli pë ntajaatsën"}, {"fr": "Novembre", "mj": "Pëli pë ntajaatsën ni pëlon"}, {"fr": "Décembre", "mj": "Pëli pë ntajaatsën ni këtëb"}, {"fr": "--- Les jours de la semaine ---", "mj": ""}, {"fr": "Lundi", "mj": "Ka leel"}, {"fr": "Mardi", "mj": "Ka luund"}, {"fr": "Mercredi", "mj": "Ka yenjan"}, {"fr": "Jeudi", "mj": "Ka tianu"}, {"fr": "Vendredi", "mj": "Ka siarar"}, {"fr": "Samedi", "mj": "Ka kon"}, {"fr": "Dimanche", "mj": "Ka taab"}, {"fr": "Aujourd'hui", "mj": "Tsari / Standi"}, {"fr": "Maintenant", "mj": "Inkëri"}, {"fr": "Intelligence / Sagesse / Savoir-faire", "mj": "Kameko"}]}, {"id": "proverbes", "titre": "Proverbes et citations", "emoji": "📜", "couleur": "#7a6a4a", "mots": [{"fr": "On récolte ce qu'on sème", "mj": "Kan de m'kër ka tambu mul", "exemple": "Littéralement : C'est celui qui mange l'huile de palme qui le défèque"}, {"fr": "Tel père, tel fils", "mj": "Utapëts dika buk ufaacal", "exemple": "Littéralement : La fourmi n'engendre pas une fourmi blanche"}, {"fr": "Un tiens vaut mieux que deux tu l'auras", "mj": "Bë cetsar u cape a matar been bë jënts", "exemple": "Littéralement : Un vieux chapeau vaut mieux qu'une tête nue"}, {"fr": "Les voyages forment la jeunesse", "mj": "M'yandar mak, kë me ko", "exemple": "Littéralement : Tu voyages beaucoup, tu sauras des choses"}, {"fr": "Il n'y a pas plus sourd que celui qui ne veut pas entendre", "mj": "Kante citsun ma kalënts niemats", "exemple": "Littéralement : Le conseiller est toujours présent mais c'est celui qui écoute qui est parfois absent"}, {"fr": "Celui qui a des responsabilités doit être sage", "mj": "Na jabi pëtant dika lut bëroa", "exemple": "Littéralement : Celui qui a une queue ne doit jamais sauter le feu. Explication : Celui qui a des enfants, des biens ou des responsabilités doit faire preuve de sagesse et ne pas prendre de risques inconsidérés."}, {"fr": "Chassez le naturel, il revient au galop", "mj": "Iñan ylants pëlan ubopal pë jita", "exemple": "Littéralement : Personne ne peut empêcher la grenouille de s'accroupir"}]}, {"id": "prenoms", "titre": "Prénoms manjaku / Itim manjaku", "emoji": "✨", "couleur": "#c8692a", "mots": [{"fr": "Aakan", "mj": "Aakan", "exemple": "Rassurant(e) — Je suis une source intarissable de paix"}, {"fr": "Aami", "mj": "Aami"}, {"fr": "Aatsar", "mj": "Aatsar"}, {"fr": "Aba", "mj": "Aba"}, {"fr": "Abaandi", "mj": "Abaandi"}, {"fr": "Abeka", "mj": "Abeka"}, {"fr": "Abibëten", "mj": "Abibëten", "exemple": "Il/elle est venu(e) voir — Je suis venu(e) voir ce qu'il y a de plus beau"}, {"fr": "Abuori", "mj": "Abuori"}, {"fr": "Acësa", "mj": "Acësa"}, {"fr": "Agara", "mj": "Agara"}, {"fr": "Aja", "mj": "Aja"}, {"fr": "Ajela", "mj": "Ajela"}, {"fr": "Ajug", "mj": "Ajug"}, {"fr": "Ajugbien", "mj": "Ajugbien"}, {"fr": "Ajugmets", "mj": "Ajugmets"}, {"fr": "Akaani", "mj": "Akaani"}, {"fr": "Alingan", "mj": "Alingan"}, {"fr": "Amea", "mj": "Amea"}, {"fr": "Amobe", "mj": "Amobe"}, {"fr": "Anam", "mj": "Anam"}, {"fr": "Aniir", "mj": "Aniir"}, {"fr": "Anim", "mj": "Anim"}, {"fr": "Anima", "mj": "Anima"}, {"fr": "Aninu", "mj": "Aninu"}, {"fr": "Aniran", "mj": "Aniran"}, {"fr": "Apepëme", "mj": "Apepëme"}, {"fr": "Apënandi", "mj": "Apënandi"}, {"fr": "Apënani", "mj": "Apënani"}, {"fr": "Apënanin", "mj": "Apënanin"}, {"fr": "Apënasin", "mj": "Apënasin"}, {"fr": "Ari", "mj": "Ari"}, {"fr": "Aruka", "mj": "Aruka"}, {"fr": "Asinu", "mj": "Asinu"}, {"fr": "Atea", "mj": "Atea"}, {"fr": "Atena", "mj": "Atena"}, {"fr": "Ateni", "mj": "Ateni"}, {"fr": "Atsenda", "mj": "Atsenda"}, {"fr": "Awara", "mj": "Awara"}, {"fr": "Awaraba", "mj": "Awaraba"}, {"fr": "Awareni", "mj": "Awareni"}, {"fr": "Awaro", "mj": "Awaro"}, {"fr": "Awimba", "mj": "Awimba"}, {"fr": "Awina", "mj": "Awina"}, {"fr": "Awinu", "mj": "Awinu"}, {"fr": "Awër", "mj": "Awër"}, {"fr": "Ayëkan", "mj": "Ayëkan"}, {"fr": "Ayëla", "mj": "Ayëla", "exemple": "Envoyé(e) — Je suis envoyé(e) pour servir et être heureux(se)"}, {"fr": "Bafetinbiki", "mj": "Bafetinbiki"}, {"fr": "Bakon", "mj": "Bakon"}, {"fr": "Balesin", "mj": "Balesin"}, {"fr": "Batafan", "mj": "Batafan"}, {"fr": "Batsi", "mj": "Batsi"}, {"fr": "Bayëkrën", "mj": "Bayëkrën"}, {"fr": "Bili", "mj": "Bili"}, {"fr": "Bëkuuj", "mj": "Bëkuuj", "exemple": "Un tournant — À chaque tournant de ma vie, je suis heureux(se)"}, {"fr": "Bëran", "mj": "Bëran"}, {"fr": "Bërats", "mj": "Bërats"}, {"fr": "Cukan", "mj": "Cukan"}, {"fr": "Cësa", "mj": "Cësa"}, {"fr": "Cësan", "mj": "Cësan"}, {"fr": "Dafetin", "mj": "Dafetin"}, {"fr": "Dayan", "mj": "Dayan"}, {"fr": "Dikaci", "mj": "Dikaci"}, {"fr": "Dikapën", "mj": "Dikapën"}, {"fr": "Faan", "mj": "Faan"}, {"fr": "Fetsin", "mj": "Fetsin"}, {"fr": "Ina", "mj": "Ina"}, {"fr": "Inja", "mj": "Inja"}, {"fr": "Inji", "mj": "Inji"}, {"fr": "Injini", "mj": "Injini"}, {"fr": "Isa", "mj": "Isa"}, {"fr": "Jelan", "mj": "Jelan"}, {"fr": "Jelats", "mj": "Jelats"}, {"fr": "Jibakarin", "mj": "Jibakarin"}, {"fr": "Jinal", "mj": "Jinal"}, {"fr": "Jipani", "mj": "Jipani"}, {"fr": "Jonatsi", "mj": "Jonatsi"}, {"fr": "Jukanin", "mj": "Jukanin"}, {"fr": "Juunts", "mj": "Juunts"}, {"fr": "Kaba", "mj": "Kaba"}, {"fr": "Kabeka", "mj": "Kabeka"}, {"fr": "Kabiniyën", "mj": "Kabiniyën"}, {"fr": "Kabiunk", "mj": "Kabiunk"}, {"fr": "Kabuka", "mj": "Kabuka"}, {"fr": "Kacësarwe", "mj": "Kacësarwe"}, {"fr": "Kafetsa", "mj": "Kafetsa"}, {"fr": "Kaisa", "mj": "Kaisa"}, {"fr": "Kaja", "mj": "Kaja"}, {"fr": "Kajako", "mj": "Kajako"}, {"fr": "Kajankuwel", "mj": "Kajankuwel"}, {"fr": "Kajintsan", "mj": "Kajintsan"}, {"fr": "Kalika", "mj": "Kalika"}, {"fr": "Kalil", "mj": "Kalil"}, {"fr": "Kalilan", "mj": "Kalilan"}, {"fr": "Kalipandin", "mj": "Kalipandin"}, {"fr": "Kambat", "mj": "Kambat"}, {"fr": "Kambukna", "mj": "Kambukna"}, {"fr": "Kameind", "mj": "Kameind"}, {"fr": "Kameko", "mj": "Kameko"}, {"fr": "Kampe", "mj": "Kampe"}, {"fr": "Kampëli", "mj": "Kampëli"}, {"fr": "Kander", "mj": "Kander"}, {"fr": "Kanima", "mj": "Kanima"}, {"fr": "Kanirnapun", "mj": "Kanirnapun"}, {"fr": "Kanorwe", "mj": "Kanorwe"}, {"fr": "Kapënarin", "mj": "Kapënarin"}, {"fr": "Kapënaryën", "mj": "Kapënaryën"}, {"fr": "Karatbaka", "mj": "Karatbaka"}, {"fr": "Karoruwe", "mj": "Karoruwe"}, {"fr": "Karua", "mj": "Karua"}, {"fr": "Kasanda", "mj": "Kasanda"}, {"fr": "Katea", "mj": "Katea", "exemple": "Procure-le moi"}, {"fr": "Katena", "mj": "Katena"}, {"fr": "Katignan", "mj": "Katignan", "exemple": "C'est sûr — Je décide et je suis sûr(e) de ce que je veux"}, {"fr": "Katim", "mj": "Katim"}, {"fr": "Katsenda", "mj": "Katsenda"}, {"fr": "Katsuran", "mj": "Katsuran"}, {"fr": "Kawara", "mj": "Kawara"}, {"fr": "Kawiin", "mj": "Kawiin"}, {"fr": "Kawina", "mj": "Kawina"}, {"fr": "Kawinarwe", "mj": "Kawinarwe"}, {"fr": "Kawëtara", "mj": "Kawëtara"}, {"fr": "Kaya", "mj": "Kaya"}, {"fr": "Kaylander", "mj": "Kaylander", "exemple": "Il/elle est entendu(e) — Je suis entendu(e) par tous, et partout"}, {"fr": "Kayës", "mj": "Kayës"}, {"fr": "Kenaba", "mj": "Kenaba"}, {"fr": "Kenateen", "mj": "Kenateen"}, {"fr": "Kenawin", "mj": "Kenawin"}, {"fr": "Kenaya", "mj": "Kenaya"}, {"fr": "Kenim", "mj": "Kenim"}, {"fr": "Kenima", "mj": "Kenima"}, {"fr": "Keyan", "mj": "Keyan"}, {"fr": "Leemparats", "mj": "Leemparats"}, {"fr": "Lesan", "mj": "Lesan"}, {"fr": "Lesanin", "mj": "Lesanin"}, {"fr": "Lesanin", "mj": "Lesanin"}, {"fr": "Lilan", "mj": "Lilan"}, {"fr": "Lilani", "mj": "Lilani"}, {"fr": "Lipin", "mj": "Lipin"}, {"fr": "Lowan", "mj": "Lowan"}, {"fr": "Lukan", "mj": "Lukan"}, {"fr": "Lukani", "mj": "Lukani"}, {"fr": "Lumpani", "mj": "Lumpani"}, {"fr": "Lutanats", "mj": "Lutanats"}, {"fr": "Lënkin", "mj": "Lënkin"}, {"fr": "Malilan", "mj": "Malilan"}, {"fr": "Mambi", "mj": "Mambi"}, {"fr": "Mamparba", "mj": "Mamparba"}, {"fr": "Mampe", "mj": "Mampe"}, {"fr": "Mampekuan", "mj": "Mampekuan"}, {"fr": "Mampok", "mj": "Mampok"}, {"fr": "Manbibëteen", "mj": "Manbibëteen"}, {"fr": "Manci", "mj": "Manci"}, {"fr": "Manciba", "mj": "Manciba"}, {"fr": "Manciniwi", "mj": "Manciniwi"}, {"fr": "Mandi", "mj": "Mandi"}, {"fr": "Mandukanda", "mj": "Mandukanda", "exemple": "Je reste avec"}, {"fr": "Manduku", "mj": "Manduku"}, {"fr": "Mangalind", "mj": "Mangalind"}, {"fr": "Mangalu", "mj": "Mangalu"}, {"fr": "Maniran", "mj": "Maniran"}, {"fr": "Manjibukul", "mj": "Manjibukul", "exemple": "Je ris d'eux — Je suis sûr(e) de ce que je suis et j'avance"}, {"fr": "Manjëkuwar", "mj": "Manjëkuwar"}, {"fr": "Mankani", "mj": "Mankani"}, {"fr": "Manpats", "mj": "Manpats"}, {"fr": "Mantis", "mj": "Mantis"}, {"fr": "Manwëtsunk", "mj": "Manwëtsunk"}, {"fr": "Manyës", "mj": "Manyës"}, {"fr": "Marani", "mj": "Marani"}, {"fr": "Mawinul", "mj": "Mawinul"}, {"fr": "Mayela", "mj": "Mayela"}, {"fr": "Mayilan", "mj": "Mayilan"}, {"fr": "Maylan", "mj": "Maylan"}, {"fr": "Mcets", "mj": "Mcets"}, {"fr": "Melanin", "mj": "Melanin"}, {"fr": "Miran", "mj": "Miran"}, {"fr": "Miranda", "mj": "Miranda"}, {"fr": "Mëlele", "mj": "Mëlele"}, {"fr": "Mëlik", "mj": "Mëlik"}, {"fr": "Nabasa", "mj": "Nabasa"}, {"fr": "Nabukin", "mj": "Nabukin"}, {"fr": "Naelia", "mj": "Naelia"}, {"fr": "Nafaacal", "mj": "Nafaacal"}, {"fr": "Naji", "mj": "Naji"}, {"fr": "Najipan", "mj": "Najipan"}, {"fr": "Nakaman", "mj": "Nakaman"}, {"fr": "Nakey", "mj": "Nakey"}, {"fr": "Nakulal", "mj": "Nakulal"}, {"fr": "Nalas", "mj": "Nalas"}, {"fr": "Naleemp", "mj": "Naleemp"}, {"fr": "Nalik", "mj": "Nalik"}, {"fr": "Nalipal", "mj": "Nalipal"}, {"fr": "Namaka", "mj": "Namaka"}, {"fr": "Namigne", "mj": "Namigne"}, {"fr": "Namoan", "mj": "Namoan"}, {"fr": "Nampëli", "mj": "Nampëli"}, {"fr": "Nangale", "mj": "Nangale", "exemple": "L'intelligent(e) — Que l'intelligence guide ta vie"}, {"fr": "Nangay", "mj": "Nangay"}, {"fr": "Nanjafu", "mj": "Nanjafu"}, {"fr": "Nanjaku", "mj": "Nanjaku"}, {"fr": "Nankabi", "mj": "Nankabi"}, {"fr": "Nantoyi", "mj": "Nantoyi"}, {"fr": "Nanyële", "mj": "Nanyële"}, {"fr": "Napats", "mj": "Napats"}, {"fr": "Napene", "mj": "Napene"}, {"fr": "Naropëji", "mj": "Naropëji"}, {"fr": "Narukan", "mj": "Narukan"}, {"fr": "Narëmb", "mj": "Narëmb"}, {"fr": "Nasanda", "mj": "Nasanda"}, {"fr": "Nasien", "mj": "Nasien"}, {"fr": "Natas", "mj": "Natas"}, {"fr": "Naties", "mj": "Naties"}, {"fr": "Natsan", "mj": "Natsan"}, {"fr": "Natson", "mj": "Natson"}, {"fr": "Natsënk", "mj": "Natsënk"}, {"fr": "Nawalu", "mj": "Nawalu"}, {"fr": "Nawalu", "mj": "Nawalu"}, {"fr": "Nawar", "mj": "Nawar", "exemple": "Le beau, la belle"}, {"fr": "Nawek", "mj": "Nawek"}, {"fr": "Nawine", "mj": "Nawine"}, {"fr": "Nawëri", "mj": "Nawëri", "exemple": "Le/la clairvoyant(e)"}, {"fr": "Naya", "mj": "Naya"}, {"fr": "Nayilani", "mj": "Nayilani"}, {"fr": "Nayësal", "mj": "Nayësal"}, {"fr": "Ndabili", "mj": "Ndabili"}, {"fr": "Ndalipin", "mj": "Ndalipin"}, {"fr": "Ndamein", "mj": "Ndamein"}, {"fr": "Ndamekats", "mj": "Ndamekats"}, {"fr": "Ndatenanul", "mj": "Ndatenanul", "exemple": "Regardez-le/la"}, {"fr": "Ndatenin", "mj": "Ndatenin"}, {"fr": "Ndatsendanul", "mj": "Ndatsendanul", "exemple": "Donnez-lui"}, {"fr": "Ndawin", "mj": "Ndawin"}, {"fr": "Ndayan", "mj": "Ndayan", "exemple": "Allez-y"}, {"fr": "Ndoles", "mj": "Ndoles"}, {"fr": "Ndome", "mj": "Ndome"}, {"fr": "Ngaats", "mj": "Ngaats"}, {"fr": "Ngaatsnasien", "mj": "Ngaatsnasien"}, {"fr": "Ngëlumpan", "mj": "Ngëlumpan"}, {"fr": "Niman", "mj": "Niman"}, {"fr": "Nints", "mj": "Nints", "exemple": "Monsieur — Je suis reconnu comme un grand Monsieur"}, {"fr": "Ninul", "mj": "Ninul"}, {"fr": "Nirani", "mj": "Nirani"}, {"fr": "Niwi", "mj": "Niwi"}, {"fr": "Njakajon", "mj": "Njakajon"}, {"fr": "Njikorin", "mj": "Njikorin", "exemple": "Moi seul(e)"}, {"fr": "Nontsëna", "mj": "Nontsëna", "exemple": "Joue avec"}, {"fr": "Nowurieb", "mj": "Nowurieb"}, {"fr": "Nuni", "mj": "Nuni"}, {"fr": "Okanin", "mj": "Okanin"}, {"fr": "Patsan", "mj": "Patsan"}, {"fr": "Patsani", "mj": "Patsani"}, {"fr": "Pokan", "mj": "Pokan"}, {"fr": "Pëli", "mj": "Pëli"}, {"fr": "Pënanats", "mj": "Pënanats"}, {"fr": "Randan", "mj": "Randan", "exemple": "Évite"}, {"fr": "Riebatsanin", "mj": "Riebatsanin"}, {"fr": "Rukan", "mj": "Rukan", "exemple": "Reste"}, {"fr": "Rëmbani", "mj": "Rëmbani", "exemple": "Respecte"}, {"fr": "Rëñgani", "mj": "Rëñgani", "exemple": "Ramène"}, {"fr": "Sienan", "mj": "Sienan", "exemple": "Règne, siège"}, {"fr": "Tanan", "mj": "Tanan"}, {"fr": "Teenan", "mj": "Teenan"}, {"fr": "Tenani", "mj": "Tenani"}, {"fr": "Tenarinul", "mj": "Tenarinul"}, {"fr": "Tsasan", "mj": "Tsasan", "exemple": "Cherche — Je cherche et je trouve"}, {"fr": "Tsekani", "mj": "Tsekani"}, {"fr": "Tsenda", "mj": "Tsenda"}, {"fr": "Tsenkin", "mj": "Tsenkin"}, {"fr": "Tsijarin", "mj": "Tsijarin", "exemple": "Tiens-moi ça"}, {"fr": "Tsunkunor", "mj": "Tsunkunor", "exemple": "Refuse la peine"}, {"fr": "Tsëpandin", "mj": "Tsëpandin"}, {"fr": "Uaak", "mj": "Uaak", "exemple": "La Paix"}, {"fr": "Ucay Batsi", "mj": "Ucay Batsi"}, {"fr": "Ucer", "mj": "Ucer"}, {"fr": "Uka", "mj": "Uka"}, {"fr": "Ukas", "mj": "Ukas"}, {"fr": "Ulilan", "mj": "Ulilan"}, {"fr": "Umign", "mj": "Umign"}, {"fr": "Umpëniwi", "mj": "Umpëniwi", "exemple": "Celui/celle qui est sorti(e)"}, {"fr": "Unu", "mj": "Unu"}, {"fr": "Upas", "mj": "Upas"}, {"fr": "Upëli", "mj": "Upëli", "exemple": "Demoiselle"}, {"fr": "Uwalu", "mj": "Uwalu", "exemple": "Le nouveau, la nouvelle — Je vis de belles et nouvelles choses"}, {"fr": "Uwasinji", "mj": "Uwasinji", "exemple": "Mon cœur"}, {"fr": "Wara", "mj": "Wara"}, {"fr": "Warabatsi", "mj": "Warabatsi"}, {"fr": "Waran", "mj": "Waran"}, {"fr": "Warani", "mj": "Warani"}, {"fr": "Waren", "mj": "Waren"}, {"fr": "Watsësi", "mj": "Watsësi"}, {"fr": "Wekawën", "mj": "Wekawën"}, {"fr": "Wicu", "mj": "Wicu"}, {"fr": "Wëlan", "mj": "Wëlan"}, {"fr": "Wëli", "mj": "Wëli"}, {"fr": "Wëlin", "mj": "Wëlin"}, {"fr": "Wëtani", "mj": "Wëtani"}, {"fr": "Yamp", "mj": "Yamp"}, {"fr": "Yankan", "mj": "Yankan"}, {"fr": "Yankarin", "mj": "Yankarin"}, {"fr": "Yokan", "mj": "Yokan"}, {"fr": "Ñgalannul", "mj": "Ñgalannul"}]}], "VERBES": [{"inf": "Pëka", "fr": "Avoir", "e": "🤲", "c": [{"mj": "Man ka", "fr": "J'ai"}, {"mj": "M'ka", "fr": "Tu as"}, {"mj": "A ka", "fr": "Il/Elle a"}, {"mj": "Wënda ka", "fr": "Nous avons"}, {"mj": "Nda ka", "fr": "Vous avez"}, {"mj": "Bu ka", "fr": "Ils/Elles ont"}]}, {"inf": "Pë ba", "fr": "Terminer", "e": "✅", "c": [{"mj": "Man ba", "fr": "J'ai terminé"}, {"mj": "M'ba", "fr": "Tu as terminé"}, {"mj": "A ba", "fr": "Il/Elle a terminé"}, {"mj": "Wënda ba", "fr": "Nous avons terminé"}, {"mj": "Nda ba", "fr": "Vous avez terminé"}, {"mj": "Bu ba", "fr": "Ils/Elles ont terminé"}]}, {"inf": "Pë bamb", "fr": "Porter sur le dos", "e": "🤱", "c": [{"mj": "Man bamb", "fr": "Je porte sur le dos"}, {"mj": "Kë bamb", "fr": "Tu portes sur le dos"}, {"mj": "Ka bamb", "fr": "Il/Elle porte sur le dos"}, {"mj": "Wënd ka bamb", "fr": "Nous portons sur le dos"}, {"mj": "Ndu bamb", "fr": "Vous portez sur le dos"}, {"mj": "Buka bamb", "fr": "Ils/Elles portent sur le dos"}]}, {"inf": "Pë beek", "fr": "Cacher", "e": "🫣", "c": [{"mj": "Man beek", "fr": "Je cache"}, {"mj": "Kë beek", "fr": "Tu caches"}, {"mj": "Ka beek", "fr": "Il/Elle cache"}, {"mj": "Wënd ka beek", "fr": "Nous cachons"}, {"mj": "Ndu beek", "fr": "Vous cachez"}, {"mj": "Buka beek", "fr": "Ils/Elles cachent"}]}, {"inf": "Pë bi", "fr": "Venir", "e": "👋", "c": [{"mj": "Man bi", "fr": "Je viens"}, {"mj": "Kë bi", "fr": "Tu viens"}, {"mj": "Ka bi", "fr": "Il/Elle vient"}, {"mj": "Wënd ka bi", "fr": "Nous venons"}, {"mj": "Ndu bi", "fr": "Vous venez"}, {"mj": "Buka bi", "fr": "Ils/Elles viennent"}]}, {"inf": "Pë biri", "fr": "Venir chercher / Réclamer", "e": "🔍", "c": [{"mj": "Man biri", "fr": "Je viens chercher / Je réclame"}, {"mj": "Kë biri", "fr": "Tu viens chercher"}, {"mj": "Ka biri", "fr": "Il/Elle vient chercher"}, {"mj": "Wënd ka biri", "fr": "Nous venons chercher"}, {"mj": "Ndu biri", "fr": "Vous venez chercher"}, {"mj": "Buka biri", "fr": "Ils/Elles viennent chercher"}]}, {"inf": "Pë boat", "fr": "Téter", "e": "🤱", "c": [{"mj": "Man boat", "fr": "Je tète"}, {"mj": "Kë boat", "fr": "Tu tètes"}, {"mj": "Ka boat", "fr": "Il/Elle tète"}, {"mj": "Wënd ka boat", "fr": "Nous tétons"}, {"mj": "Ndu boat", "fr": "Vous tétez"}, {"mj": "Buka boat", "fr": "Ils/Elles tètent"}]}, {"inf": "Pë boatan", "fr": "Allaiter", "e": "🤱", "c": [{"mj": "Man boatan", "fr": "J'allaite"}, {"mj": "Kë boatan", "fr": "Tu allaites"}, {"mj": "Ka boatan", "fr": "Il/Elle allaite"}, {"mj": "Wënd ka boatan", "fr": "Nous allaitons"}, {"mj": "Ndu boatan", "fr": "Vous allaitez"}, {"mj": "Buka boatan", "fr": "Ils/Elles allaitent"}]}, {"inf": "Pë bof", "fr": "Être ensemble, fusionner", "e": "🤝", "c": [{"mj": "Man bof", "fr": "Je fusionne / Je suis ensemble"}, {"mj": "Kë bof", "fr": "Tu fusionnes"}, {"mj": "Ka bof", "fr": "Il/Elle fusionne"}, {"mj": "Wënd ka bof", "fr": "Nous fusionnons"}, {"mj": "Ndu bof", "fr": "Vous fusionnez"}, {"mj": "Buka bof", "fr": "Ils/Elles fusionnent"}]}, {"inf": "Pë buots", "fr": "Pêcher", "e": "🎣", "c": [{"mj": "Man buots", "fr": "Je pêche"}, {"mj": "Kë buots", "fr": "Tu pêches"}, {"mj": "Ka buots", "fr": "Il/Elle pêche"}, {"mj": "Wënd ka buots", "fr": "Nous pêchons"}, {"mj": "Ndu buots", "fr": "Vous pêchez"}, {"mj": "Buka buots", "fr": "Ils/Elles pêchent"}]}, {"inf": "Pë bëts", "fr": "Boucher", "e": "🔇", "c": [{"mj": "Man bëts", "fr": "Je bouche"}, {"mj": "Kë bëts", "fr": "Tu bouches"}, {"mj": "Ka bëts", "fr": "Il/Elle bouche"}, {"mj": "Wënd ka bëts", "fr": "Nous bouchons"}, {"mj": "Ndu bëts", "fr": "Vous bouchez"}, {"mj": "Buka bëts", "fr": "Ils/Elles bouchent"}]}, {"inf": "Pë caran", "fr": "Se dépêcher de faire quelque chose", "e": "⚡", "c": [{"mj": "Man caran", "fr": "Je me dépêche de faire"}, {"mj": "Kë caran", "fr": "Tu te dépêches de faire"}, {"mj": "Ka caran", "fr": "Il/Elle se dépêche de faire"}, {"mj": "Wënd ka caran", "fr": "Nous nous dépêchons de faire"}, {"mj": "Ndu caran", "fr": "Vous vous dépêchez de faire"}, {"mj": "Buka caran", "fr": "Ils/Elles se dépêchent de faire"}]}, {"inf": "Pë cat", "fr": "Sauter", "e": "⬆️", "c": [{"mj": "Man cat", "fr": "Je saute"}, {"mj": "Kë cat", "fr": "Tu sautes"}, {"mj": "Ka cat", "fr": "Il/Elle saute"}, {"mj": "Wënd ka cat", "fr": "Nous sautons"}, {"mj": "Ndu cat", "fr": "Vous sautez"}, {"mj": "Buka cat", "fr": "Ils/Elles sautent"}]}, {"inf": "Pë cekës", "fr": "Débuter / Commencer", "e": "🌱", "c": [{"mj": "Man cekës", "fr": "Je débute"}, {"mj": "Kë cekës", "fr": "Tu débutes"}, {"mj": "Ka cekës", "fr": "Il/Elle débute"}, {"mj": "Wënd ka cekës", "fr": "Nous débutons"}, {"mj": "Ndu cekës", "fr": "Vous débutez"}, {"mj": "Buka cekës", "fr": "Ils/Elles débutent"}]}, {"inf": "Pë cel", "fr": "Cotiser", "e": "💰", "c": [{"mj": "Man cel", "fr": "Je cotise"}, {"mj": "Kë cel", "fr": "Tu cotises"}, {"mj": "Ka cel", "fr": "Il/Elle cotise"}, {"mj": "Wënd ka cel", "fr": "Nous cotisons"}, {"mj": "Ndu cel", "fr": "Vous cotisez"}, {"mj": "Buka cel", "fr": "Ils/Elles cotisent"}]}, {"inf": "Pë ci", "fr": "Être", "e": "🌟", "c": [{"mj": "Man ci", "fr": "Je suis"}, {"mj": "M'ci", "fr": "Tu es"}, {"mj": "A ci", "fr": "Il/Elle est"}, {"mj": "Wënda ci", "fr": "Nous sommes (excl.)"}, {"mj": "Ngë ci", "fr": "Nous sommes (incl.)"}, {"mj": "Nda ci", "fr": "Vous êtes"}, {"mj": "Bu ci", "fr": "Ils/Elles sont"}]}, {"inf": "Pë cin", "fr": "Péter", "e": "💨", "c": [{"mj": "Man cin", "fr": "Je pète"}, {"mj": "Kë cin", "fr": "Tu pètes"}, {"mj": "Ka cin", "fr": "Il/Elle pète"}, {"mj": "Wënd ka cin", "fr": "Nous pétons"}, {"mj": "Ndu cin", "fr": "Vous pétez"}, {"mj": "Buka cin", "fr": "Ils/Elles pètent"}]}, {"inf": "Pë cok", "fr": "Casser", "e": "🔨", "c": [{"mj": "Man cok", "fr": "Je casse"}, {"mj": "Kë cok", "fr": "Tu casses"}, {"mj": "Ka cok", "fr": "Il/Elle casse"}, {"mj": "Wënd ka cok", "fr": "Nous cassons"}, {"mj": "Ndu cok", "fr": "Vous cassez"}, {"mj": "Buka cok", "fr": "Ils/Elles cassent"}]}, {"inf": "Pë cuas", "fr": "Interroger l'âme d'un défunt", "e": "🔮", "c": [{"mj": "Man cuas", "fr": "J'interroge l'âme"}, {"mj": "Kë cuas", "fr": "Tu interroges l'âme"}, {"mj": "Ka cuas", "fr": "Il/Elle interroge l'âme"}, {"mj": "Wënd ka cuas", "fr": "Nous interrogeons l'âme"}, {"mj": "Ndu cuas", "fr": "Vous interrogez l'âme"}, {"mj": "Buka cuas", "fr": "Ils/Elles interrogent l'âme"}]}, {"inf": "Pë cësa", "fr": "Se presser", "e": "🏃", "c": [{"mj": "Man cësa", "fr": "Je me presse"}, {"mj": "Kë cësa", "fr": "Tu te presses"}, {"mj": "Ka cësa", "fr": "Il/Elle se presse"}, {"mj": "Wënd ka cësa", "fr": "Nous nous pressons"}, {"mj": "Ndu cësa", "fr": "Vous vous pressez"}, {"mj": "Buka cësa", "fr": "Ils/Elles se pressent"}]}, {"inf": "Pë cët", "fr": "Briser", "e": "💔", "c": [{"mj": "Man cët", "fr": "Je brise"}, {"mj": "Kë cët", "fr": "Tu brises"}, {"mj": "Ka cët", "fr": "Il/Elle brise"}, {"mj": "Wënd ka cët", "fr": "Nous brisons"}, {"mj": "Ndu cët", "fr": "Vous brisez"}, {"mj": "Buka cët", "fr": "Ils/Elles brisent"}]}, {"inf": "Pë fa", "fr": "Essuyer", "e": "🧻", "c": [{"mj": "Man fa", "fr": "J'essuie"}, {"mj": "Kë fa", "fr": "Tu essuies"}, {"mj": "Ka fa", "fr": "Il/Elle essuie"}, {"mj": "Wënd ka fa", "fr": "Nous essuyons"}, {"mj": "Ndu fa", "fr": "Vous essuyez"}, {"mj": "Buka fa", "fr": "Ils/Elles essuient"}]}, {"inf": "Pë fej", "fr": "Sculpter", "e": "🗿", "c": [{"mj": "Man fej", "fr": "Je sculpte"}, {"mj": "Kë fej", "fr": "Tu sculptes"}, {"mj": "Ka fej", "fr": "Il/Elle sculpte"}, {"mj": "Wënd ka fej", "fr": "Nous sculptons"}, {"mj": "Ndu fej", "fr": "Vous sculptez"}, {"mj": "Buka fej", "fr": "Ils/Elles sculptent"}]}, {"inf": "Pë fiñg", "fr": "Tuer", "e": "⚔️", "c": [{"mj": "Man fiñg", "fr": "Je tue"}, {"mj": "Kë fiñg", "fr": "Tu tues"}, {"mj": "Ka fiñg", "fr": "Il/Elle tue"}, {"mj": "Wënd ka fiñg", "fr": "Nous tuons"}, {"mj": "Ndu fiñg", "fr": "Vous tuez"}, {"mj": "Buka fiñg", "fr": "Ils/Elles tuent"}]}, {"inf": "Pë gar", "fr": "Annuler / Divorcer", "e": "❌", "c": [{"mj": "Man gar", "fr": "J'annule / Je divorce"}, {"mj": "Kë gar", "fr": "Tu annules"}, {"mj": "Ka gar", "fr": "Il/Elle annule"}, {"mj": "Wënd ka gar", "fr": "Nous annulons"}, {"mj": "Ndu gar", "fr": "Vous annulez"}, {"mj": "Buka gar", "fr": "Ils/Elles annulent"}]}, {"inf": "Pë jaka", "fr": "S'appeler", "e": "👤", "c": [{"mj": "Man jaka", "fr": "Je m'appelle"}, {"mj": "Kë jaka", "fr": "Tu t'appelles"}, {"mj": "Ka jaka", "fr": "Il/Elle s'appelle"}, {"mj": "Wënd ka jaka", "fr": "Nous nous appelons"}, {"mj": "Ndu jaka", "fr": "Vous vous appelez"}, {"mj": "Buka jaka", "fr": "Ils/Elles s'appellent"}]}, {"inf": "Pë jang", "fr": "Chasser", "e": "🏹", "c": [{"mj": "Man jang", "fr": "Je chasse"}, {"mj": "Kë jang", "fr": "Tu chasses"}, {"mj": "Ka jang", "fr": "Il/Elle chasse"}, {"mj": "Wënd ka jang", "fr": "Nous chassons"}, {"mj": "Ndu jang", "fr": "Vous chassez"}, {"mj": "Buka jang", "fr": "Ils/Elles chassent"}]}, {"inf": "Pë jankma", "fr": "Répondre", "e": "💬", "c": [{"mj": "Man jankma", "fr": "Je réponds"}, {"mj": "Kë jankma", "fr": "Tu réponds"}, {"mj": "Ka jankma", "fr": "Il/Elle répond"}, {"mj": "Wënd ka jankma", "fr": "Nous répondons"}, {"mj": "Ndu jankma", "fr": "Vous répondez"}, {"mj": "Buka jankma", "fr": "Ils/Elles répondent"}]}, {"inf": "Pë jipan", "fr": "Parler", "e": "🗣️", "c": [{"mj": "Man jipan", "fr": "Je parle"}, {"mj": "Kë jipan", "fr": "Tu parles"}, {"mj": "Ka jipan", "fr": "Il/Elle parle"}, {"mj": "Wënd ka jipan", "fr": "Nous parlons"}, {"mj": "Ndu jipan", "fr": "Vous parlez"}, {"mj": "Buka jipan", "fr": "Ils/Elles parlent"}]}, {"inf": "Pë jita", "fr": "S'accroupir", "e": "🧎", "c": [{"mj": "Man jita", "fr": "Je m'accroupis"}, {"mj": "Kë jita", "fr": "Tu t'accroupis"}, {"mj": "Ka jita", "fr": "Il/Elle s'accroupit"}, {"mj": "Wënd ka jita", "fr": "Nous nous accroupissons"}, {"mj": "Ndu jita", "fr": "Vous vous accroupissez"}, {"mj": "Buka jita", "fr": "Ils/Elles s'accroupissent"}]}, {"inf": "Pë joatsan", "fr": "Être triste", "e": "😢", "c": [{"mj": "Man joatsan", "fr": "Je suis triste"}, {"mj": "Kë joatsan", "fr": "Tu es triste"}, {"mj": "Ka joatsan", "fr": "Il/Elle est triste"}, {"mj": "Wënd ka joatsan", "fr": "Nous sommes tristes"}, {"mj": "Ndu joatsan", "fr": "Vous êtes tristes"}, {"mj": "Buka joatsan", "fr": "Ils/Elles sont tristes"}]}, {"inf": "Pë joya", "fr": "Se prosterner", "e": "🙇", "c": [{"mj": "Man joya", "fr": "Je me prosterne"}, {"mj": "Kë joya", "fr": "Tu te prosternes"}, {"mj": "Ka joya", "fr": "Il/Elle se prosterne"}, {"mj": "Wënd ka joya", "fr": "Nous nous prosternons"}, {"mj": "Ndu joya", "fr": "Vous vous prosternez"}, {"mj": "Buka joya", "fr": "Ils/Elles se prosternent"}]}, {"inf": "Pë juk", "fr": "Apprendre", "e": "📚", "c": [{"mj": "Man juk", "fr": "J'apprends"}, {"mj": "Kë juk", "fr": "Tu apprends"}, {"mj": "Ka juk", "fr": "Il/Elle apprend"}, {"mj": "Wënd ka juk", "fr": "Nous apprenons"}, {"mj": "Ndu juk", "fr": "Vous apprenez"}, {"mj": "Buka juk", "fr": "Ils/Elles apprennent"}]}, {"inf": "Pë jund", "fr": "Commencer", "e": "🚀", "c": [{"mj": "Man jund", "fr": "Je commence"}, {"mj": "Kë jund", "fr": "Tu commences"}, {"mj": "Ka jund", "fr": "Il/Elle commence"}, {"mj": "Wënd ka jund", "fr": "Nous commençons"}, {"mj": "Ndu jund", "fr": "Vous commencez"}, {"mj": "Buka jund", "fr": "Ils/Elles commencent"}]}, {"inf": "Pë kak", "fr": "Se réconcilier", "e": "🤝", "c": [{"mj": "Man kak", "fr": "Je me réconcilie"}, {"mj": "Kë kak", "fr": "Tu te réconcilies"}, {"mj": "Ka kak", "fr": "Il/Elle se réconcilie"}, {"mj": "Wënd ka kak", "fr": "Nous nous réconcilions"}, {"mj": "Ndu kak", "fr": "Vous vous réconciliez"}, {"mj": "Buka kak", "fr": "Ils/Elles se réconcilient"}]}, {"inf": "Pë kam", "fr": "Se battre", "e": "👊", "c": [{"mj": "Man kam", "fr": "Je me bats"}, {"mj": "Kë kam", "fr": "Tu te bats"}, {"mj": "Ka kam", "fr": "Il/Elle se bat"}, {"mj": "Wënd ka kam", "fr": "Nous nous battons"}, {"mj": "Ndu kam", "fr": "Vous vous battez"}, {"mj": "Buka kam", "fr": "Ils/Elles se battent"}]}, {"inf": "Pë kamna", "fr": "Se battre pour", "e": "⚔️", "c": [{"mj": "Man kamna", "fr": "Je me bats pour"}, {"mj": "Kë kamna", "fr": "Tu te bats pour"}, {"mj": "Ka kamna", "fr": "Il/Elle se bat pour"}, {"mj": "Wënd ka kamna", "fr": "Nous nous battons pour"}, {"mj": "Ndu kamna", "fr": "Vous vous battez pour"}, {"mj": "Buka kamna", "fr": "Ils/Elles se battent pour"}]}, {"inf": "Pë kar", "fr": "Insulter", "e": "😤", "c": [{"mj": "Man kar", "fr": "J'insulte"}, {"mj": "Kë kar", "fr": "Tu insultes"}, {"mj": "Ka kar", "fr": "Il/Elle insulte"}, {"mj": "Wënd ka kar", "fr": "Nous insultons"}, {"mj": "Ndu kar", "fr": "Vous insultez"}, {"mj": "Buka kar", "fr": "Ils/Elles insultent"}]}, {"inf": "Pë kata", "fr": "Se redresser", "e": "🧍", "c": [{"mj": "Man kata", "fr": "Je me redresse"}, {"mj": "Kë kata", "fr": "Tu te redresses"}, {"mj": "Ka kata", "fr": "Il/Elle se redresse"}, {"mj": "Wënd ka kata", "fr": "Nous nous redressons"}, {"mj": "Ndu kata", "fr": "Vous vous redressez"}, {"mj": "Buka kata", "fr": "Ils/Elles se redressent"}]}, {"inf": "Pë key", "fr": "Danser", "e": "💃", "c": [{"mj": "Man key", "fr": "Je danse"}, {"mj": "Kë key", "fr": "Tu danses"}, {"mj": "Ka key", "fr": "Il/Elle danse"}, {"mj": "Wënd ka key", "fr": "Nous dansons"}, {"mj": "Ndu key", "fr": "Vous dansez"}, {"mj": "Buka key", "fr": "Ils/Elles dansent"}]}, {"inf": "Pë laañg", "fr": "Empêcher", "e": "🚫", "c": [{"mj": "Man laañg", "fr": "J'empêche"}, {"mj": "Kë laañg", "fr": "Tu empêches"}, {"mj": "Ka laañg", "fr": "Il/Elle empêche"}, {"mj": "Wënd ka laañg", "fr": "Nous empêchons"}, {"mj": "Ndu laañg", "fr": "Vous empêchez"}, {"mj": "Buka laañg", "fr": "Ils/Elles empêchent"}]}, {"inf": "Pë lac", "fr": "Avoir tort", "e": "❌", "c": [{"mj": "Man lac", "fr": "J'ai tort"}, {"mj": "Kë lac", "fr": "Tu as tort"}, {"mj": "Ka lac", "fr": "Il/Elle a tort"}, {"mj": "Wënd ka lac", "fr": "Nous avons tort"}, {"mj": "Ndu lac", "fr": "Vous avez tort"}, {"mj": "Buka lac", "fr": "Ils/Elles ont tort"}]}, {"inf": "Pë leemp", "fr": "Travailler", "e": "🔨", "c": [{"mj": "Man leemp", "fr": "Je travaille"}, {"mj": "Kë leemp", "fr": "Tu travailles"}, {"mj": "Ka leemp", "fr": "Il/Elle travaille"}, {"mj": "Wënd ka leemp", "fr": "Nous travaillons"}, {"mj": "Ndu leemp", "fr": "Vous travaillez"}, {"mj": "Buka leemp", "fr": "Ils/Elles travaillent"}]}, {"inf": "Pë leents", "fr": "Dire", "e": "🗣️", "c": [{"mj": "Man leents", "fr": "Je dis"}, {"mj": "Kë leents", "fr": "Tu dis"}, {"mj": "Ka leents", "fr": "Il/Elle dit"}, {"mj": "Wënd ka leents", "fr": "Nous disons"}, {"mj": "Ndu leents", "fr": "Vous dites"}, {"mj": "Buka leents", "fr": "Ils/Elles disent"}]}, {"inf": "Pë lena", "fr": "Saluer", "e": "🤝", "c": [{"mj": "Man lena", "fr": "Je salue"}, {"mj": "Kë lena", "fr": "Tu salues"}, {"mj": "Ka lena", "fr": "Il/Elle salue"}, {"mj": "Wënd ka lena", "fr": "Nous saluons"}, {"mj": "Ndu lena", "fr": "Vous saluez"}, {"mj": "Buka lena", "fr": "Ils/Elles saluent"}]}, {"inf": "Pë lint", "fr": "Racler avec le doigt", "e": "👆", "c": [{"mj": "Man lint", "fr": "Je racle avec le doigt"}, {"mj": "Kë lint", "fr": "Tu racles"}, {"mj": "Ka lint", "fr": "Il/Elle racle"}, {"mj": "Wënd ka lint", "fr": "Nous raclons"}, {"mj": "Ndu lint", "fr": "Vous raclez"}, {"mj": "Buka lint", "fr": "Ils/Elles raclent"}]}, {"inf": "Pë lut", "fr": "Traverser", "e": "⬆️", "c": [{"mj": "Man lut", "fr": "Je saute"}, {"mj": "Kë lut", "fr": "Tu sautes"}, {"mj": "Ka lut", "fr": "Il/Elle saute"}, {"mj": "Wënd ka lut", "fr": "Nous sautons"}, {"mj": "Ndu lut", "fr": "Vous sautez"}, {"mj": "Buka lut", "fr": "Ils/Elles sautent"}]}, {"inf": "Pë me", "fr": "Savoir", "e": "🧠", "c": [{"mj": "Man me", "fr": "Je sais"}, {"mj": "M'me", "fr": "Tu sais"}, {"mj": "A me", "fr": "Il/Elle sait"}, {"mj": "Wënda me", "fr": "Nous savons"}, {"mj": "Nda me", "fr": "Vous savez"}, {"mj": "Bu me", "fr": "Ils/Elles savent"}]}, {"inf": "Pë mob", "fr": "Attraper", "e": "🤜", "c": [{"mj": "Man mob", "fr": "J'attrape"}, {"mj": "Kë mob", "fr": "Tu attrapes"}, {"mj": "Ka mob", "fr": "Il/Elle attrape"}, {"mj": "Wënd ka mob", "fr": "Nous attrapons"}, {"mj": "Ndu mob", "fr": "Vous attrapez"}, {"mj": "Buka mob", "fr": "Ils/Elles attrapent"}]}, {"inf": "Pë niem", "fr": "Être perdu(e)", "e": "😕", "c": [{"mj": "Man niem", "fr": "Je suis perdu(e)"}, {"mj": "M'niem", "fr": "Tu es perdu(e)"}, {"mj": "A niem", "fr": "Il/Elle est perdu(e)"}, {"mj": "Wënda niem", "fr": "Nous sommes perdus"}, {"mj": "Nda niem", "fr": "Vous êtes perdus"}, {"mj": "Bu niem", "fr": "Ils/Elles sont perdus"}]}, {"inf": "Pë nieman", "fr": "Perdre", "e": "💨", "c": [{"mj": "Man nieman", "fr": "Je perds"}, {"mj": "Kë nieman", "fr": "Tu perds"}, {"mj": "Ka nieman", "fr": "Il/Elle perd"}, {"mj": "Wënd ka nieman", "fr": "Nous perdons"}, {"mj": "Ndu nieman", "fr": "Vous perdez"}, {"mj": "Buka nieman", "fr": "Ils/Elles perdent"}]}, {"inf": "Pë par", "fr": "Passer / Se dérouler", "e": "⏳", "c": [{"mj": "Man par", "fr": "Je passe / Ça se déroule"}, {"mj": "Kë par", "fr": "Tu passes"}, {"mj": "Ka par", "fr": "Il/Elle passe"}, {"mj": "Wënd ka par", "fr": "Nous passons"}, {"mj": "Ndu par", "fr": "Vous passez"}, {"mj": "Buka par", "fr": "Ils/Elles passent"}]}, {"inf": "Pë pat", "fr": "Naviguer", "e": "⛵", "c": [{"mj": "Man pat", "fr": "Je navigue"}, {"mj": "Kë pat", "fr": "Tu navigues"}, {"mj": "Ka pat", "fr": "Il/Elle navigue"}, {"mj": "Wënd ka pat", "fr": "Nous naviguons"}, {"mj": "Ndu pat", "fr": "Vous naviguez"}, {"mj": "Buka pat", "fr": "Ils/Elles naviguent"}]}, {"inf": "Pë peen", "fr": "Partir / Sortir", "e": "🏃", "c": [{"mj": "Man peen", "fr": "Je pars / Je sors"}, {"mj": "Kë peen", "fr": "Tu pars"}, {"mj": "Ka peen", "fr": "Il/Elle part"}, {"mj": "Wënd ka peen", "fr": "Nous partons"}, {"mj": "Ndu peen", "fr": "Vous partez"}, {"mj": "Buka peen", "fr": "Ils/Elles partent"}]}, {"inf": "Pë pets", "fr": "Dénoncer", "e": "⚠️", "c": [{"mj": "Man pets", "fr": "Je dénonce"}, {"mj": "Kë pets", "fr": "Tu dénonces"}, {"mj": "Ka pets", "fr": "Il/Elle dénonce"}, {"mj": "Wënd ka pets", "fr": "Nous dénonçons"}, {"mj": "Ndu pets", "fr": "Vous dénoncez"}, {"mj": "Buka pets", "fr": "Ils/Elles dénoncent"}]}, {"inf": "Pë pican", "fr": "Discourir / Être orateur", "e": "🎤", "c": [{"mj": "Man pican", "fr": "Je discours / Je suis orateur"}, {"mj": "Kë pican", "fr": "Tu discoures"}, {"mj": "Ka pican", "fr": "Il/Elle discourt"}, {"mj": "Wënd ka pican", "fr": "Nous discourons"}, {"mj": "Ndu pican", "fr": "Vous discourez"}, {"mj": "Buka pican", "fr": "Ils/Elles discourent"}]}, {"inf": "Pë pintar", "fr": "Peindre", "e": "🎨", "c": [{"mj": "Man pintar", "fr": "Je peins"}, {"mj": "Kë pintar", "fr": "Tu peins"}, {"mj": "Ka pintar", "fr": "Il/Elle peint"}, {"mj": "Wënd ka pintar", "fr": "Nous peignons"}, {"mj": "Ndu pintar", "fr": "Vous peignez"}, {"mj": "Buka pintar", "fr": "Ils/Elles peignent"}]}, {"inf": "Pë pok", "fr": "Refuser", "e": "🚫", "c": [{"mj": "Man pok", "fr": "Je refuse"}, {"mj": "Kë pok", "fr": "Tu refuses"}, {"mj": "Ka pok", "fr": "Il/Elle refuse"}, {"mj": "Wënd ka pok", "fr": "Nous refusons"}, {"mj": "Ndu pok", "fr": "Vous refusez"}, {"mj": "Buka pok", "fr": "Ils/Elles refusent"}]}, {"inf": "Pë pëni", "fr": "Sortir / Naître", "e": "🚪", "c": [{"mj": "Man pëni", "fr": "Je sors / Je suis né(e)"}, {"mj": "M'pëni", "fr": "Tu sors"}, {"mj": "A pëni", "fr": "Il/Elle sort"}, {"mj": "Wënda pëni", "fr": "Nous sortons"}, {"mj": "Nda pëni", "fr": "Vous sortez"}, {"mj": "Bu pëni", "fr": "Ils/Elles sortent"}]}, {"inf": "Pë pëya", "fr": "Monter", "e": "⬆️", "c": [{"mj": "Man pëya", "fr": "Je monte"}, {"mj": "Kë pëya", "fr": "Tu montes"}, {"mj": "Ka pëya", "fr": "Il/Elle monte"}, {"mj": "Wënd ka pëya", "fr": "Nous montons"}, {"mj": "Ndu pëya", "fr": "Vous montez"}, {"mj": "Buka pëya", "fr": "Ils/Elles montent"}]}, {"inf": "Pë raan", "fr": "Boire", "e": "🥤", "c": [{"mj": "Man ran mëlik", "fr": "Je bois de l'eau"}, {"mj": "Kë raan m'tow", "fr": "Tu bois du lait"}, {"mj": "Ka raan poat", "fr": "Il/Elle boit du vin"}, {"mj": "Wënd ka ran", "fr": "Nous buvons"}, {"mj": "Ndu raan", "fr": "Vous buvez"}, {"mj": "Buka raan", "fr": "Ils/Elles boivent"}]}, {"inf": "Pë rac", "fr": "Consoler", "e": "🫂", "c": [{"mj": "Man rac", "fr": "Je console"}, {"mj": "Kë rac", "fr": "Tu consoles"}, {"mj": "Ka rac", "fr": "Il/Elle console"}, {"mj": "Wënd ka rac", "fr": "Nous consolons"}, {"mj": "Ndu rac", "fr": "Vous consolez"}, {"mj": "Buka rac", "fr": "Ils/Elles consolent"}]}, {"inf": "Pë remban", "fr": "Enrichir", "e": "💰", "c": [{"mj": "Man remban", "fr": "J'enrichis"}, {"mj": "Kë remban", "fr": "Tu enrichis"}, {"mj": "Ka remban", "fr": "Il/Elle enrichit"}, {"mj": "Wënd ka remban", "fr": "Nous enrichissons"}, {"mj": "Ndu remban", "fr": "Vous enrichissez"}, {"mj": "Buka remban", "fr": "Ils/Elles enrichissent"}]}, {"inf": "Pë ret", "fr": "Présenter / Brandir solennellement", "e": "🙌", "c": [{"mj": "Man ret", "fr": "Je présente / Je brandis"}, {"mj": "Kë ret", "fr": "Tu présentes"}, {"mj": "Ka ret", "fr": "Il/Elle présente"}, {"mj": "Wënd ka ret", "fr": "Nous présentons"}, {"mj": "Ndu ret", "fr": "Vous présentez"}, {"mj": "Buka ret", "fr": "Ils/Elles présentent"}]}, {"inf": "Pë reñgan", "fr": "Ramener", "e": "🔄", "c": [{"mj": "Man reñgan", "fr": "Je ramène"}, {"mj": "Kë reñgan", "fr": "Tu ramènes"}, {"mj": "Ka reñgan", "fr": "Il/Elle ramène"}, {"mj": "Wënd ka reñgan", "fr": "Nous ramenons"}, {"mj": "Ndu reñgan", "fr": "Vous ramenez"}, {"mj": "Buka reñgan", "fr": "Ils/Elles ramènent"}]}, {"inf": "Pë ri", "fr": "Manquer / Envier", "e": "💔", "c": [{"mj": "Man ri", "fr": "Je manque / J'envie"}, {"mj": "Kë ri", "fr": "Tu manques"}, {"mj": "Ka ri", "fr": "Il/Elle manque"}, {"mj": "Wënd ka ri", "fr": "Nous manquons"}, {"mj": "Ndu ri", "fr": "Vous manquez"}, {"mj": "Buka ri", "fr": "Ils/Elles manquent"}]}, {"inf": "Pë ro", "fr": "Faire", "e": "🛠️", "c": [{"mj": "Man ro", "fr": "Je fais"}, {"mj": "Kë ro", "fr": "Tu fais"}, {"mj": "Ka ro", "fr": "Il/Elle fait"}, {"mj": "Wënd ka ro", "fr": "Nous faisons"}, {"mj": "Ndu ro", "fr": "Vous faites"}, {"mj": "Buka ro", "fr": "Ils/Elles font"}]}, {"inf": "Pë rug", "fr": "Pleurer", "e": "😢", "c": [{"mj": "Man rug", "fr": "Je pleure"}, {"mj": "Kë rug", "fr": "Tu pleures"}, {"mj": "Ka rug", "fr": "Il/Elle pleure"}, {"mj": "Wënd ka rug", "fr": "Nous pleurons"}, {"mj": "Ndu rug", "fr": "Vous pleurez"}, {"mj": "Buka rug", "fr": "Ils/Elles pleurent"}]}, {"inf": "Pë ruk", "fr": "Laisser", "e": "✋", "c": [{"mj": "Man ruk", "fr": "Je laisse"}, {"mj": "Kë ruk", "fr": "Tu laisses"}, {"mj": "Ka ruk", "fr": "Il/Elle laisse"}, {"mj": "Wënd ka ruk", "fr": "Nous laissons"}, {"mj": "Ndu ruk", "fr": "Vous laissez"}, {"mj": "Buka ruk", "fr": "Ils/Elles laissent"}]}, {"inf": "Pë ruka", "fr": "Rester", "e": "🏠", "c": [{"mj": "Man ruka", "fr": "Je reste"}, {"mj": "Kë ruka", "fr": "Tu restes"}, {"mj": "Ka ruka", "fr": "Il/Elle reste"}, {"mj": "Wënd ka ruka", "fr": "Nous restons"}, {"mj": "Ndu ruka", "fr": "Vous restez"}, {"mj": "Buka ruka", "fr": "Ils/Elles restent"}]}, {"inf": "Pë ruok", "fr": "Poursuivre", "e": "🏃", "c": [{"mj": "Man ruok", "fr": "Je poursuis"}, {"mj": "Kë ruok", "fr": "Tu poursuis"}, {"mj": "Ka ruok", "fr": "Il/Elle poursuit"}, {"mj": "Wënd ka ruok", "fr": "Nous poursuivons"}, {"mj": "Ndu ruok", "fr": "Vous poursuivez"}, {"mj": "Buka ruok", "fr": "Ils/Elles poursuivent"}]}, {"inf": "Pë rëmban", "fr": "Respecter", "e": "🙏", "c": [{"mj": "Man rëmban", "fr": "Je respecte"}, {"mj": "Kë rëmban", "fr": "Tu respectes"}, {"mj": "Ka rëmban", "fr": "Il/Elle respecte"}, {"mj": "Wënd ka rëmban", "fr": "Nous respectons"}, {"mj": "Ndu rëmban", "fr": "Vous respectez"}, {"mj": "Buka rëmban", "fr": "Ils/Elles respectent"}]}, {"inf": "Pë tamb", "fr": "Déféquer", "e": "🚽", "c": [{"mj": "Man tamb", "fr": "Je défèque"}, {"mj": "Kë tamb", "fr": "Tu défèques"}, {"mj": "Ka tamb", "fr": "Il/Elle défèque"}, {"mj": "Wënd ka tamb", "fr": "Nous déféquons"}, {"mj": "Ndu tamb", "fr": "Vous déféquez"}, {"mj": "Buka tamb", "fr": "Ils/Elles défèquent"}]}, {"inf": "Pë tan", "fr": "Attacher", "e": "🪢", "c": [{"mj": "Man tan", "fr": "J'attache"}, {"mj": "Kë tan", "fr": "Tu attaches"}, {"mj": "Ka tan", "fr": "Il/Elle attache"}, {"mj": "Wënd ka tan", "fr": "Nous attachons"}, {"mj": "Ndu tan", "fr": "Vous attachez"}, {"mj": "Buka tan", "fr": "Ils/Elles attachent"}]}, {"inf": "Pë tar", "fr": "Étendre", "e": "🌅", "c": [{"mj": "Man tar", "fr": "J'étends"}, {"mj": "Kë tar", "fr": "Tu étends"}, {"mj": "Ka tar", "fr": "Il/Elle étend"}, {"mj": "Wënd ka tar", "fr": "Nous étendons"}, {"mj": "Ndu tar", "fr": "Vous étendez"}, {"mj": "Buka tar", "fr": "Ils/Elles étendent"}]}, {"inf": "Pë tara", "fr": "S'étirer", "e": "🙆", "c": [{"mj": "Man tara", "fr": "Je m'étire"}, {"mj": "Kë tara", "fr": "Tu t'étires"}, {"mj": "Ka tara", "fr": "Il/Elle s'étire"}, {"mj": "Wënd ka tara", "fr": "Nous nous étirons"}, {"mj": "Ndu tara", "fr": "Vous vous étirez"}, {"mj": "Buka tara", "fr": "Ils/Elles s'étirent"}]}, {"inf": "Pë tiib", "fr": "Écrire", "e": "✍️", "c": [{"mj": "Man tiib", "fr": "J'écris"}, {"mj": "Kë tiib", "fr": "Tu écris"}, {"mj": "Ka tiib", "fr": "Il/Elle écrit"}, {"mj": "Wënd ka tiib", "fr": "Nous écrivons"}, {"mj": "Ndu tiib", "fr": "Vous écrivez"}, {"mj": "Buka tiib", "fr": "Ils/Elles écrivent"}]}, {"inf": "Pë tis", "fr": "Rentrer chez soi", "e": "🏡", "c": [{"mj": "Man tis", "fr": "Je rentre chez moi"}, {"mj": "Kë tis", "fr": "Tu rentres chez toi"}, {"mj": "Ka tis", "fr": "Il/Elle rentre chez soi"}, {"mj": "Wënd ka tis", "fr": "Nous rentrons chez nous"}, {"mj": "Ndu tis", "fr": "Vous rentrez chez vous"}, {"mj": "Buka tis", "fr": "Ils/Elles rentrent chez eux"}]}, {"inf": "Pë tsak", "fr": "Forger", "e": "⚒️", "c": [{"mj": "Man tsak", "fr": "Je forge"}, {"mj": "Kë tsak", "fr": "Tu forges"}, {"mj": "Ka tsak", "fr": "Il/Elle forge"}, {"mj": "Wënd ka tsak", "fr": "Nous forgeons"}, {"mj": "Ndu tsak", "fr": "Vous forgez"}, {"mj": "Buka tsak", "fr": "Ils/Elles forgent"}]}, {"inf": "Pë tsend", "fr": "Offrir solennellement", "e": "🎁", "c": [{"mj": "Man tsend", "fr": "J'offre solennellement"}, {"mj": "Kë tsend", "fr": "Tu offres solennellement"}, {"mj": "Ka tsend", "fr": "Il/Elle offre solennellement"}, {"mj": "Wënd ka tsend", "fr": "Nous offrons solennellement"}, {"mj": "Ndu tsend", "fr": "Vous offrez solennellement"}, {"mj": "Buka tsend", "fr": "Ils/Elles offrent solennellement"}]}, {"inf": "Pë tsuar", "fr": "S'asseoir", "e": "🪑", "c": [{"mj": "Man tsuar", "fr": "Je m'assieds"}, {"mj": "Kë tsuar", "fr": "Tu t'assieds"}, {"mj": "Ka tsuar", "fr": "Il/Elle s'assied"}, {"mj": "Wënd ka tsuar", "fr": "Nous nous asseyons"}, {"mj": "Ndu tsuar", "fr": "Vous vous asseyez"}, {"mj": "Buka tsuar", "fr": "Ils/Elles s'assoient"}]}, {"inf": "Pë tsënk", "fr": "Aider", "e": "🤝", "c": [{"mj": "Man tsënk", "fr": "J'aide"}, {"mj": "Kë tsënk", "fr": "Tu aides"}, {"mj": "Ka tsënk", "fr": "Il/Elle aide"}, {"mj": "Wënd ka tsënk", "fr": "Nous aidons"}, {"mj": "Ndu tsënk", "fr": "Vous aidez"}, {"mj": "Buka tsënk", "fr": "Ils/Elles aident"}]}, {"inf": "Pë tul", "fr": "Verser / Libation", "e": "🫗", "c": [{"mj": "Man tul", "fr": "Je verse / Je fais une libation"}, {"mj": "Kë tul", "fr": "Tu verses"}, {"mj": "Ka tul", "fr": "Il/Elle verse"}, {"mj": "Wënd ka tul", "fr": "Nous versons"}, {"mj": "Ndu tul", "fr": "Vous versez"}, {"mj": "Buka tul", "fr": "Ils/Elles versent"}]}, {"inf": "Pë waaf", "fr": "Applaudir", "e": "👏", "c": [{"mj": "Man waaf", "fr": "J'applaudis"}, {"mj": "Kë waaf", "fr": "Tu applaudis"}, {"mj": "Ka waaf", "fr": "Il/Elle applaudit"}, {"mj": "Wënd ka waaf", "fr": "Nous applaudissons"}, {"mj": "Ndu waaf", "fr": "Vous applaudissez"}, {"mj": "Buka waaf", "fr": "Ils/Elles applaudissent"}]}, {"inf": "Pë waap", "fr": "Vendre", "e": "🛒", "c": [{"mj": "Man waap", "fr": "Je vends"}, {"mj": "Kë waap", "fr": "Tu vends"}, {"mj": "Ka waap", "fr": "Il/Elle vend"}, {"mj": "Wënd ka waap", "fr": "Nous vendons"}, {"mj": "Ndu waap", "fr": "Vous vendez"}, {"mj": "Buka waap", "fr": "Ils/Elles vendent"}]}, {"inf": "Pë wat", "fr": "Faire tomber", "e": "💥", "c": [{"mj": "Man wat", "fr": "Je fais tomber"}, {"mj": "Kë wat", "fr": "Tu fais tomber"}, {"mj": "Ka wat", "fr": "Il/Elle fait tomber"}, {"mj": "Wënd ka wat", "fr": "Nous faisons tomber"}, {"mj": "Ndu wat", "fr": "Vous faites tomber"}, {"mj": "Buka wat", "fr": "Ils/Elles font tomber"}]}, {"inf": "Pë wel", "fr": "Acheter", "e": "💰", "c": [{"mj": "Man wel", "fr": "J'achète"}, {"mj": "Kë wel", "fr": "Tu achètes"}, {"mj": "Ka wel", "fr": "Il/Elle achète"}, {"mj": "Wënd ka wel", "fr": "Nous achetons"}, {"mj": "Ndu wel", "fr": "Vous achetez"}, {"mj": "Buka wel", "fr": "Ils/Elles achètent"}]}, {"inf": "Pë win", "fr": "Voir", "e": "👁️", "c": [{"mj": "Man win", "fr": "Je vois"}, {"mj": "Kë win", "fr": "Tu vois"}, {"mj": "Ka win", "fr": "Il/Elle voit"}, {"mj": "Wënd ka win", "fr": "Nous voyons"}, {"mj": "Ndu win", "fr": "Vous voyez"}, {"mj": "Buka win", "fr": "Ils/Elles voient"}]}, {"inf": "Pë witse", "fr": "Revenir", "e": "🔄", "c": [{"mj": "Man witse", "fr": "Je reviens"}, {"mj": "Kë witse", "fr": "Tu reviens"}, {"mj": "Ka witse", "fr": "Il/Elle revient"}, {"mj": "Wënd ka witse", "fr": "Nous revenons"}, {"mj": "Ndu witse", "fr": "Vous revenez"}, {"mj": "Buka witse", "fr": "Ils/Elles reviennent"}]}, {"inf": "Pë wëjats", "fr": "Penser", "e": "💭", "c": [{"mj": "Man wëjats", "fr": "Je pense"}, {"mj": "Kë wëjats", "fr": "Tu penses"}, {"mj": "Ka wëjats", "fr": "Il/Elle pense"}, {"mj": "Wënd ka wëjats", "fr": "Nous pensons"}, {"mj": "Ndu wëjats", "fr": "Vous pensez"}, {"mj": "Buka wëjats", "fr": "Ils/Elles pensent"}]}, {"inf": "Pë wël", "fr": "Donner", "e": "🎁", "c": [{"mj": "Man wël", "fr": "Je donne"}, {"mj": "Kë wël", "fr": "Tu donnes"}, {"mj": "Ka wël", "fr": "Il/Elle donne"}, {"mj": "Wënd ka wël", "fr": "Nous donnons"}, {"mj": "Ndu wël", "fr": "Vous donnez"}, {"mj": "Buka wël", "fr": "Ils/Elles donnent"}]}, {"inf": "Pë wët", "fr": "Arrêter", "e": "🛑", "c": [{"mj": "Man wët", "fr": "J'arrête"}, {"mj": "Kë wët", "fr": "Tu arrêtes"}, {"mj": "Ka wët", "fr": "Il/Elle arrête"}, {"mj": "Wënd ka wët", "fr": "Nous arrêtons"}, {"mj": "Ndu wët", "fr": "Vous arrêtez"}, {"mj": "Buka wët", "fr": "Ils/Elles arrêtent"}]}, {"inf": "Pë wëtan", "fr": "Abandonner / Quitter définitivement", "e": "🚪", "c": [{"mj": "Man wëtan", "fr": "J'abandonne / Je quitte"}, {"mj": "Kë wëtan", "fr": "Tu abandonnes"}, {"mj": "Ka wëtan", "fr": "Il/Elle abandonne"}, {"mj": "Wënd ka wëtan", "fr": "Nous abandonnons"}, {"mj": "Ndu wëtan", "fr": "Vous abandonnez"}, {"mj": "Buka wëtan", "fr": "Ils/Elles abandonnent"}]}, {"inf": "Pë wëtani", "fr": "Quitter temporairement / Finir sa journée", "e": "⏸️", "c": [{"mj": "Man wëtani", "fr": "Je finis ma journée"}, {"mj": "Kë wëtani", "fr": "Tu finis ta journée"}, {"mj": "Ka wëtani", "fr": "Il/Elle finit sa journée"}, {"mj": "Wënd ka wëtani", "fr": "Nous finissons notre journée"}, {"mj": "Ndu wëtani", "fr": "Vous finissez votre journée"}, {"mj": "Buka wëtani", "fr": "Ils/Elles finissent leur journée"}]}, {"inf": "Pë ya", "fr": "Aller", "e": "🏃", "c": [{"mj": "Man ya", "fr": "Je vais"}, {"mj": "Kë ya ⚠️", "fr": "Tu vas"}, {"mj": "Ka ya ⚠️", "fr": "Il/Elle va"}, {"mj": "Wënd ka ya", "fr": "Nous allons"}, {"mj": "Ndu ya ⚠️", "fr": "Vous allez"}, {"mj": "Buka ya", "fr": "Ils/Elles vont"}]}, {"inf": "Pë yandar", "fr": "Marcher / Se déplacer", "e": "🚶", "c": [{"mj": "Man yandar", "fr": "Je marche / Je me déplace"}, {"mj": "Kë yandar", "fr": "Tu marches"}, {"mj": "Ka yandar", "fr": "Il/Elle marche"}, {"mj": "Wënd ka yandar", "fr": "Nous marchons"}, {"mj": "Ndu yandar", "fr": "Vous marchez"}, {"mj": "Buka yandar", "fr": "Ils/Elles marchent"}]}, {"inf": "Pë yefënts", "fr": "Respirer", "e": "🌬️", "c": [{"mj": "Man yefënts", "fr": "Je respire"}, {"mj": "Kë yefënts", "fr": "Tu respires"}, {"mj": "Ka yefënts", "fr": "Il/Elle respire"}, {"mj": "Wënd ka yefënts", "fr": "Nous respirons"}, {"mj": "Ndu yefënts", "fr": "Vous respirez"}, {"mj": "Buka yefënts", "fr": "Ils/Elles respirent"}]}, {"inf": "Pë yepar", "fr": "Demander", "e": "🙋", "c": [{"mj": "Man yepar", "fr": "Je demande"}, {"mj": "Kë yepar", "fr": "Tu demandes"}, {"mj": "Ka yepar", "fr": "Il/Elle demande"}, {"mj": "Wënd ka yepar", "fr": "Nous demandons"}, {"mj": "Ndu yepar", "fr": "Vous demandez"}, {"mj": "Buka yepar", "fr": "Ils/Elles demandent"}]}, {"inf": "Pë ylan", "fr": "Parvenir / Réussir / Arriver à", "e": "✅", "c": [{"mj": "Man ylan", "fr": "Je réussis / J'y arrive"}, {"mj": "Kë ylan", "fr": "Tu réussis"}, {"mj": "Ka ylan", "fr": "Il/Elle réussit"}, {"mj": "Wënd ka ylan", "fr": "Nous réussissons"}, {"mj": "Ndu ylan", "fr": "Vous réussissez"}, {"mj": "Buka ylan", "fr": "Ils/Elles réussissent"}]}, {"inf": "Pë ylants", "fr": "Échouer", "e": "❌", "c": [{"mj": "Man ylants", "fr": "J'échoue"}, {"mj": "Kë ylants", "fr": "Tu échoues"}, {"mj": "Ka ylants", "fr": "Il/Elle échoue"}, {"mj": "Wënd ka ylants", "fr": "Nous échouons"}, {"mj": "Ndu ylants", "fr": "Vous échouez"}, {"mj": "Buka ylants", "fr": "Ils/Elles échouent"}]}, {"inf": "Pë yu", "fr": "Piquer / Poignarder", "e": "🗡️", "c": [{"mj": "Man yu", "fr": "Je pique / Je poignarde"}, {"mj": "Kë yu", "fr": "Tu piques"}, {"mj": "Ka yu", "fr": "Il/Elle pique"}, {"mj": "Wënd ka yu", "fr": "Nous piquons"}, {"mj": "Ndu yu", "fr": "Vous piquez"}, {"mj": "Buka yu", "fr": "Ils/Elles piquent"}]}, {"inf": "Pë yël", "fr": "Charger quelqu'un de", "e": "📋", "c": [{"mj": "Man yël", "fr": "Je charge quelqu'un de"}, {"mj": "Kë yël", "fr": "Tu charges quelqu'un de"}, {"mj": "Ka yël", "fr": "Il/Elle charge quelqu'un de"}, {"mj": "Wënd ka yël", "fr": "Nous chargeons quelqu'un de"}, {"mj": "Ndu yël", "fr": "Vous chargez quelqu'un de"}, {"mj": "Buka yël", "fr": "Ils/Elles chargent quelqu'un de"}]}, {"inf": "Pë yër", "fr": "Tomber", "e": "⬇️", "c": [{"mj": "Man yër", "fr": "Je tombe"}, {"mj": "Kë yër", "fr": "Tu tombes"}, {"mj": "Ka yër", "fr": "Il/Elle tombe"}, {"mj": "Wënd ka yër", "fr": "Nous tombons"}, {"mj": "Ndu yër", "fr": "Vous tombez"}, {"mj": "Buka yër", "fr": "Ils/Elles tombent"}]}, {"inf": "Pë ñan", "fr": "Prier", "e": "🙏", "c": [{"mj": "Man ñan", "fr": "Je prie"}, {"mj": "M'ñan", "fr": "Tu pries"}, {"mj": "A ñan", "fr": "Il/Elle prie"}, {"mj": "Wënda ñan", "fr": "Nous prions"}, {"mj": "Nda ñan", "fr": "Vous priez"}, {"mj": "Bu ñan", "fr": "Ils/Elles prient"}]}, {"inf": "Pë ñgaal", "fr": "Vouloir / Aimer", "e": "❤️", "c": [{"mj": "Man ñgaal", "fr": "Je veux/J'aime"}, {"mj": "M'ñgaal", "fr": "Tu veux"}, {"mj": "A ñgaal", "fr": "Il/Elle veut"}, {"mj": "Wënda ñgaal", "fr": "Nous voulons"}, {"mj": "Nda ñgaal", "fr": "Vous voulez"}, {"mj": "Bu ñgaal", "fr": "Ils/Elles veulent"}]}, {"inf": "Pë ñgoy", "fr": "Dormir", "e": "😴", "c": [{"mj": "Man ñgoy", "fr": "Je dors"}, {"mj": "M'ñgoy", "fr": "Tu dors"}, {"mj": "A ñgoy", "fr": "Il/Elle dort"}, {"mj": "Wënda ñgoy", "fr": "Nous dormons"}, {"mj": "Nda ñgoy", "fr": "Vous dormez"}, {"mj": "Bu ñgoy", "fr": "Ils/Elles dorment"}]}, {"inf": "Pë ñingits", "fr": "Tisser", "e": "🧵", "c": [{"mj": "Man ñingits", "fr": "Je tisse"}, {"mj": "Kë ñingits", "fr": "Tu tisses"}, {"mj": "Ka ñingits", "fr": "Il/Elle tisse"}, {"mj": "Wënd ka ñingits", "fr": "Nous tissons"}, {"mj": "Ndu ñingits", "fr": "Vous tissez"}, {"mj": "Buka ñingits", "fr": "Ils/Elles tissent"}]}, {"inf": "Pë ñow", "fr": "Laver", "e": "🧼", "c": [{"mj": "Man ñow", "fr": "Je lave"}, {"mj": "Kë ñow", "fr": "Tu laves"}, {"mj": "Ka ñow", "fr": "Il/Elle lave"}, {"mj": "Wënd ka ñow", "fr": "Nous lavons"}, {"mj": "Ndu ñow", "fr": "Vous lavez"}, {"mj": "Buka ñow", "fr": "Ils/Elles lavent"}]}, {"inf": "Pë ñowa", "fr": "Se laver / Se purifier", "e": "🚿", "c": [{"mj": "Man ñowa", "fr": "Je me lave / Je me purifie"}, {"mj": "Kë ñowa", "fr": "Tu te laves"}, {"mj": "Ka ñowa", "fr": "Il/Elle se lave"}, {"mj": "Wënd ka ñowa", "fr": "Nous nous lavons"}, {"mj": "Ndu ñowa", "fr": "Vous vous lavez"}, {"mj": "Buka ñowa", "fr": "Ils/Elles se lavent"}]}], "PRONOMS": [{"fort": "Inji", "sujet": "Man", "fr": "Moi / Je"}, {"fort": "Wi", "sujet": "M' / Kë", "fr": "Toi / Tu"}, {"fort": "Nul", "sujet": "A / Ka", "fr": "Il / Elle"}, {"fort": "Wënd", "sujet": "Wënda", "fr": "Nous (exclusif)"}, {"fort": "Inja", "sujet": "Ngë", "fr": "Nous (inclusif)"}, {"fort": "Ind", "sujet": "Nda / Ndu", "fr": "Vous"}, {"fort": "Bukul", "sujet": "Bu / Buka", "fr": "Eux / Elles"}], "REGLES": [{"t": "Le passé — Adon", "c": "Adon est le marqueur du passé. Ex: U lof adon ka re ul (La soif lui faisait mal). A don lofënts (Il avait soif). Structure: [sujet] + adon + [verbe/état]."}, {"t": "Les suffixes verbaux", "c": "Les suffixes changent le sens du verbe. -i = vers quelqu'un/sortir (Pë yani = rendre visite). -an = action sur quelque chose (Pë pënan = enlever). -ani = action depuis quelque chose (Pë pënani = retirer de). -and = partir avec (Pë yaand = emmener). -andi = remporter/obtenir (Pë pënandi = remporter)."}, {"t": "L'impératif", "c": "L'impératif se forme en ajoutant -an à la fin du verbe. Tu = verbe+an (Yaan, Rielan). Qu'il/elle = Na + verbe (Na ya). Nous = Ngë + verbe (Ngë ya). Vous = Nda + verbe+an (Nda yaan)."}, {"t": "Le complément d'objet", "c": "En manjaku le complément se place directement après le verbe. Ex: Man lip u (Je t'attends), Kë lip in (Tu m'attends). Pronoms compléments: in = me/moi, u = te/toi, ul = le/la/lui, ind = vous, wënd = nous, bukul = les/leur."}, {"t": "Deux groupes de verbes", "c": "Groupe 1 (M', A, Wënda): ci, yës, lilan, me, te, ñgaal… Groupe 2 (Kë, Ka, Wënd ka, Ndu, Buka): ya, ja, juk, ro, lok, jaka… Man (je) est identique dans les deux groupes !"}, {"t": "L'adjectif après le nom", "c": "En manjak, l'adjectif se place toujours après le nom. Ex: Kato kawar (belle maison), Uncam mak (beaucoup d'argent)."}, {"t": "Deux 'nous'", "c": "Wënd/Wënda = nous sans la personne à qui on parle (exclusif). Inja/Ngë = nous avec la personne à qui on parle (inclusif)."}, {"t": "La possession", "c": "Inji = mon/ma — U = ton/ta — Ul = son/sa. Ex: Anin inji (ma mère), Atiem ul nints (son grand-père)."}, {"t": "Ka reen — exprimer la douleur", "c": "[partie du corps / besoin] + ka reen exprime la douleur. Ex: Been ka reen (j'ai mal à la tête), U bon ka reen (j'ai faim)."}, {"t": "Les classes nominales", "c": "Singulier: Ka, U, Pë, Bë, Na. Pluriel: I, Ngë. Ex: Ka misa → I misa, U roba → Ngë roba."}, {"t": "Le futur proche", "c": "Man ya pë [verbe] = je vais faire qqch. Ex: Man ya pë ño (je vais me doucher). Ya + lieu: Man ya kato (je vais à la maison)."}, {"t": "Riela = Diela — R et D interchangeables", "c": "Le R et le D sont interchangeables en manjaku. Ex: Pë riela = Pë diela (manger). Les deux formes sont correctes."}, {"t": "La négation — Dika", "c": "Dika est le marqueur de la négation. Il se place après le sujet. Ex: Man dika ya (Je ne vais pas), Ka dika me (Il/Elle ne sait pas)."}, {"t": "Prépositions et connecteurs", "c": "Avec = Ni | Avant = Di brun | Après = Tsi brun | Devant = Di brun | Derrière = Di ufets | À côté = Di kanban | Dedans = Di bametsu | Dehors = Di utsand | Dessus = Di ruëts | Dessous = Di utsia | Mais = Ma | Toujours = Maa | Tête nue = Been bë jënts | À la fin = U ba"}, {"t": "Les classificateurs numéraux", "c": "En manjaku, le classificateur (1, 2...) suit la classe nominale du mot. La classe est indiquée par le préfixe du nom. Exemples : Pë mangu → Pëlon pë mangu (1 mangue) / Ngëlon ngë mangu (des mangues). Ka mañ → Kalon ka mañ (1 sac) / Ilon i mañ (des sacs). U bus → Ulon u bus (1 chien) / Ngëlon ngë bus (des chiens). Na cunkan → Nalon na cunkan (1 soignant) / Balon ba cunkan (des soignants). La règle : le classificateur reprend le préfixe singulier du nom."}, {"t": "Di — préposition de lieu", "c": "Di = à / au / dans (lieu). Ex: Di kanëm = au marché. Di kato = à la maison. Di tsëko = à l'endroit."}, {"t": "Les temps du passé — Adon vs A ne", "c": "Adon = imparfait — action qui durait dans le passé. Ex: Adon ka pëya m'cem = Il montait au palmier. /// A ne = passé simple — action accomplie, soudaine. Ex: A ne yër = Il est tombé. /// Exemple complet: Adon ka pëya m'cem, a ne yër, a na cets = Il montait au palmier, il est tombé et il est mort."}], "ESSENTIELS": [{"fr": "Oui", "mj": "Eyo"}, {"fr": "Non", "mj": "An-an"}, {"fr": "Bravo !", "mj": "Ina !"}, {"fr": "Merci", "mj": "Baran"}, {"fr": "Bien", "mj": "Uwar"}, {"fr": "Un peu", "mj": "Kotiës"}, {"fr": "Beaucoup", "mj": "Mak"}, {"fr": "J'ai bien dormi", "mj": "Man ñgoy uwar"}, {"fr": "Je me suis bien levé", "mj": "Man natsa uwar"}, {"fr": "Je vais me doucher", "mj": "Man ya pë ño"}, {"fr": "Je vais à la maison", "mj": "Man ya kato"}, {"fr": "Je vais faire pipi", "mj": "Man ya katuan"}], "INTERROGATIFS": [{"fr": "Où ?", "mj": "Tsùm"}, {"fr": "Quoi ?", "mj": "We"}, {"fr": "Comment ? / Quel ?", "mj": "Um"}, {"fr": "Qui ?", "mj": "Yën"}, {"fr": "Quand ?", "mj": "Lum"}, {"fr": "Pourquoi ?", "mj": "Ni we"}, {"fr": "Combien ?", "mj": "Um"}], "VOYELLES": [{"l": "A", "s": "Comme en français"}, {"l": "à", "s": "Voyelle tendue"}, {"l": "aa", "s": "Voyelle longue"}, {"l": "E", "s": "Se prononce é"}, {"l": "ë", "s": "Se prononce eu (peur)"}, {"l": "ee", "s": "Voyelle longue"}, {"l": "I", "s": "Comme en français"}, {"l": "O", "s": "Comme en français"}, {"l": "oo", "s": "Voyelle longue"}, {"l": "U", "s": "Se prononce ou (coucou)"}, {"l": "ù", "s": "Voyelle tendue"}, {"l": "uu", "s": "Voyelle longue"}], "CONSONNES": [{"l": "C", "s": "Son TCH (tchin)"}, {"l": "K", "s": "Son Q/K dur (qui)"}, {"l": "J", "s": "Son DJ (djembé)"}, {"l": "G", "s": "Son GUE (guêpe)"}, {"l": "Ñ", "s": "Son GNE (agneau)"}]}</script>
+
+<script>
+var D=JSON.parse(document.getElementById('jdata').textContent);
+var LECONS=D.LECONS,VERBES=D.VERBES,PRONOMS=D.PRONOMS,REGLES=D.REGLES,ESSENTIELS=D.ESSENTIELS,INTERROGATIFS=D.INTERROGATIFS,VOYELLES=D.VOYELLES,CONSONNES=D.CONSONNES;
+var TM=LECONS.reduce(function(a,l){return a+l.mots.length;},0)+ESSENTIELS.length;
+var tab='a',lecon=null,verbe=null,sec=null,flipped={},srch='';
+var quiz={on:false,l:null,i:0,sc:0,rep:null,fin:false,opts:[]};
+
+function go(t){
+  tab=t;lecon=null;verbe=null;
+  document.querySelectorAll('.nb').forEach(function(b){b.classList.remove('on');});
+  document.getElementById('nb-'+t).classList.add('on');
+  draw();
+}
+function esc(s){if(!s)return'';return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function draw(){
+  var c=document.getElementById('ct');
+  c.scrollTop=0;
+  var html='';
+  if(tab==='a')html=pageA();
+  else if(tab==='l')html=lecon?pageL():pageLS();
+  else if(tab==='g')html=pageG();
+  else if(tab==='q')html=pageQ();
+  else if(tab==='d')html=pageD();
+  else if(tab==='ap')html=pageAP();
+  c.innerHTML=html;
+  if(tab==='d'){var si=document.getElementById('si');if(si){si.value=srch;si.addEventListener('input',function(){US(this.value);});}}
+}
+
+// ── ACCUEIL ──
+function pageA(){
+  var r='<div class="anim-up">';
+  r+='<div class="hero">';
+  r+='<div class="hero-title">✦ Bienvenue</div>';
+  r+='<p class="hero-text">Se reconnecter à ses racines.<br>Transmettre la langue à ses enfants.<br>Préserver une identité.</p>';
+  r+='</div>';
+  r+='<div class="stats">';
+  r+='<div class="stat"><div class="stat-v">'+LECONS.length+'</div><div class="stat-l">Leçons</div></div>';
+  r+='<div class="stat"><div class="stat-v">'+TM+'</div><div class="stat-l">Mots</div></div>';
+  r+='<div class="stat"><div class="stat-v">'+VERBES.length+'</div><div class="stat-l">Verbes</div></div>';
+  r+='</div>';
+  r+='<div class="sec-label">Leçons disponibles</div>';
+  r+='<div class="lc-grid">';
+  for(var i=0;i<LECONS.length;i++){
+    var l=LECONS[i];
+    r+='<div class="lc" onclick="OL('+i+')" style="--c:'+l.couleur+';animation-delay:'+(i*0.04)+'s">';
+    r+='<span class="lc-emoji">'+esc(l.emoji)+'</span>';
+    r+='<div class="lc-name">'+esc(l.titre)+'</div>';
+    r+='<div class="lc-count">'+l.mots.length+' mots</div>';
+    r+='<div class="lc-accent"></div>';
+    r+='</div>';
+  }
+  r+='</div></div>';
+  return r;
+}
+
+function OL(i){lecon=LECONS[i];flipped={};tab='l';document.querySelectorAll('.nb').forEach(function(b){b.classList.remove('on');});document.getElementById('nb-l').classList.add('on');draw();}
+
+// ── LISTE LEÇONS ──
+function pageLS(){
+  var r='<h2 class="page-title">Leçons</h2><div class="lc-grid">';
+  for(var i=0;i<LECONS.length;i++){
+    var l=LECONS[i];
+    r+='<div class="lc" onclick="OL('+i+')" style="--c:'+l.couleur+';animation-delay:'+(i*0.04)+'s">';
+    r+='<span class="lc-emoji">'+esc(l.emoji)+'</span>';
+    r+='<div class="lc-name">'+esc(l.titre)+'</div>';
+    r+='<div class="lc-count">'+l.mots.length+' mots</div>';
+    r+='<div class="lc-accent"></div>';
+    r+='</div>';
+  }
+  r+='</div>';
+  return r;
+}
+
+// ── DÉTAIL LEÇON ──
+function pageL(){
+  var l=lecon;var li=LECONS.indexOf(l);
+  var r='<div class="anim-up">';
+  r+='<button class="back-btn" onclick="lecon=null;draw()">← Retour</button>';
+  
+  // Leçons verrouillées
+  var verrouillee = l.id === 'spiritualite' && !isPremium;
+  if(verrouillee){
+    r+='<div class="lecon-header">';
+    r+='<div class="lecon-header-emoji">🔒</div>';
+    r+='<h2>'+esc(l.titre)+'</h2>';
+    r+='</div>';
+    r+='<div style="background:rgba(200,137,42,0.08);border:1px solid rgba(200,137,42,0.3);border-radius:18px;padding:28px 20px;text-align:center;margin:20px 0">';
+    r+='<div style="font-size:48px;margin-bottom:12px">🔒</div>';
+    r+='<h3 style="color:var(--gold);font-family:Cinzel,serif;margin-bottom:10px">Contenu Premium</h3>';
+    r+='<p style="color:rgba(240,232,216,0.75);font-size:13px;margin-bottom:20px;line-height:1.7">Cette leçon est réservée aux membres premium.<br>Accède à toutes les leçons à vie pour seulement <strong style="color:var(--gold)">19€</strong>.</p>';
+    r+='<div style="margin:20px 0" id="stripe-btn-container"></div>';
+    r+='<p style="color:rgba(240,232,216,0.5);font-size:11px;margin-top:16px">✦ Accès à vie · Nouvelles leçons chaque mois · La première app manjaku au monde</p>';
+    r+='</div>';
+    r+='</div>';
+    return r;
+  }
+  r+='<div class="lecon-header">';
+  r+='<div class="lecon-header-emoji">'+esc(l.emoji)+'</div>';
+  r+='<h2>'+esc(l.titre)+'</h2>';
+  r+='<p>'+l.mots.filter(function(m){return m.fr.indexOf('---')!==0;}).length+' mots et expressions</p>';
+  r+='</div>';
+  r+='<div style="background:rgba(200,137,42,0.1);border:1px solid rgba(200,137,42,0.25);border-radius:10px;padding:10px 14px;margin-bottom:14px;display:flex;align-items:center;gap:8px"><span style="font-size:16px">👆</span><span style="font-size:12px;color:rgba(240,232,216,0.75)">Appuie sur chaque carte pour voir la réponse</span></div>';
+  for(var i=0;i<l.mots.length;i++){
+    var m=l.mots[i];
+    if(m.fr.indexOf('---')===0){r+='<div class="sep-lbl">'+esc(m.fr.replace(/---/g,'').trim())+'</div>';continue;}
+    var f=flipped[i];
+    r+='<div class="mc'+(f?' open':'')+'" onclick="FC('+i+')" style="animation-delay:'+(i*0.03)+'s">';
+    r+='<div class="mc-row">';
+    r+='<div><div class="mc-fr-lbl">Français</div><div class="mc-fr">'+esc(m.fr)+'</div></div>';
+    r+='<div><div class="mc-mj-lbl">Manjaku</div><div class="mc-mj">'+esc(m.mj)+'</div></div>';
+    r+='</div>';
+    if(f&&m.reponse)r+='<div class="mc-extra"><div class="mc-extra-lbl">Réponse</div><div class="mc-extra-val">'+esc(m.reponse)+'</div></div>';
+    if(f&&m.exemple)r+='<div class="mc-extra"><div class="mc-extra-lbl">Exemple</div><div class="mc-extra-val">'+esc(m.exemple)+'</div></div>';
+    r+='</div>';
+  }
+  r+='<button class="test-btn" onclick="SQ('+li+')">🎯 Tester cette leçon</button>';
+  r+='</div>';
+  return r;
+}
+function FC(i){flipped[i]=!flipped[i];draw();}
+
+// ── GRAMMAIRE ──
+function pageG(){
+  var secs=[
+    {id:'rg',lb:'📜 Règles de grammaire'},
+    {id:'pp',lb:'👥 Pronoms personnels'},
+    {id:'po',lb:'🔑 Pronoms possessifs'},
+    {id:'pi',lb:'❓ Mots interrogatifs'},
+    {id:'vb',lb:'⚡ Verbes conjugués'},
+    {id:'al',lb:'🔤 Alphabet & sons'},
+    {id:'es',lb:'⭐ Mots essentiels'}
+  ];
+  var r='<h2 class="page-title">Grammaire</h2>';
+  for(var i=0;i<secs.length;i++){
+    var s=secs[i];var isOpen=(sec===s.id);
+    r+='<div class="sg'+(isOpen?' op':'')+'" onclick="TS(\''+s.id+'\')" style="animation-delay:'+(i*0.05)+'s">';
+    r+='<span class="sg-title">'+s.lb+'</span>';
+    r+='<span class="sg-icon">▼</span>';
+    r+='</div>';
+    if(isOpen)r+='<div class="sg-content">'+RS(s.id)+'</div>';
+  }
+  return r;
+}
+function TS(id){sec=(sec===id)?null:id;verbe=null;draw();}
+function RS(id){
+  var r='';
+  if(id==='rg'){
+    for(var i=0;i<REGLES.length;i++){
+      var rg=REGLES[i];
+      r+='<div class="rc"><div class="rc-title">'+esc(rg.t)+'</div><div class="rc-text">'+esc(rg.c)+'</div></div>';
+    }
+  }
+  else if(id==='pp'){
+    r='<div style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-bottom:6px">';
+    for(var i=0;i<PRONOMS.length;i++){
+      var p=PRONOMS[i];
+      r+='<div class="prn-row"><div class="prn-fort">'+esc(p.fort)+'</div><div class="prn-suj">'+esc(p.sujet)+'</div><div class="prn-fr">'+esc(p.fr)+'</div></div>';
+    }
+    r+='</div>';
+  }
+  else if(id==='po'){
+    var tbls=[
+      {t:'Objets (Ka/I)',rows:[{fr:'Mien',sg:'Ka miñ',pl:'I miñ'},{fr:'Tien',sg:'Kic u',pl:'Ic u'},{fr:'Sien',sg:'Kic ul',pl:'Ic ul'},{fr:'Notre',sg:'Kic wend',pl:'Ic wend'},{fr:'Votre',sg:'Kic ind',pl:'Ic ind'},{fr:'Leur',sg:'Kic bukul',pl:'Ic bukul'}]},
+      {t:'Personnes (Na/Ba)',rows:[{fr:'Mien',sg:'Na miñ',pl:'Ba miñ'},{fr:'Tien',sg:'Nic u',pl:'Ba ic u'},{fr:'Sien',sg:'Nic ul',pl:'Ba ic ul'}]}
+    ];
+    for(var ti=0;ti<tbls.length;ti++){
+      var tbl=tbls[ti];
+      r+='<div class="poss-table"><div class="poss-title">'+tbl.t+'</div><table><thead><tr><th></th><th>Singulier</th><th>Pluriel</th></tr></thead><tbody>';
+      for(var j=0;j<tbl.rows.length;j++){
+        var row=tbl.rows[j];
+        r+='<tr><td style="color:var(--muted)">'+row.fr+'</td><td style="color:var(--gold);font-weight:700">'+row.sg+'</td><td style="color:rgba(240,192,64,0.65)">'+row.pl+'</td></tr>';
+      }
+      r+='</tbody></table></div>';
+    }
+  }
+  else if(id==='pi'){
+    r='<div style="display:grid;grid-template-columns:1fr 1fr;gap:6px">';
+    for(var i=0;i<INTERROGATIFS.length;i++){
+      var m=INTERROGATIFS[i];
+      r+='<div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:10px;text-align:center"><div style="font-size:11px;color:var(--muted);margin-bottom:4px">'+esc(m.fr)+'</div><div style="font-size:15px;font-weight:700;color:var(--gold)">'+esc(m.mj)+'</div></div>';
+    }
+    r+='</div>';
+  }
+  else if(id==='vb'){
+    if(verbe){
+      r='<button class="back-btn" onclick="verbe=null;draw()" style="margin-bottom:12px">← Retour</button>';
+      r+='<div style="text-align:center;background:linear-gradient(135deg,rgba(200,137,42,0.15),rgba(200,137,42,0.04));border:1px solid var(--border);border-radius:var(--radius);padding:16px;margin-bottom:12px">';
+      r+='<div style="font-size:30px;margin-bottom:6px">'+esc(verbe.e)+'</div>';
+      r+='<div style="font-family:Cinzel,serif;font-size:15px;color:var(--gold);font-weight:700">'+esc(verbe.inf)+'</div>';
+      r+='<div style="font-size:12px;color:var(--muted);margin-top:3px">'+esc(verbe.fr)+'</div>';
+      r+='</div>';
+      r+='<div class="verb-detail-grid">';
+      for(var i=0;i<verbe.c.length;i++){
+        var cv=verbe.c[i];
+        r+='<div class="verb-row" style="animation-delay:'+(i*0.05)+'s"><span class="verb-fr-small">'+esc(cv.fr)+'</span><span class="verb-mj-val">'+esc(cv.mj)+'</span></div>';
+      }
+      r+='</div>';
+    }else{
+      for(var i=0;i<VERBES.length;i++){
+        var v=VERBES[i];
+        r+='<div class="verb-list-item" onclick="OV('+i+')" style="animation-delay:'+(i*0.03)+'s">';
+        r+='<span class="verb-emoji">'+esc(v.e)+'</span>';
+        r+='<div class="verb-info"><div class="verb-mj">'+esc(v.inf)+'</div><div class="verb-fr">'+esc(v.fr)+'</div></div>';
+        r+='<span style="color:var(--border);font-size:13px">›</span>';
+        r+='</div>';
+      }
+    }
+  }
+  else if(id==='al'){
+    r='<div style="margin-bottom:12px"><div style="font-size:10px;color:var(--gold3);letter-spacing:2px;text-transform:uppercase;margin-bottom:8px">Voyelles spéciales</div>';
+    r+='<div class="alpha-grid">';
+    for(var i=0;i<VOYELLES.length;i++){
+      var v=VOYELLES[i];
+      r+='<div class="alpha-cell"><div class="alpha-letter">'+esc(v.l)+'</div><div class="alpha-sound">'+esc(v.s)+'</div></div>';
+    }
+    r+='</div></div>';
+    r+='<div style="font-size:10px;color:var(--gold3);letter-spacing:2px;text-transform:uppercase;margin-bottom:8px">Consonnes spéciales</div>';
+    r+='<div style="display:grid;grid-template-columns:repeat(5,1fr);gap:6px">';
+    for(var i=0;i<CONSONNES.length;i++){
+      var cv=CONSONNES[i];
+      r+='<div style="background:rgba(200,137,42,0.12);border:1px solid var(--border);border-radius:10px;padding:10px 4px;text-align:center">';
+      r+='<div style="font-size:18px;font-weight:700;color:var(--gold);font-family:Cinzel,serif">'+esc(cv.l)+'</div>';
+      r+='<div style="font-size:9px;color:var(--muted);margin-top:4px;line-height:1.3">'+esc(cv.s)+'</div>';
+      r+='</div>';
+    }
+    r+='</div>';
+  }
+  else if(id==='es'){
+    for(var i=0;i<ESSENTIELS.length;i++){
+      var m=ESSENTIELS[i];
+      r+='<div class="ess-item"><span class="ess-fr">'+esc(m.fr)+'</span><span class="ess-mj">'+esc(m.mj)+'</span></div>';
+    }
+  }
+  return r;
+}
+function OV(i){verbe=VERBES[i];draw();}
+
+// ── QUIZ ──
+function genO(m,ms){
+  if(ms.length<4)return ms;
+  var a=ms.filter(function(x){return x.mj!==m.mj;}).sort(function(){return Math.random()-0.5;}).slice(0,3);
+  return a.concat([m]).sort(function(){return Math.random()-0.5;});
+}
+function SQ(i){
+  var l=LECONS[i];
+  var mots=l.mots.filter(function(m){return m.fr&&m.mj&&m.fr.indexOf('---')!==0;});
+  var shuffled=mots.slice().sort(function(){return Math.random()-0.5;}).slice(0,10);
+  quiz={on:true,l:{id:l.id,titre:l.titre,mots:shuffled},i:0,sc:0,rep:null,fin:false,opts:genO(shuffled[0],shuffled)};
+  go('q');
+}
+function pageQ(){
+  if(!quiz.on&&!quiz.fin){
+    var r='<h2 class="page-title">Quiz</h2>';
+    r+='<p style="font-size:12px;color:var(--muted);margin-bottom:16px">Choisissez une leçon pour vous tester</p>';
+    for(var i=0;i<LECONS.length;i++){
+      var l=LECONS[i];
+      r+='<div class="quiz-list-item" onclick="SQ('+i+')" style="animation-delay:'+(i*0.04)+'s">';
+      r+='<span style="font-size:22px">'+esc(l.emoji)+'</span>';
+      r+='<div style="flex:1"><div style="font-weight:600;font-size:13px">'+esc(l.titre)+'</div><div style="font-size:10px;color:var(--muted);margin-top:2px">'+l.mots.filter(function(m){return m.fr.indexOf('---')!==0;}).length+' questions</div></div>';
+      r+='<span style="color:var(--gold);font-size:13px">›</span>';
+      r+='</div>';
+    }
+    return r;
+  }
+  if(quiz.fin){
+    var e=quiz.sc===quiz.l.mots.length?'🏆':quiz.sc>=quiz.l.mots.length/2?'⭐':'💪';
+    return '<div class="quiz-fin">'+
+      '<span class="quiz-fin-trophy">'+e+'</span>'+
+      '<div class="quiz-fin-score">'+quiz.sc+' / '+quiz.l.mots.length+'</div>'+
+      '<div class="quiz-fin-msg">'+(quiz.sc===quiz.l.mots.length?'Parfait, bravo !':quiz.sc>=quiz.l.mots.length/2?'Bien joué !':'Continue, tu progresses !')+'</div>'+
+      '<button class="test-btn" style="max-width:220px;margin:0 auto;display:block" onclick="quiz={on:false,l:null,i:0,sc:0,rep:null,fin:false,opts:[]};draw()">Recommencer</button>'+
+      '</div>';
+  }
+  var m=quiz.l.mots[quiz.i];
+  var r='<div class="quiz-wrap">';
+  r+='<div class="quiz-top"><button class="quiz-close" onclick="quiz={on:false,l:null,i:0,sc:0,rep:null,fin:false,opts:[]};draw()">✕</button><div class="quiz-num">'+(quiz.i+1)+' / '+quiz.l.mots.length+'</div><div class="quiz-score">⭐ '+quiz.sc+'</div></div>';
+  r+='<div class="quiz-prog-bar"><div class="quiz-prog-fill" style="width:'+Math.round(quiz.i/quiz.l.mots.length*100)+'%"></div></div>';
+  r+='<div class="quiz-q"><div class="quiz-q-lbl">Comment dit-on en Manjaku ?</div><div class="quiz-q-word">'+esc(m.fr)+'</div></div>';
+  r+='<div class="quiz-opts">';
+  for(var i=0;i<quiz.opts.length;i++){
+    var o=quiz.opts[i];var cls='quiz-opt';
+    if(quiz.rep!==null){if(o.mj===m.mj)cls+=' ok';else if(o.mj===quiz.rep)cls+=' ko';}
+    r+='<div class="'+cls+'" onclick="AQ('+i+')">'+esc(o.mj)+'</div>';
+  }
+  r+='</div></div>';
+  return r;
+}
+function AQ(i){
+  if(quiz.rep!==null)return;
+  var o=quiz.opts[i],ok=o.mj===quiz.l.mots[quiz.i].mj;
+  quiz.rep=o.mj;if(ok)quiz.sc++;
+  draw();
+  setTimeout(function(){
+    var n=quiz.i+1;
+    if(n>=quiz.l.mots.length){quiz.fin=true;quiz.rep=null;}
+    else{quiz.i=n;quiz.rep=null;quiz.opts=genO(quiz.l.mots[n],quiz.l.mots);}
+    draw();
+  },2000);
+}
+
+// ── DICO ──
+function allMots(){
+  var a=[];
+  for(var i=0;i<LECONS.length;i++){
+    var l=LECONS[i];
+    for(var j=0;j<l.mots.length;j++){
+      if(l.mots[j].fr.indexOf('---')!==0&&l.mots[j].mj)
+        a.push({fr:l.mots[j].fr,mj:l.mots[j].mj,cat:l.titre});
+    }
+  }
+  for(var i=0;i<ESSENTIELS.length;i++)a.push({fr:ESSENTIELS[i].fr,mj:ESSENTIELS[i].mj,cat:'Essentiels'});
+  return a.sort(function(a,b){return a.fr.localeCompare(b.fr,'fr');});
+}
+function pageD(){
+  var all=allMots();
+  var f=srch?all.filter(function(m){return m.fr.toLowerCase().indexOf(srch.toLowerCase())>=0||m.mj.toLowerCase().indexOf(srch.toLowerCase())>=0;}):all;
+  var r='<h2 class="page-title">Dictionnaire</h2>';
+  r+='<div class="search-wrap"><span class="search-icon">🔍</span><input class="search-input" id="si" type="search" placeholder="Chercher en français ou manjaku…"></div>';
+  if(srch&&f.length>0)r+='<div class="dico-count" style="color:var(--gold)">'+f.length+' résultat(s) pour "'+esc(srch)+'"</div>';
+  if(!srch)r+='<div class="dico-count">'+TM+' mots disponibles</div>';
+  if(f.length===0&&srch)r+='<div style="text-align:center;padding:20px;color:var(--muted)">Aucun résultat pour "'+esc(srch)+'"</div>';
+  var shown=srch?f:f.slice(0,200);
+  for(var i=0;i<shown.length;i++){
+    var m=shown[i];
+    r+='<div class="di"><div><div class="di-fr">'+esc(m.fr)+'</div><div class="di-cat">'+esc(m.cat)+'</div></div><div class="di-mj">'+esc(m.mj)+'</div></div>';
+  }
+  return r;
+}
+function US(v){
+  srch=v;
+  var ct=document.getElementById('ct');
+  var all=allMots();
+  var f=v?all.filter(function(m){return m.fr.toLowerCase().indexOf(v.toLowerCase())>=0||m.mj.toLowerCase().indexOf(v.toLowerCase())>=0;}):all;
+  var existing=ct.querySelectorAll('.di');
+  existing.forEach(function(el){el.remove();});
+  var countEl=ct.querySelector('.dico-count');if(countEl)countEl.remove();
+  var r='';
+  var shown=srch?f:f.slice(0,200);
+  for(var i=0;i<shown.length;i++){
+    var m=shown[i];
+    r+='<div class="di"><div><div class="di-fr">'+esc(m.fr)+'</div><div class="di-cat">'+esc(m.cat)+'</div></div><div class="di-mj">'+esc(m.mj)+'</div></div>';
+  }
+  if(f.length===0)r='<div style="text-align:center;padding:40px;color:var(--muted)">Aucun résultat</div>';
+  ct.insertAdjacentHTML('beforeend',r);
+}
+
+function pageAP(){
+  var r='<div class="anim-up">';
+  r+='<div class="ap-hero">';
+  r+='<div style="font-size:48px;margin-bottom:10px">✨</div>';
+  r+='<div class="ap-name">Tata Éléonore</div>';
+  r+='<div class="ap-sub">Femme de parole et de transmission</div>';
+  r+='<div><span class="ap-badge">Napene</span><span class="ap-badge">Infirmière</span><span class="ap-badge">Coach</span><span class="ap-badge">Autrice</span></div>';
+  r+='</div>';
+  r+='<div class="ap-section" style="animation-delay:.05s">';
+  r+='<div class="ap-section-title">✦ Son chemin</div>';
+  r+="<p class='ap-text'>Éléonore chemine entre ancestralité et spiritualité. Infirmière et cadre de santé en bloc opératoire pendant plus de 40 ans, elle a exploré le corps humain dans ses moindres détails — pour comprendre, finalement, que nous ne sommes pas ce corps. Que nous sommes vastes, infinis, et que c'est dans cette vastitude que résident la connaissance et la guérison.</p>";
+  r+='</div>';
+  r+='<div class="ap-section" style="animation-delay:.1s">';
+  r+='<div class="ap-section-title">✦ Sa mission</div>';
+  r+="<p class='ap-text'>Coach certifiée et Initiée aux sciences traditionnelles africaines, elle accompagne les femmes à retrouver leur puissance intérieure, à travers la mémoire des lignées, la parole sacrée et l'éveil de leur vraie nature.</p>";
+  r+="<p class='ap-text' style='margin-top:8px'>Napene — prêtresse divinatoire et thérapeutique — Tata Éléonore est l'aboutissement vivant de ce qu'elle transmet : une femme enracinée dans sa tradition, gardienne de la langue, de la culture et de l'âme manjaku.</p>";
+  r+='</div>';
+  r+='<div class="ap-section" style="animation-delay:.15s">';
+  r+='<div class="ap-section-title">✦ Ses œuvres</div>';
+  r+='<div class="ap-book">📖 Conversation avec mon double de lumière</div>';
+  r+='<div class="ap-book">📖 Neuf mois pour renaître</div>';
+  r+='<div class="ap-book">👑 Cercle "Je reprends mon trône"</div>';
+  r+='</div>';
+  r+='<div class="ap-section" style="animation-delay:.2s">';
+  r+='<div class="ap-section-title">✦ Jukanin Manjaku</div>';
+  r+="<p class='ap-text'>C'est de cette profondeur qu'est née <strong style='color:var(--gold)'>Jukanin Manjaku</strong> — apprends-moi le manjaku — aujourd'hui portée par une communauté de milliers de membres, unis par le désir de se reconnecter à leurs racines.</p>";
+  r+='</div>';
+  r+='<div class="ap-mission">';
+  r+='<p>Se reconnecter à ses racines.</p>';
+  r+='<p>Transmettre la langue à ses enfants.</p>';
+  r+='<p>Préserver une identité.</p>';
+  r+='</div>';
+  r+='</div>';
+  return r;
+}
+
+
+
+// ── Système Premium ──
+var PREMIUM_CODE = "jukn-7Yx2-premium";
+var urlParams = new URLSearchParams(window.location.search);
+if(urlParams.get("unlock") === PREMIUM_CODE){
+  localStorage.setItem("jukaninPremium", "true");
+}
+var isPremium = localStorage.getItem("jukaninPremium") === "true";
+
+window.onload=function(){draw();};
+</script>
+
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    // PWA install prompt
+    var deferredPrompt;
+    window.addEventListener('beforeinstallprompt', function(e) {
+      e.preventDefault();
+      deferredPrompt = e;
+      // Afficher bouton install si pas encore installé
+      var btn = document.getElementById('install-btn');
+      if (btn) btn.style.display = 'flex';
+    });
+    
+    window.addEventListener('appinstalled', function() {
+      var btn = document.getElementById('install-btn');
+      if (btn) btn.style.display = 'none';
+    });
+  });
+}
+</script>
+</body>
+</html>
