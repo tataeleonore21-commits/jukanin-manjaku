@@ -488,11 +488,35 @@ function pageA(){
   r+='<a href="https://www.youtube.com/@jukaninmanjaku2123" target="_blank" style="display:flex;flex-direction:column;align-items:center;gap:4px;background:var(--card);border:1px solid var(--border);border-radius:10px;padding:8px 4px;text-decoration:none"><span style="font-size:20px">▶️</span><span style="font-size:9px;color:var(--gold3)">YouTube</span></a>';
   r+='</div></div>';
   r+='<div class="sec-label">Leçons disponibles</div>';
+  // Section gratuite
+  var gratuits = ['salutations','nourriture','famille','nombres','couleurs','proverbes'];
+  r+='<div style="font-family:Cinzel,serif;font-size:11px;letter-spacing:2px;color:#4caf50;margin:8px 0 6px">✅ LEÇONS GRATUITES</div>';
   r+='<div class="lc-grid">';
   for(var i=0;i<LECONS.length;i++){
     var l=LECONS[i];
+    if(gratuits.indexOf(l.id)===-1) continue;
     r+='<div class="lc" onclick="OL('+i+')" style="--c:'+l.couleur+';animation-delay:'+(i*0.04)+'s">';
     r+='<span class="lc-emoji">'+esc(l.emoji)+'</span>';
+    r+='<div class="lc-name">'+esc(l.titre)+'</div>';
+    r+='<div class="lc-count">'+l.mots.length+' mots</div>';
+    r+='<div class="lc-accent"></div>';
+    r+='</div>';
+  }
+  r+='</div>';
+  // Section premium
+  r+='<div style="font-family:Cinzel,serif;font-size:11px;letter-spacing:2px;color:var(--gold);margin:16px 0 6px">🔒 ESPACE PREMIUM</div>';
+  if(!isPremium){
+    r+='<div style="background:rgba(200,137,42,0.08);border:1px solid rgba(200,137,42,0.3);border-radius:14px;padding:16px;margin-bottom:12px;text-align:center">';
+    r+='<p style="font-size:14px;color:rgba(240,232,216,0.8);margin-bottom:12px">Accès à vie · Nouvelles leçons chaque mois</p>';
+    r+='<a href="https://buy.stripe.com/4gM5kC7pV6XEfuw8oJ9Ve03" target="_blank" style="display:inline-block;background:linear-gradient(135deg,#f0c040,#e8923a);color:#0a0d12;font-family:Cinzel,serif;font-weight:700;font-size:14px;padding:12px 24px;border-radius:25px;text-decoration:none">🔓 Débloquer tout — 19€</a>';
+    r+='</div>';
+  }
+  r+='<div class="lc-grid">';
+  for(var i=0;i<LECONS.length;i++){
+    var l=LECONS[i];
+    if(gratuits.indexOf(l.id)!==-1) continue;
+    r+='<div class="lc" onclick="OL('+i+')" style="--c:'+l.couleur+';animation-delay:'+(i*0.04)+'s;opacity:'+(isPremium?'1':'0.7')+'">';
+    r+='<span class="lc-emoji">'+(isPremium?esc(l.emoji):'🔒')+'</span>';
     r+='<div class="lc-name">'+esc(l.titre)+'</div>';
     r+='<div class="lc-count">'+l.mots.length+' mots</div>';
     r+='<div class="lc-accent"></div>';
