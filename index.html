@@ -470,6 +470,7 @@ function pageA(){
   var r='<div class="anim-up">';
   r+='<div class="hero">';
   r+='<div class="hero-title">✦ Bienvenue</div>';
+  
   r+='<p class="hero-text">Se reconnecter à ses racines.<br>Transmettre la langue à ses enfants.<br>Préserver une identité.</p>';
   r+='</div>';
   r+='<div class="stats">';
@@ -477,6 +478,15 @@ function pageA(){
   r+='<div class="stat"><div class="stat-v">'+TM+'</div><div class="stat-l">Mots</div></div>';
   r+='<div class="stat"><div class="stat-v">'+VERBES.length+'</div><div class="stat-l">Verbes</div></div>';
   r+='</div>';
+  r+='<div style="margin:14px 0">';
+  r+='<div style="font-family:Cinzel,serif;font-size:11px;letter-spacing:2px;color:var(--gold3);text-align:center;margin-bottom:8px">NOUS SUIVRE</div>';
+  r+='<div style="display:grid;grid-template-columns:repeat(5,1fr);gap:6px">';
+  r+='<a href="https://www.facebook.com/share/g/1EmXPY7J9x/?mibextid=wwXIfr" target="_blank" style="display:flex;flex-direction:column;align-items:center;gap:4px;background:var(--card);border:1px solid var(--border);border-radius:10px;padding:8px 4px;text-decoration:none"><span style="font-size:20px">📘</span><span style="font-size:9px;color:var(--gold3)">Facebook</span></a>';
+  r+='<a href="https://www.tiktok.com/@jukaninmanjaku" target="_blank" style="display:flex;flex-direction:column;align-items:center;gap:4px;background:var(--card);border:1px solid var(--border);border-radius:10px;padding:8px 4px;text-decoration:none"><span style="font-size:20px">🎵</span><span style="font-size:9px;color:var(--gold3)">TikTok</span></a>';
+  r+='<a href="https://www.instagram.com/jukanin_manjaku" target="_blank" style="display:flex;flex-direction:column;align-items:center;gap:4px;background:var(--card);border:1px solid var(--border);border-radius:10px;padding:8px 4px;text-decoration:none"><span style="font-size:20px">📸</span><span style="font-size:9px;color:var(--gold3)">Instagram</span></a>';
+  r+='<a href="https://whatsapp.com/channel/0029Vb8KpzAIN9ixiLZeOi1F" target="_blank" style="display:flex;flex-direction:column;align-items:center;gap:4px;background:var(--card);border:1px solid var(--border);border-radius:10px;padding:8px 4px;text-decoration:none"><span style="font-size:20px">💬</span><span style="font-size:9px;color:var(--gold3)">WhatsApp</span></a>';
+  r+='<a href="https://www.youtube.com/@jukaninmanjaku2123" target="_blank" style="display:flex;flex-direction:column;align-items:center;gap:4px;background:var(--card);border:1px solid var(--border);border-radius:10px;padding:8px 4px;text-decoration:none"><span style="font-size:20px">▶️</span><span style="font-size:9px;color:var(--gold3)">YouTube</span></a>';
+  r+='</div></div>';
   r+='<div class="sec-label">Leçons disponibles</div>';
   r+='<div class="lc-grid">';
   for(var i=0;i<LECONS.length;i++){
