@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recettes Manjaku — Bë juñgaar</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<meta property="og:title" content="Recettes Manjaku — Bë juñgaar">
+<meta property="og:description" content="Découvrez les recettes traditionnelles Manjaku en bilingue français/manjaku.">
+<meta property="og:image" content="https://tataeleonore21-commits.github.io/jukanin-manjaku/logo.svg">
+<meta property="og:url" content="https://www.jukanin-manjaku.com/recettes.html">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --noir:#0a0d12;
+  --or:#f0c040;
+  --or2:#c8892a;
+  --creme:rgba(240,232,216,0.85);
+  --card:rgba(255,255,255,0.04);
+  --border:rgba(200,137,42,0.3);
+}
+body{
+  background:var(--noir);
+  color:var(--creme);
+  font-family:'Lora',serif;
+  min-height:100vh;
+  padding:24px 16px;
+  max-width:600px;
+  margin:0 auto;
+}
+.logo{
+  font-family:'Cinzel',serif;
+  font-size:13px;
+  letter-spacing:4px;
+  color:var(--or2);
+  text-align:center;
+  margin-bottom:8px;
+}
+.titre{
+  font-family:'Cinzel',serif;
+  font-size:28px;
+  color:var(--or);
+  text-align:center;
+  margin-bottom:4px;
+}
+.sous-titre{
+  font-size:14px;
+  color:rgba(240,232,216,0.5);
+  text-align:center;
+  font-style:italic;
+  margin-bottom:28px;
+}
+/* Onglets */
+.onglets{
+  display:flex;
+  gap:8px;
+  overflow-x:auto;
+  padding-bottom:4px;
+  margin-bottom:20px;
+  scrollbar-width:none;
+}
+.onglets::-webkit-scrollbar{display:none}
+.onglet{
+  flex-shrink:0;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:20px;
+  padding:8px 16px;
+  color:rgba(240,232,216,0.6);
+  font-family:'Cinzel',serif;
+  font-size:12px;
+  cursor:pointer;
+  transition:all 0.2s;
+  white-space:nowrap;
+}
+.onglet.actif{
+  background:linear-gradient(135deg,var(--or),var(--or2));
+  color:#0a0d12;
+  border-color:transparent;
+  font-weight:700;
+}
+/* Recette */
+.recette{display:none}
+.recette.active{display:block}
+.recette-titre{
+  font-family:'Cinzel',serif;
+  font-size:22px;
+  color:var(--or);
+  margin-bottom:4px;
+}
+.recette-mj{
+  font-size:14px;
+  color:var(--or2);
+  font-style:italic;
+  margin-bottom:20px;
+}
+.section-titre{
+  font-family:'Cinzel',serif;
+  font-size:11px;
+  letter-spacing:3px;
+  color:var(--or2);
+  margin:20px 0 10px;
+  padding-bottom:6px;
+  border-bottom:1px solid var(--border);
+}
+.ingredient{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:10px 0;
+  border-bottom:1px solid rgba(200,137,42,0.1);
+}
+.ing-fr{font-size:15px;color:var(--creme)}
+.ing-mj{font-size:13px;color:var(--or);font-weight:600}
+.etape{
+  display:flex;
+  gap:14px;
+  padding:12px 0;
+  border-bottom:1px solid rgba(200,137,42,0.08);
+  line-height:1.6;
+}
+.etape-num{
+  font-family:'Cinzel',serif;
+  font-size:18px;
+  color:var(--or);
+  min-width:28px;
+  font-weight:700;
+}
+.etape-texte{font-size:14px;color:var(--creme)}
+.etape-mj{
+  font-size:12px;
+  color:var(--or2);
+  font-style:italic;
+  margin-top:4px;
+}
+.fin{
+  text-align:center;
+  margin-top:24px;
+  padding:16px;
+  background:rgba(200,137,42,0.08);
+  border:1px solid var(--border);
+  border-radius:14px;
+}
+.fin-mot{
+  font-size:22px;
+  color:var(--or);
+  font-family:'Cinzel',serif;
+  margin-bottom:4px;
+}
+.fin-fr{font-size:14px;color:rgba(240,232,216,0.7)}
+.retour{
+  display:block;
+  text-align:center;
+  margin-top:28px;
+  color:var(--or2);
+  font-size:13px;
+  text-decoration:none;
+  font-family:'Cinzel',serif;
+}
+</style>
+</head>
+<body>
+
+<div class="logo">JUKANIN MANJAKU</div>
+<h1 class="titre">Bë juñgaar Manjaku</h1>
+<p class="sous-titre">Recettes traditionnelles · Tata Éléonore — Napene 2.0</p>
+
+<div class="onglets">
+  <button class="onglet actif" onclick="afficher(0,this)">🫘 Riz aux haricots</button>
+  <button class="onglet" onclick="afficher(1,this)">🍲 Prochainement</button>
+  <button class="onglet" onclick="afficher(2,this)">🥜 Prochainement</button>
+</div>
+
+<!-- Recette 1 : Riz aux haricots -->
+<div class="recette active" id="r0">
+  <div class="recette-titre">U nata</div>
+  <div class="recette-mj">Riz aux haricots · U maani ni u liëk</div>
+
+  <div class="section-titre">Ingrédients — Ngë fiër</div>
+  <div class="ingredient"><span class="ing-fr">Haricot œil noir (500g)</span><span class="ing-mj">U liëk</span></div>
+  <div class="ingredient"><span class="ing-fr">Eau</span><span class="ing-mj">Mlik</span></div>
+  <div class="ingredient"><span class="ing-fr">Riz (1 bol)</span><span class="ing-mj">U maani</span></div>
+  <div class="ingredient"><span class="ing-fr">Sel</span><span class="ing-mj">Pë nam</span></div>
+  <div class="ingredient"><span class="ing-fr">Huile de palme</span><span class="ing-mj">Mkër mjankal</span></div>
+
+  <div class="section-titre">Préparation</div>
+
+  <div class="etape">
+    <span class="etape-num">1</span>
+    <div><div class="etape-texte">Trier les haricots.</div><div class="etape-mj">Pë rat u liëk</div></div>
+  </div>
+  <div class="etape">
+    <span class="etape-num">2</span>
+    <div><div class="etape-texte">Les laver à l'eau froide.</div><div class="etape-mj">Pë nij wël ni mlik mjuab</div></div>
+  </div>
+  <div class="etape">
+    <span class="etape-num">3</span>
+    <div><div class="etape-texte">Mettre dans une casserole.</div><div class="etape-mj">Pë tsukar</div></div>
+  </div>
+  <div class="etape">
+    <span class="etape-num">4</span>
+    <div><div class="etape-texte">Couvrir d'eau froide et porter à ébullition jusqu'à cuisson des haricots. Écraser un haricot avec le pouce pour vérifier.</div></div>
+  </div>
+  <div class="etape">
+    <span class="etape-num">5</span>
+    <div><div class="etape-texte">Si pas assez d'eau, ajouter de l'eau très chaude pour ne pas arrêter la cuisson.</div><div class="etape-mj">Pë watsan mëlik</div></div>
+  </div>
+  <div class="etape">
+    <span class="etape-num">6</span>
+    <div><div class="etape-texte">Saler.</div><div class="etape-mj">Pë tsu pë nam</div></div>
+  </div>
+  <div class="etape">
+    <span class="etape-num">7</span>
+    <div><div class="etape-texte">Trier, laver le riz et l'incorporer aux haricots.</div></div>
+  </div>
+  <div class="etape">
+    <span class="etape-num">8</span>
+    <div><div class="etape-texte">Laisser cuire jusqu'à évaporation de l'eau.</div></div>
+  </div>
+  <div class="etape">
+    <span class="etape-num">9</span>
+    <div><div class="etape-texte">Diminuer le feu.</div><div class="etape-mj">Pë rukus berua</div></div>
+  </div>
+  <div class="etape">
+    <span class="etape-num">10</span>
+    <div><div class="etape-texte">Écraser le tout avec une spatule en bois jusqu'à obtenir une pâte.</div><div class="etape-mj">Pë nap — Ka ciib</div></div>
+  </div>
+  <div class="etape">
+    <span class="etape-num">11</span>
+    <div><div class="etape-texte">Servir dans un bol. Arroser d'huile de palme selon son envie.</div><div class="etape-mj">Mkër mjankal</div></div>
+  </div>
+
+  <div class="fin">
+    <div class="fin-mot">A juñga ! · A lil ! · A caab !</div>
+    <div class="fin-fr">C'est cuit ! · C'est bon ! · Ça a du goût !</div>
+    <div style="margin-top:10px;font-size:18px;color:var(--or)">Ba riela bëwar ! 🍲</div>
+    <div class="fin-fr">Bon appétit !</div>
+  </div>
+</div>
+
+<!-- Recette 2 : Prochainement -->
+<div class="recette" id="r1">
+  <div style="text-align:center;padding:40px 20px">
+    <div style="font-size:48px;margin-bottom:16px">🔒</div>
+    <div class="recette-titre" style="color:var(--or2)">Recette premium</div>
+    <div class="recette-mj" style="margin-bottom:20px">Cette recette est réservée aux membres premium.</div>
+    <a href="https://www.jukanin-manjaku.com" style="display:inline-block;background:linear-gradient(135deg,#f0c040,#c8892a);color:#0a0d12;font-family:Cinzel,serif;font-weight:700;font-size:13px;padding:12px 24px;border-radius:25px;text-decoration:none">Accéder à l'app — 19€</a>
+  </div>
+</div>
+
+<!-- Recette 3 : Prochainement -->
+<div class="recette" id="r2">
+  <div style="text-align:center;padding:40px 0">
+    <div style="font-size:48px;margin-bottom:16px">🥜</div>
+    <div class="recette-titre">Prochainement</div>
+    <div class="recette-mj">Une nouvelle recette arrive bientôt !</div>
+  </div>
+</div>
+
+<a href="https://www.jukanin-manjaku.com" class="retour">← Retour à l'application</a>
+
+<script>
+function afficher(idx, btn){
+  document.querySelectorAll('.recette').forEach(function(r){r.classList.remove('active')});
+  document.querySelectorAll('.onglet').forEach(function(b){b.classList.remove('actif')});
+  document.getElementById('r'+idx).classList.add('active');
+  btn.classList.add('actif');
+}
+</script>
+</body>
+</html>
