@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Test ton niveau en Manjaku</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --noir:#0a0d12;
+  --or:#f0c040;
+  --or2:#c8892a;
+  --creme:rgba(240,232,216,0.85);
+  --card:rgba(255,255,255,0.04);
+  --border:rgba(200,137,42,0.3);
+}
+body{
+  background:var(--noir);
+  color:var(--creme);
+  font-family:'Lora',serif;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  padding:24px 16px;
+}
+.logo{
+  font-family:'Cinzel',serif;
+  font-size:13px;
+  letter-spacing:4px;
+  color:var(--or2);
+  margin-bottom:32px;
+}
+.titre{
+  font-family:'Cinzel',serif;
+  font-size:clamp(24px,5vw,40px);
+  color:var(--or);
+  text-align:center;
+  line-height:1.3;
+  margin-bottom:8px;
+}
+.sous-titre{
+  font-size:15px;
+  color:rgba(240,232,216,0.6);
+  text-align:center;
+  margin-bottom:32px;
+  font-style:italic;
+}
+.progress-bar{
+  width:100%;
+  max-width:500px;
+  height:4px;
+  background:rgba(255,255,255,0.1);
+  border-radius:2px;
+  margin-bottom:32px;
+  overflow:hidden;
+}
+.progress-fill{
+  height:100%;
+  background:linear-gradient(90deg,var(--or),var(--or2));
+  border-radius:2px;
+  transition:width 0.4s ease;
+}
+.question-box{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:20px;
+  padding:28px 24px;
+  width:100%;
+  max-width:500px;
+  margin-bottom:20px;
+}
+.q-numero{
+  font-size:11px;
+  letter-spacing:3px;
+  color:var(--or2);
+  margin-bottom:12px;
+  font-family:'Cinzel',serif;
+}
+.q-texte{
+  font-size:18px;
+  color:var(--creme);
+  line-height:1.6;
+  margin-bottom:6px;
+}
+.q-manjaku{
+  font-size:22px;
+  color:var(--or);
+  font-weight:600;
+  margin-bottom:20px;
+}
+.choix{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+.choix-btn{
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(200,137,42,0.2);
+  border-radius:12px;
+  padding:14px 18px;
+  color:var(--creme);
+  font-family:'Lora',serif;
+  font-size:15px;
+  cursor:pointer;
+  text-align:left;
+  transition:all 0.2s;
+}
+.choix-btn:hover{background:rgba(200,137,42,0.1);border-color:var(--or2)}
+.choix-btn.correct{background:rgba(76,175,80,0.15);border-color:#4caf50;color:#81c784}
+.choix-btn.incorrect{background:rgba(244,67,54,0.15);border-color:#f44336;color:#e57373}
+.choix-btn:disabled{cursor:default}
+.explication{
+  font-size:13px;
+  color:rgba(240,232,216,0.6);
+  margin-top:12px;
+  font-style:italic;
+  line-height:1.5;
+  display:none;
+}
+.btn-suivant{
+  background:linear-gradient(135deg,var(--or),var(--or2));
+  color:#0a0d12;
+  font-family:'Cinzel',serif;
+  font-weight:700;
+  font-size:15px;
+  padding:14px 32px;
+  border:none;
+  border-radius:30px;
+  cursor:pointer;
+  width:100%;
+  max-width:500px;
+  display:none;
+  margin-top:4px;
+}
+.resultat{
+  display:none;
+  text-align:center;
+  width:100%;
+  max-width:500px;
+}
+.score-cercle{
+  width:160px;
+  height:160px;
+  border-radius:50%;
+  background:linear-gradient(135deg,var(--or),var(--or2));
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  margin:0 auto 24px;
+}
+.score-chiffre{
+  font-family:'Cinzel',serif;
+  font-size:48px;
+  font-weight:700;
+  color:#0a0d12;
+  line-height:1;
+}
+.score-total{
+  font-size:14px;
+  color:#0a0d12;
+  opacity:0.7;
+}
+.niveau-titre{
+  font-family:'Cinzel',serif;
+  font-size:28px;
+  color:var(--or);
+  margin-bottom:8px;
+}
+.niveau-desc{
+  font-size:15px;
+  color:rgba(240,232,216,0.75);
+  line-height:1.7;
+  margin-bottom:28px;
+}
+.cta{
+  display:inline-block;
+  background:linear-gradient(135deg,var(--or),var(--or2));
+  color:#0a0d12;
+  font-family:'Cinzel',serif;
+  font-weight:700;
+  font-size:14px;
+  padding:14px 28px;
+  border-radius:30px;
+  text-decoration:none;
+  margin-bottom:16px;
+  width:100%;
+}
+.recommencer{
+  background:none;
+  border:1px solid var(--border);
+  color:var(--or2);
+  font-family:'Cinzel',serif;
+  font-size:13px;
+  padding:12px 24px;
+  border-radius:30px;
+  cursor:pointer;
+  width:100%;
+}
+.footer{
+  margin-top:40px;
+  font-size:12px;
+  color:rgba(240,232,216,0.3);
+  text-align:center;
+}
+</style>
+</head>
+<body>
+
+<div class="logo">JUKANIN MANJAKU</div>
+<h1 class="titre">Teste ton niveau<br>en Manjaku</h1>
+<p class="sous-titre">5 questions · du débutant à l'expert</p>
+
+<div class="progress-bar">
+  <div class="progress-fill" id="prog" style="width:0%"></div>
+</div>
+
+<div class="question-box" id="qbox">
+  <div class="q-numero" id="qnum">QUESTION 1 / 5</div>
+  <div class="q-texte" id="qtexte"></div>
+  <div class="q-manjaku" id="qmanjaku"></div>
+  <div class="choix" id="choix"></div>
+  <div class="explication" id="explication"></div>
+</div>
+
+<button class="btn-suivant" id="btnSuivant" onclick="suivant()">Question suivante →</button>
+
+<div class="resultat" id="resultat">
+  <div class="score-cercle">
+    <div class="score-chiffre" id="scoreChiffre">0</div>
+    <div class="score-total">/ 5</div>
+  </div>
+  <div class="niveau-titre" id="niveauTitre"></div>
+  <div class="niveau-desc" id="niveauDesc"></div>
+  <a href="https://www.jukanin-manjaku.com" class="cta">Apprendre le Manjaku →</a>
+  <button class="recommencer" onclick="recommencer()">Recommencer le quiz</button>
+</div>
+
+<div class="footer">www.jukanin-manjaku.com · Tata Éléonore — Napene 2.0</div>
+
+<script>
+var questions = [
+  {
+    texte: "Comment dit-on",
+    manjaku: "Bonjour (le matin) ?",
+    choix: ["Ko rom", "Bëfa", "Baran", "Man jaka"],
+    reponse: 1,
+    explication: "Bëfa = Bonjour le matin. Pënak = Bonjour l'après-midi."
+  },
+  {
+    texte: "Que signifie",
+    manjaku: "Man ligan",
+    choix: ["Je suis fatigué(e)", "Je suis triste", "Je suis rassasié(e)", "Je suis malade"],
+    reponse: 2,
+    explication: "Man ligan = Je suis rassasié(e). Man noor = Je suis fatigué(e)."
+  },
+  {
+    texte: "Quelle est la différence entre",
+    manjaku: "Pë fin et Pë fiñg ?",
+    choix: ["Aucune différence", "Oublier / Tuer", "Tomber / Sauter", "Acheter / Donner"],
+    reponse: 1,
+    explication: "En Manjaku, un seul son change tout ! Pë fin = oublier. Pë fiñg = tuer."
+  },
+  {
+    texte: "Comment dit-on",
+    manjaku: "Merci ?",
+    choix: ["Eyo", "An-an", "Baran", "Bëfa"],
+    reponse: 2,
+    explication: "Baran = Merci. Eyo = Oui. An-an / Kole = Non."
+  },
+  {
+    texte: "Que signifie",
+    manjaku: "Panguën ?",
+    choix: ["Village", "Présage", "Ancêtre", "Cérémonie"],
+    reponse: 1,
+    explication: "Panguën = présage / signe annonciateur. Les Manjaku font très attention aux signes de la nature."
+  }
+];
+
+var current = 0;
+var score = 0;
+var repondu = false;
+
+function afficher(){
+  var q = questions[current];
+  document.getElementById('qnum').textContent = 'QUESTION '+(current+1)+' / '+questions.length;
+  document.getElementById('qtexte').textContent = q.texte;
+  document.getElementById('qmanjaku').textContent = q.manjaku;
+  document.getElementById('explication').style.display = 'none';
+  document.getElementById('btnSuivant').style.display = 'none';
+  document.getElementById('prog').style.width = (current/questions.length*100)+'%';
+  repondu = false;
+
+  var c = document.getElementById('choix');
+  c.innerHTML = '';
+  for(var i=0;i<q.choix.length;i++){
+    var b = document.createElement('button');
+    b.className = 'choix-btn';
+    b.textContent = q.choix[i];
+    b.setAttribute('data-i', i);
+    b.onclick = choisir;
+    c.appendChild(b);
+  }
+}
+
+function choisir(e){
+  if(repondu) return;
+  repondu = true;
+  var idx = parseInt(e.target.getAttribute('data-i'));
+  var q = questions[current];
+  var btns = document.querySelectorAll('.choix-btn');
+  btns.forEach(function(b){ b.disabled = true; });
+  if(idx === q.reponse){
+    score++;
+    btns[idx].classList.add('correct');
+  } else {
+    btns[idx].classList.add('incorrect');
+    btns[q.reponse].classList.add('correct');
+  }
+  var exp = document.getElementById('explication');
+  exp.textContent = q.explication;
+  exp.style.display = 'block';
+  document.getElementById('btnSuivant').style.display = 'block';
+  if(current === questions.length - 1){
+    document.getElementById('btnSuivant').textContent = 'Voir mon résultat ✨';
+  } else {
+    document.getElementById('btnSuivant').textContent = 'Question suivante →';
+  }
+}
+
+function suivant(){
+  current++;
+  if(current < questions.length){
+    afficher();
+  } else {
+    montrerResultat();
+  }
+}
+
+function montrerResultat(){
+  document.getElementById('prog').style.width = '100%';
+  document.getElementById('qbox').style.display = 'none';
+  document.getElementById('btnSuivant').style.display = 'none';
+  document.getElementById('resultat').style.display = 'block';
+  document.getElementById('scoreChiffre').textContent = score;
+
+  var titre, desc;
+  if(score <= 1){
+    titre = '🌱 Débutant';
+    desc = 'Tu fais tes premiers pas en Manjaku ! C\'est un début magnifique. Commence par les leçons gratuites sur Jukanin Manjaku et reviens nous montrer tes progrès.';
+  } else if(score <= 3){
+    titre = '📚 En progression';
+    desc = 'Tu connais déjà quelques mots en Manjaku, bravo ! Continue d\'apprendre sur Jukanin Manjaku — les leçons premium t\'attendent pour aller plus loin.';
+  } else if(score === 4){
+    titre = '⭐ Bon niveau';
+    desc = 'Impressionnant ! Tu maîtrises bien les bases du Manjaku. Tu n\'es plus très loin de la maîtrise totale. Continue sur Jukanin Manjaku !';
+  } else {
+    titre = '🏆 Expert Manjaku !';
+    desc = 'Félicitations ! Tu maîtrises le Manjaku. Tu es un vrai Jukanin ! Partage ce quiz avec ta famille et tes amis pour voir leur niveau.';
+  }
+  document.getElementById('niveauTitre').textContent = titre;
+  document.getElementById('niveauDesc').textContent = desc;
+}
+
+function recommencer(){
+  current = 0;
+  score = 0;
+  document.getElementById('qbox').style.display = 'block';
+  document.getElementById('resultat').style.display = 'none';
+  afficher();
+}
+
+afficher();
+</script>
+</body>
+</html>
