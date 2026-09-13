@@ -551,7 +551,24 @@ function pageL(){
   r+='<button class="back-btn" onclick="lecon=null;draw()">← Retour</button>';
   
   // Leçons verrouillées
-  var verrouillee = ['spiritualite','etrehumain','maison','transports','lieux','nature','animaux','activites','metiers','viequotidienne','adjectifs','ecole','phrasesutiles','villages','prenoms','panguen','femme_enfant','recettes'].indexOf(l.id) !== -1 && !isPremium;
+  // Redirection recettes vers page dédiée
+  if(l.id === 'recettes' && isPremium){
+    window.location.href = 'https://www.jukanin-manjaku.com/recettes.html';
+    return '';
+  }
+  if(l.id === 'recettes' && !isPremium){
+    var r='<div class="anim-up">';
+    r+='<button class="back-btn" onclick="lecon=null;draw()">← Retour</button>';
+    r+='<div style="background:rgba(200,137,42,0.08);border:1px solid rgba(200,137,42,0.3);border-radius:18px;padding:28px 20px;text-align:center;margin:20px 0">';
+    r+='<div style="font-size:48px;margin-bottom:12px">🍲</div>';
+    r+='<h3 style="color:var(--gold);font-family:Cinzel,serif;margin-bottom:10px">Recettes Manjaku</h3>';
+    r+='<p style="color:rgba(240,232,216,0.75);font-size:14px;margin-bottom:16px;line-height:1.7">Découvrez la recette gratuite du <strong>U nata</strong> et accédez aux autres recettes en premium.</p>';
+    r+='<a href="https://www.jukanin-manjaku.com/recettes.html" style="display:inline-block;background:linear-gradient(135deg,#f0c040,#e8923a);color:#0a0d12;font-family:Cinzel,serif;font-weight:700;font-size:14px;padding:12px 24px;border-radius:25px;text-decoration:none;margin-bottom:12px">🍲 Voir les recettes</a><br>';
+    r+='<a href="https://buy.stripe.com/4gM5kC7pV6XEfuw8oJ9Ve03" target="_blank" style="display:inline-block;background:none;border:1px solid rgba(200,137,42,0.4);color:var(--gold);font-family:Cinzel,serif;font-size:13px;padding:10px 20px;border-radius:25px;text-decoration:none;margin-top:8px">🔓 Tout débloquer — 19€</a>';
+    r+='</div></div>';
+    return r;
+  }
+  var verrouillee = ['spiritualite','etrehumain','maison','transports','lieux','nature','animaux','activites','metiers','viequotidienne','adjectifs','ecole','phrasesutiles','villages','prenoms','panguen','femme_enfant'].indexOf(l.id) !== -1 && !isPremium;
   if(verrouillee){
     r+='<div class="lecon-header">';
     r+='<div class="lecon-header-emoji">🔒</div>';
